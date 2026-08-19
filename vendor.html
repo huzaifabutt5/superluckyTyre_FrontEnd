@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage-vendor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/vendor.css">
+    <link rel="stylesheet" href="/css/media.css">
+</head>
+
+<body>
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo">
+                <img src="/images/Logo.svg" alt="Super Lucky Tyre">
+            </div>
+
+
+            <!-- sidebar Menu -->
+            <div class="sidebar-menu ">
+
+                <a href="dashboard.html" class="menu-item ">
+                    <img src="/images/home.svg" alt="">
+                    <span>Dashboard</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    VENDOR MANAGEMENT
+                </div>
+
+                <a href="vendor.html" class="menu-item active">
+                    <img src="/images/home.svg" alt="">
+                    <span>Manage Vendor</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    CUSTOMER MANAGEMENT
+                </div>
+
+                <a href="customer.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Manage Customer</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    PRODUCT MANAGEMENT
+                </div>
+
+                <a href="manage-product.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Manage Product</span>
+                </a>
+
+                <a href="stock-listing.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Stock Listing</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    SALE / PURCHASE MANAGEMENT
+                </div>
+
+                <a href="sale.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Sale</span>
+                </a>
+
+                <a href="purchase.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Purchase</span>
+                </a>
+
+                <a href="reporting.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Reporting</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    PROFIT & LOSS MANAGEMENT
+                </div>
+
+                <a href="open-balance-sheet.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Open Balance Sheet</span>
+                </a>
+
+                <a href="pnl-report.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>PnL Report</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    EXPENSE MANAGEMENT
+                </div>
+
+                <a href="manage-expenses.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Manage Expenses</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    ROLE MANAGEMENT
+                </div>
+
+                <a href="manage-role.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Manage Role</span>
+                </a>
+
+            </div>
+
+
+            <!-- Bottom Buttons -->
+            <div class="sidebar-bottom ">
+
+                <a href="account-setting.html" class="menu-item account-btn">
+                    <i class="bi bi-gear"></i>
+                    <span>Account Setting</span>
+                </a>
+
+                <button type="button" class="menu-item logout-btn" onclick="logoutUser()">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN AREA -->
+        <main class="main-area">
+
+            <!-- TOP NAVBAR -->
+            <header class="top-header">
+
+                <button type="button" class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">
+
+                    <img src="/images/SVG.svg" alt="Menu">
+
+                </button>
+
+
+                <div class="search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input type="text" placeholder="Search">
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <div class="profile">
+
+                        <img src="/images/notification.svg" alt="Profile">
+
+                    </div>
+
+
+
+                    <div class="profile">
+
+                        <img src="/images/settings.svg" alt="Profile">
+
+                    </div>
+
+                </div>
+
+            </header>
+            <!-- DASHBOARD CONTENT -->
+
+            <div class="dashboard-content">
+                <div class="left">
+                    <p>Tyre Shop > Vendor Management > Vendor Listing </p>
+                    <h3>Vendor Listing</h3>
+                    <a href="add-vendor.html" class="add-vendor-btn">
+                        <i class="bi bi-plus-lg"></i>
+                        Add New Vendor
+                    </a>
+                    <!--vendor table-->
+                    <div class="vendor-table-top">
+
+                        <div>
+                            <select>
+                                <option>10</option>
+                                <option>20</option>
+                                <option>30</option>
+                            </select>
+
+                            <span>entries per page</span>
+                        </div>
+
+                        <div class="vendor-search">
+                            <label>Search:</label>
+                            <input type="text" placeholder="Search Vendor">
+                        </div>
+
+                    </div>
+
+
+                    <!-- TABLE START -->
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>SL</th>
+                                    <th>Vendor ID</th>
+                                    <th>Vendor Name</th>
+                                    <th>Vendor Email</th>
+                                    <th>Vendor Phone</th>
+                                    <th>Address</th>
+                                    <th>Bank Name</th>
+                                    <th>Account Title</th>
+                                    <th>AC/IBAN</th>
+                                    <th>Payable</th>
+                                    <th>Receivable</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>1</td>
+                                    <td>TYRPNT-VN-0001</td>
+                                    <td>Usama Aslam</td>
+                                    <td>theeusama@gmail.com</td>
+                                    <td>+92 320 7852636</td>
+                                    <td>Karachi, Pakistan</td>
+                                    <td>Meezan Bank</td>
+                                    <td>Usama Aslam</td>
+
+                                    <td>PK36SCBL0000001123456789</td>
+                                    <td>PKR 225,900</td>
+                                    <td>PKR 225,900</td>
+                                    <td>
+                                        <button class="action-btn view-btn">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>TYRPNT-VN-0002</td>
+                                    <td>Hamza Iqbal</td>
+                                    <td>theeusama@gmail.com</td>
+                                    <td>+92 320 7852636</td>
+                                    <td>Lahore, Pakistan</td>
+                                    <td>HBL Bank</td>
+                                    <td>Hamza Iqbal</td>
+
+                                    <td>PK23HBLM0000001234567890</td>
+                                    <td>PKR 225,900</td>
+                                    <td>PKR 225,900</td>
+                                    <td>
+                                        <button class="action-btn view-btn">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>TYRPNT-VN-0003</td>
+                                    <td>Asad ullah</td>
+                                    <td>theeusama@gmail.com</td>
+                                    <td>+92 320 7852636</td>
+                                    <td>Islamabad, Pakistan</td>
+                                    <td>Allied Bank</td>
+                                    <td>Asad ullah</td>
+
+                                    <td>PK56MEBL0000001234567894</td>
+                                    <td>PKR 225,900</td>
+                                    <td>PKR 225,900</td>
+                                    <td>
+                                        <button class="action-btn view-btn">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>4</td>
+                                    <td>TYRPNT-VN-0004</td>
+                                    <td>Anees</td>
+                                    <td>theeusama@gmail.com</td>
+                                    <td>+92 320 7852636</td>
+                                    <td>Faisalabad, Pakistan</td>
+                                    <td>UBL Bank</td>
+                                    <td>Anees</td>
+                                    <td>PK12UBL000001122334455</td>
+                                    <td>PKR 225,900</td>
+                                    <td>PKR 225,900</td>
+                                    <td>
+                                        <button class="action-btn view-btn">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>5</td>
+                                    <td>TYRPNT-VN-0005</td>
+                                    <td>Usama Aslam</td>
+                                    <td>theeusama@gmail.com</td>
+                                    <td>+92 320 7852636</td>
+                                    <td>Multan, Pakistan</td>
+                                    <td>Askari Bank</td>
+                                    <td>Usama Aslam</td>
+                                    <td>PK20ASY50000001456789012</td>
+                                    <td>PKR 225,900</td>
+                                    <td>PKR 225,900</td>
+                                    <td>
+                                        <button class="action-btn view-btn">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>6</td>
+                                    <td>TYRPNT-VN-0006</td>
+                                    <td>Hamza Iqbal</td>
+                                    <td>theeusama@gmail.com</td>
+                                    <td>+92 320 7852636</td>
+                                    <td>Peshawar, Pakistan</td>
+                                    <td>MCB Bank</td>
+                                    <td>Hamza Iqbal</td>
+                                    <td>PK45ALF0000001678901234</td>
+                                    <td>PKR 225,900</td>
+                                    <td>PKR 225,900</td>
+                                    <td>
+                                        <button class="action-btn view-btn">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>7</td>
+                                    <td>TYRPNT-VN-0007</td>
+                                    <td>Asad ullah</td>
+                                    <td>theeusama@gmail.com</td>
+                                    <td>+92 320 7852636</td>
+                                    <td>Quetta, Pakistan</td>
+                                    <td>Silk Bank</td>
+                                    <td>Asad ullah</td>
+                                    <td>PK78MCB0000001890123456</td>
+                                    <td>PKR 225,900</td>
+                                    <td>PKR 225,900</td>
+                                    <td>
+                                        <button class="action-btn view-btn">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>8</td>
+                                    <td>TYRPNT-VN-0008</td>
+                                    <td>Anees</td>
+                                    <td>theeusama@gmail.com</td>
+                                    <td>+92 320 7852636</td>
+                                    <td>Rawalpindi, Pakistan</td>
+                                    <td>Summit Bank</td>
+                                    <td>Anees</td>
+                                    <td>PK90BAKN0000001987654321</td>
+                                    <td>PKR 225,900</td>
+                                    <td>PKR 225,900</td>
+                                    <td>
+                                        <button class="action-btn view-btn">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>9</td>
+                                    <td>TYRPNT-VN-0009</td>
+                                    <td>Huzaifa</td>
+                                    <td>theeusama@gmail.com</td>
+                                    <td>+92 320 7852636</td>
+                                    <td>Gujranwala, Pakistan</td>
+                                    <td>Soneri Bank</td>
+                                    <td>Huzaifa</td>
+                                    <td>PK34BOP0000001234567890</td>
+                                    <td>PKR 225,900</td>
+                                    <td>PKR 225,900</td>
+                                    <td>
+                                        <button class="action-btn view-btn">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>10</td>
+                                    <td>TYRPNT-VN-0010</td>
+                                    <td>Huzaifa</td>
+                                    <td>theeusama@gmail.com</td>
+                                    <td>+92 320 7852636</td>
+                                    <td>Sialkot, Pakistan</td>
+                                    <td>Faysal Bank</td>
+                                    <td>Huzaifa</td>
+                                    <td>PK67ABL000001654327890</td>
+                                    <td>PKR 225,900</td>
+                                    <td>PKR 225,900</td>
+                                    <td>
+                                        <button class="action-btn view-btn">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="action-btn edit-btn">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                    <div class="vendor-footer">
+                        <span>Showing 1 to 10 of 20 entries</span>
+
+                        <div class="pagination">
+                            <button>«</button>
+                            <button>‹</button>
+                            <button class="active">1</button>
+                            <button>2</button>
+                            <button>›</button>
+                            <button>»</button>
+                        </div>
+                    </div>
+
+
+
+        </main>
+
+
+        <div class="vendor-header">
+            <h2>Manage Vendor</h2>
+            <span>Dashboard - Vendor Management</span>
+        </div>
+
+    </div>
+
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+
+
+
+
+
+    <script src="/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+
+</html>

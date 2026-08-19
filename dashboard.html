@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Lucky Tyre - ERP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/media.css">
+</head>
+
+<body>
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo">
+                <img src="/images/Logo.svg" alt="Super Lucky Tyre">
+            </div>
+
+
+            <!-- sidebar Menu -->
+            <div class="sidebar-menu ">
+
+                <a href="dashboard.html" class="menu-item active">
+                    <img src="/images/home.svg" alt="">
+                    <span>Dashboard</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    VENDOR MANAGEMENT
+                </div>
+
+                <a href="vendor.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Manage Vendor</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    CUSTOMER MANAGEMENT
+                </div>
+
+                <a href="customer.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Manage Customer</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    PRODUCT MANAGEMENT
+                </div>
+
+                <a href="manage-product.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Manage Product</span>
+                </a>
+
+                <a href="stock-listing.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Stock Listing</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    SALE / PURCHASE MANAGEMENT
+                </div>
+
+                <a href="sale.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Sale</span>
+                </a>
+
+                <a href="purchase.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Purchase</span>
+                </a>
+
+                <a href="reporting.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Reporting</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    PROFIT & LOSS MANAGEMENT
+                </div>
+
+                <a href="open-balance-sheet.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Open Balance Sheet</span>
+                </a>
+
+                <a href="pnl-report.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>PnL Report</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    EXPENSE MANAGEMENT
+                </div>
+
+                <a href="manage-expenses.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Manage Expenses</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    ROLE MANAGEMENT
+                </div>
+
+                <a href="manage-role.html" class="menu-item">
+                    <img src="/images/home.svg" alt="">
+                    <span>Manage Role</span>
+                </a>
+
+            </div>
+
+
+            <!-- Bottom Buttons -->
+            <div class="sidebar-bottom ">
+
+                <a href="account-setting.html" class="menu-item account-btn">
+                    <i class="bi bi-gear"></i>
+                    <span>Account Setting</span>
+                </a>
+
+                <button type="button" class="menu-item logout-btn" onclick="logoutUser()">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN AREA -->
+        <main class="main-area">
+
+            <!-- TOP NAVBAR -->
+            <header class="top-header">
+
+                <button type="button" class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">
+
+                    <img src="/images/SVG.svg" alt="Menu">
+
+                </button>
+
+
+                <div class="search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input type="text" placeholder="Search">
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <div class="profile">
+
+                        <img src="/images/notification.svg" alt="Profile">
+
+                    </div>
+
+
+
+                    <div class="profile">
+
+                        <img src="/images/settings.svg" alt="Profile">
+
+                    </div>
+
+                </div>
+
+            </header>
+            <!-- DASHBOARD CONTENT -->
+
+            <div class="dashboard-content">
+                <div class="left">
+                    <p>Tyre Shop > Dashboard</p>
+                    <h3>Dashboard</h3>
+                </div>
+            </div>
+
+            <!-- cards -->
+            <div class="summary-card">
+
+                <div class="card blue-card">
+                    <div class="card-info">
+                        <span>Net Sale</span>
+                        <strong>Rs. 53,659,748</strong>
+                    </div>
+                    <div class="card-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                </div>
+
+                <div class="card blue-card">
+                    <div class="card-info">
+                        <span>Total COG - Sale</span>
+                        <strong>Rs. 53,659,748</strong>
+                    </div>
+                    <div class="card-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                </div>
+
+                <div class="card purple-card">
+                    <div class="card-info">
+                        <span>Net Purchase</span>
+                        <strong>Rs. 53,659,748</strong>
+                    </div>
+                    <div class="card-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                </div>
+
+                <div class="card orange-card">
+                    <div class="card-info">
+                        <span>OverAll Expenses</span>
+                        <strong>Rs. 53,659,748</strong>
+                    </div>
+                    <div class="card-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                </div>
+
+                <div class="card green-card">
+                    <div class="card-info">
+                        <span>Net Profit</span>
+                        <strong>Rs. 53,659,748</strong>
+                    </div>
+                    <div class="card-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <section class="chart-card">
+
+                <div class="section-header">
+
+                    <h3>
+                        Sales vs Purchase
+                    </h3>
+
+                    <div class="chart-actions">
+
+                        <select id="rangeSelect">
+                            <option>Yearly</option>
+                            <option>Monthly</option>
+                            <option>Weekly</option>
+                        </select>
+
+                        <button>
+                            <i class="fa-regular fa-calendar"></i>
+                        </button>
+
+                    </div>
+                    <div class="date-modal" id="dateModal">
+
+                        <div class="date-box">
+
+                            <h3>Select Date</h3>
+
+                            <div class="date-fields">
+
+                                <div class="date-field">
+                                    <label for="fromDate">From Date</label>
+                                    <input type="date" id="fromDate">
+                                </div>
+
+                                <div class="date-field">
+                                    <label for="toDate">To Date</label>
+                                    <input type="date" id="toDate">
+                                </div>
+
+                            </div>
+
+                            <div class="date-buttons">
+
+                                <button type="button" id="resetDate">
+                                    Reset
+                                </button>
+
+                                <button type="button" id="applyDate">
+                                    Apply Filter
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="chart-container">
+                    <canvas id="dashboardChart"></canvas>
+                </div>
+
+
+                <div class="chart-summary">
+
+                    <div class="chart-stat sales-stat">
+                        <span class="dot"></span>
+
+                        <div>
+                            <small>Sales</small>
+                            <strong>PKR 26,201 <b>10% ↑</b></strong>
+                        </div>
+                    </div>
+
+
+                    <div class="chart-stat purchase-stat">
+                        <span class="dot"></span>
+
+                        <div>
+                            <small>Purchase</small>
+                            <strong>PKR 24,201 <b>10% ↓</b></strong>
+                        </div>
+                    </div>
+
+                    <div class="chart-stat COGS-stat">
+                        <span class="dot"></span>
+
+                        <div>
+                            <small>COGS</small>
+                            <strong>PKR 24,201 <b>10% ↓</b></strong>
+                        </div>
+                    </div>
+
+
+                    <div class="chart-stat expense-stat">
+                        <span class="dot"></span>
+
+                        <div>
+                            <small>Total Expense</small>
+                            <strong>PKR 18,500 <b>5% ↓</b></strong>
+                        </div>
+                    </div>
+
+
+                    <div class="chart-stat pnl-stat">
+                        <span class="dot"></span>
+
+                        <div>
+                            <small>PnL</small>
+                            <strong>PKR 2,000 <b>0% ↑</b></strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Tables -->
+            <div class="container table">
+                <div class="row">
+                    <div class="col-6">
+
+                        <div class="table-card">
+                            <h3>Top Venders</h3>
+                            <a href="/vendor.html">View All</a>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">SL</th>
+                                        <th scope="col">Vendor ID</th>
+                                        <th scope="col">Vendor Name</th>
+                                        <th scope="col">Due Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td>TYRPNT-VN-0006</td>
+                                        <td>Sara Khan</td>
+                                        <td>Rs15,000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>02</td>
+                                        <td>TYRPNT-VN-0002</td>
+                                        <td>Hamza Iqbal</td>
+                                        <td>Rs.45,200.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td>TYRPNT-VN-0003</td>
+                                        <td>Asad ullah</td>
+                                        <td>98,300.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>04</td>
+                                        <td>TYRPNT-VN-0004</td>
+                                        <td>Anees</td>
+                                        <td>Rs88,700.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>05</td>
+                                        <td>TYRPNT-VN-0005</td>
+                                        <td>Huzaifa</td>
+                                        <td>Rs74,200.00</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="table-card">
+                            <h3>Top Customer</h3>
+                            <a href="/customer.html">View All</a>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">SL</th>
+                                        <th scope="col">Customer ID</th>
+                                        <th scope="col">Customer Name</th>
+                                        <th scope="col">Due Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td>TYRPNT-CS-0001</td>
+                                        <td>Sara Khan</td>
+                                        <td>Rs15,000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>02</td>
+                                        <td>TYRPNT-CS-0002</td>
+                                        <td>Hamza Iqbal</td>
+                                        <td>Rs.45,200.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td>TYRPNT-CS-0003</td>
+                                        <td>Asad ullah</td>
+                                        <td>98,300.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>04</td>
+                                        <td>TYRPNT-CS-0004</td>
+                                        <td>Anees</td>
+                                        <td>Rs88,700.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>05</td>
+                                        <td>TYRPNT-CS-0005</td>
+                                        <td>Huzaifa</td>
+                                        <td>Rs74,200.00</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+
+</html>
