@@ -90,6 +90,15 @@ a {
     font-size: 10px;
     flex-shrink: 0;
 }
+.menu-item span{
+    font-size: 14px;
+    font-weight: 400;
+}
+.menu-section-title{
+    font-size: 8px;
+    font-weight: 600;
+}
+
 
 .menu-item:hover {
     background-color: #f2f5fb;
@@ -275,4 +284,325 @@ a {
     color:#282D44 ;
     margin-left: 14px;
     justify-content: space-between;
+}
+/* =========================================================
+   MAIN FORM CARD
+========================================================= */
+
+.vendor-form-card {
+    width: 100%;
+
+    background-color: #ffffff;
+
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.form-section {
+    width: 100%;
+
+    padding: 16px 16px 20px 16px;
+
+    border-bottom: 1px solid #E5E7EB;
+}
+
+
+/* Section heading */
+
+.form-section h4 {
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #282D44;
+
+    margin: 0 0 16px 0;
+}
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-fields {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 8px;
+    row-gap: 14px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+/* Full width field */
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.form-group label {
+    font-size: 10px;
+    font-weight: 600;
+
+    color: #596273;
+
+    margin-bottom: 6px;
+}
+/* Required star */
+
+.form-group label span {
+    color: #EF4444;
+}
+/* =========================================================
+   INPUT + SELECT
+========================================================= */
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 38px;
+
+    padding: 0 10px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #D1D5DB;
+    border-radius: 5px;
+
+    outline: none;
+
+    font-size: 11px;
+    font-weight: 400;
+
+    color: #374151;
+}
+/* Placeholder */
+
+.form-group input::placeholder {
+    color: #9CA3AF;
+}
+
+
+/* Select */
+
+.form-group select {
+    color: #6B7280;
+
+    cursor: pointer;
+}
+
+
+/* Focus */
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #487FFF;
+}
+/* Readonly Vendor ID */
+
+.form-group input[readonly] {
+    background-color: #F5F6FA;
+
+    color: #6B7280;
+
+    cursor: not-allowed;
+}
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.form-actions {
+    width: 100%;
+
+    min-height: 64px;
+
+    padding: 12px 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    background-color: #ffffff;
+}
+/* =========================================================
+   CANCEL BUTTON
+========================================================= */
+
+.cancel-btn {
+    min-width: 90px;
+    height: 38px;
+
+    padding: 0 14px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #F3F4F6;
+
+    color: #596273;
+
+    border: none;
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+.cancel-btn:hover {
+    background-color: #E5E7EB;
+    color: #374151;
+}
+/* =========================================================
+   ADD NEW VENDOR BUTTON
+========================================================= */
+
+.add-vendor-submit {
+    min-width: 120px;
+    height: 38px;
+
+    padding: 0 14px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #487FFF;
+
+    color: #ffffff;
+
+    border: none;
+    border-radius: 5px;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+.add-vendor-submit:hover {
+    background-color: #3863C7;
+}
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .dashboard-content {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .dashboard-content h3 {
+        font-size: 24px;
+    }
+
+    .form-fields {
+        column-gap: 12px;
+    }
+
+}
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .dashboard-content {
+        margin-top: 82px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .dashboard-content h3 {
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+
+    .form-fields {
+        grid-template-columns: 1fr;
+        row-gap: 12px;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+    .form-section {
+        padding: 14px;
+    }
+
+    .form-section h4 {
+        font-size: 12px;
+    }
+
+    .form-actions {
+        justify-content: stretch;
+    }
+
+    .cancel-btn,
+    .add-vendor-submit {
+        flex: 1;
+    }
+
+}
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .dashboard-content {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .breadcrumb-text {
+        font-size: 10px;
+    }
+
+    .dashboard-content h3 {
+        font-size: 20px;
+    }
+
+    .form-section {
+        padding: 12px;
+    }
+    .form-group input,
+    .form-group select {
+        height: 36px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .cancel-btn,
+    .add-vendor-submit {
+        width: 100%;
+        flex: none;
+    }
+
 }

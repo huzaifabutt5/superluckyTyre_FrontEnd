@@ -344,3 +344,53 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+
+
+// logout  popup //
+
+function logoutUser() {
+    document.getElementById("logoutModal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("logoutModal").style.display = "none";
+}
+
+function confirmLogout() {
+    window.location.href = "login.html";
+}
+// date popup//
+
+function openDateModal() {
+    document.getElementById("dateModal").style.display = "flex";
+}
+
+// close modal
+function closeDateModal() {
+    document.getElementById("dateModal").style.display = "none";
+}
+
+// reset dates
+document.getElementById("resetDate").onclick = function () {
+    document.getElementById("fromDate").value = "";
+    document.getElementById("toDate").value = "";
+};
+
+// apply filter
+document.getElementById("applyDate").onclick = function () {
+    let from = document.getElementById("fromDate").value;
+    let to = document.getElementById("toDate").value;
+
+    console.log("From:", from, "To:", to);
+
+    closeDateModal();
+};
+
+// close on outside click
+window.onclick = function(e) {
+    let modal = document.getElementById("dateModal");
+    if (e.target === modal) {
+        closeDateModal();
+    }
+};

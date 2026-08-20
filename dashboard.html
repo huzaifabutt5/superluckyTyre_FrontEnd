@@ -135,7 +135,6 @@
                     <i class="bi bi-gear"></i>
                     <span>Account Setting</span>
                 </a>
-
                 <button type="button" class="menu-item logout-btn" onclick="logoutUser()">
                     <i class="bi bi-box-arrow-right"></i>
                     <span>Logout</span>
@@ -207,6 +206,7 @@
                     <div class="card-icon">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </div>
+
                 </div>
 
                 <div class="card blue-card">
@@ -250,7 +250,7 @@
                 </div>
 
             </div>
-
+            <!------------graph---------------->
 
             <section class="chart-card">
 
@@ -268,11 +268,12 @@
                             <option>Weekly</option>
                         </select>
 
-                        <button>
+                        <button onclick="openDateModal()" class="open-date-btn">
                             <i class="fa-regular fa-calendar"></i>
                         </button>
 
                     </div>
+
                     <div class="date-modal" id="dateModal">
 
                         <div class="date-box">
@@ -309,10 +310,8 @@
 
                     </div>
 
+
                 </div>
-
-
-
                 <div class="chart-container">
                     <canvas id="dashboardChart"></canvas>
                 </div>
@@ -373,20 +372,25 @@
             </section>
 
             <!-- Tables -->
-            <div class="container table">
-                <div class="row">
-                    <div class="col-6">
+            <div class="table">
 
-                        <div class="table-card">
-                            <h3>Top Venders</h3>
-                            <a href="/vendor.html">View All</a>
-                            <table class="table table-striped">
+                <div class="table-wrapper">
+
+                    <!-- Top Vendors -->
+                    <div class="table-card">
+                        <div class="table-header">
+                            <h3>Top Vendors</h3>
+                            <a href="#">View All</a>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table>
                                 <thead>
                                     <tr>
-                                        <th scope="col">SL</th>
-                                        <th scope="col">Vendor ID</th>
-                                        <th scope="col">Vendor Name</th>
-                                        <th scope="col">Due Amount</th>
+                                        <th>SL</th>
+                                        <th>Vendor ID</th>
+                                        <th>Vendor Name</th>
+                                        <th>Due Amount</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -394,49 +398,52 @@
                                         <td>01</td>
                                         <td>TYRPNT-VN-0006</td>
                                         <td>Sara Khan</td>
-                                        <td>Rs15,000.00</td>
+                                        <td>Rs 15,000.00</td>
                                     </tr>
                                     <tr>
                                         <td>02</td>
                                         <td>TYRPNT-VN-0002</td>
                                         <td>Hamza Iqbal</td>
-                                        <td>Rs.45,200.00</td>
+                                        <td>Rs 45,200.00</td>
                                     </tr>
                                     <tr>
-                                        <td>03</td>
+                                        <td>02</td>
                                         <td>TYRPNT-VN-0003</td>
-                                        <td>Asad ullah</td>
-                                        <td>98,300.00</td>
+                                        <td>Hamza Iqbal</td>
+                                        <td>Rs 45,200.00</td>
                                     </tr>
                                     <tr>
-                                        <td>04</td>
+                                        <td>02</td>
                                         <td>TYRPNT-VN-0004</td>
-                                        <td>Anees</td>
-                                        <td>Rs88,700.00</td>
+                                        <td>Hamza Iqbal</td>
+                                        <td>Rs 45,200.00</td>
                                     </tr>
                                     <tr>
-                                        <td>05</td>
+                                        <td>02</td>
                                         <td>TYRPNT-VN-0005</td>
-                                        <td>Huzaifa</td>
-                                        <td>Rs74,200.00</td>
+                                        <td>Asad ullah</td>
+                                        <td>Rs 45,200.00</td>
                                     </tr>
-
-
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="table-card">
+
+                    <!-- Top Customer -->
+                    <div class="table-card">
+                        <div class="table-header">
                             <h3>Top Customer</h3>
-                            <a href="/customer.html">View All</a>
-                            <table class="table table-striped">
+                            <a href="#">View All</a>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table>
                                 <thead>
                                     <tr>
-                                        <th scope="col">SL</th>
-                                        <th scope="col">Customer ID</th>
-                                        <th scope="col">Customer Name</th>
-                                        <th scope="col">Due Amount</th>
+                                        <th>SL</th>
+                                        <th>Customer ID</th>
+                                        <th>Customer Name</th>
+                                        <th>Due Amount</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -444,44 +451,38 @@
                                         <td>01</td>
                                         <td>TYRPNT-CS-0001</td>
                                         <td>Sara Khan</td>
-                                        <td>Rs15,000.00</td>
+                                        <td>Rs 15,000.00</td>
                                     </tr>
                                     <tr>
                                         <td>02</td>
-                                        <td>TYRPNT-CS-0002</td>
-                                        <td>Hamza Iqbal</td>
-                                        <td>Rs.45,200.00</td>
+                                        <td>YRPNT-CS-0002</td>
+                                        <td>Sara Khan</td>
+                                        <td>Rs 15,000.00</td>
                                     </tr>
                                     <tr>
                                         <td>03</td>
                                         <td>TYRPNT-CS-0003</td>
-                                        <td>Asad ullah</td>
-                                        <td>98,300.00</td>
+                                        <td>Sara Khan</td>
+                                        <td>Rs 15,000.00</td>
                                     </tr>
                                     <tr>
                                         <td>04</td>
                                         <td>TYRPNT-CS-0004</td>
-                                        <td>Anees</td>
-                                        <td>Rs88,700.00</td>
+                                        <td>Sara Khan</td>
+                                        <td>Rs 15,000.00</td>
                                     </tr>
                                     <tr>
                                         <td>05</td>
                                         <td>TYRPNT-CS-0005</td>
-                                        <td>Huzaifa</td>
-                                        <td>Rs74,200.00</td>
+                                        <td>Sara Khan</td>
+                                        <td>Rs 15,000.00</td>
                                     </tr>
-
-
                                 </tbody>
                             </table>
                         </div>
                     </div>
 
                 </div>
-
-
-
-
             </div>
 
         </main>
@@ -490,7 +491,32 @@
 
 
     <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!---------------------popup---------------------->
 
+
+
+    <!-- ================= LOGOUT POPUP ================= -->
+
+    <!-- Overlay -->
+    <div id="logoutModal" class="modal-overlay">
+
+        <div class="modal-box">
+
+            <h3>Log Out</h3>
+
+            <p>
+                Are you sure you want to log out? You need
+                credential to login again.
+            </p>
+
+            <div class="modal-actions">
+                <button class="btn cancel-btn" onclick="closeModal()">No, I'm good!</button>
+                <button class="btn logout-confirm" onclick="confirmLogout()">Log Out</button>
+            </div>
+
+        </div>
+
+    </div>
 
 
 

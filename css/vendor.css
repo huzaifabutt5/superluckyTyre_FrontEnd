@@ -84,6 +84,15 @@ a {
     text-align: left;
     white-space: nowrap;
 }
+.menu-item span{
+    font-size: 14px;
+    font-weight: 400;
+}
+.menu-section-title{
+    font-size: 8px;
+    font-weight: 600;
+}
+
 
 .menu-item img {
     width: 13px;
@@ -259,6 +268,7 @@ a {
     height: 100%;
     object-fit: cover;
 }
+/*
 .dashboard-content{
     margin-top: 84px;
 }
@@ -276,5 +286,354 @@ a {
     margin-left: 14px;
     justify-content: space-between;
 }
+/*---------------------add ventor btn-------------------------------*/
+/*.add-vendor-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color:#4b7ff5; 
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 6px;
+    text-decoration: none; 
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+}
+
+
+.add-vendor-btn:hover {
+    background-color:#3863C7;
+}
 /*----------------------------------------------------------------------------------------------*/
 /*vendor table*/
+/* ================= VENDOR LISTING ================= */
+
+.dashboard-content {
+    margin-top: 84px;
+    margin-left: 24px;
+    margin-right: 24px;
+    position: relative;
+}
+
+/* Breadcrumb */
+.dashboard-content p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6B7280;
+    margin: 0 0 6px 0;
+}
+
+/* Page Heading */
+.dashboard-content h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #282D44;
+    margin: 0 0 24px 0;
+}
+
+
+/* ================= ADD NEW VENDOR BUTTON ================= */
+
+.add-vendor-btn {
+    position: absolute;
+    top: 38px;
+    right: 0;
+
+    height: 40px;
+    padding: 0 14px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    background-color: #487FFF;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.add-vendor-btn:hover {
+    background-color: #3863C7;
+    color: #ffffff;
+}
+
+
+/* ================= VENDOR TABLE CARD ================= */
+
+.vendor-table-top {
+    width: 100%;
+    min-height: 64px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #E5E7EB;
+    border-bottom: none;
+
+    border-radius: 8px 8px 0 0;
+
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Entries section */
+
+.vendor-table-top > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vendor-table-top select {
+    width: 40px;
+    height: 32px;
+
+    padding: 0 6px;
+
+    border: 1px solid #D1D5DB;
+    border-radius: 5px;
+
+    background-color: #ffffff;
+
+    color: #374151;
+    font-size: 12px;
+
+    outline: none;
+}
+
+.vendor-table-top span {
+    font-size: 12px;
+    color: #596273;
+}
+
+
+/* ================= SEARCH VENDOR ================= */
+
+.vendor-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vendor-search label {
+    font-size: 12px;
+    color: #596273;
+}
+
+.vendor-search input {
+    width: 200px;
+    height: 32px;
+
+    padding: 0 10px;
+
+    border: 1px solid #D1D5DB;
+    border-radius: 5px;
+
+    outline: none;
+
+    background-color: #ffffff;
+
+    font-size: 12px;
+    color: #374151;
+}
+
+.vendor-search input::placeholder {
+    color: #9CA3AF;
+}
+
+.vendor-search input:focus {
+    border-color: #487FFF;
+}
+
+
+/* ================= TABLE ================= */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background-color: #ffffff;
+
+    border-left: 1px solid #E5E7EB;
+    border-right: 1px solid #E5E7EB;
+}
+
+.table-wrapper table {
+    width: 100%;
+    min-width: 1050px;
+
+    border-collapse: collapse;
+
+    table-layout: auto;
+}
+
+
+/* Table Header */
+
+.table-wrapper thead {
+    background-color: #F5F6FA;
+}
+
+.table-wrapper th {
+    height: 40px;
+
+    padding: 0 10px;
+
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+
+    color: #282D44;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+
+/* Table Body */
+
+.table-wrapper td {
+    height: 40px;
+
+    padding: 0 10px;
+
+    border-bottom: 1px solid #E5E7EB;
+
+    color: #596273;
+
+    font-size: 11px;
+    font-weight: 400;
+
+    white-space: nowrap;
+}
+
+.table-wrapper tbody tr:hover {
+    background-color: #F9FAFB;
+}
+
+
+/* ================= ACTION BUTTONS ================= */
+
+.action-btn {
+    width: 28px;
+    height: 28px;
+
+    margin-right: 4px;
+
+    border: none;
+    border-radius: 5px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 11px;
+}
+
+.view-btn {
+    background-color: #E8F0FF;
+    color: #487FFF;
+}
+
+.view-btn:hover {
+    background-color: #487FFF;
+    color: #ffffff;
+}
+
+.edit-btn {
+    background-color: #45B36926;
+    color: #45B366;
+}
+
+.edit-btn:hover {
+    background-color:#45B366;
+    color: #ffffff;
+}
+.delete-btn {
+    background-color: #f03d6926;
+    color: #b00404f0;
+}
+
+.delete-btn:hover {
+    background-color:#b00404f0;
+    color: #ffffff;
+}
+
+
+/* ================= TABLE FOOTER ================= */
+
+.vendor-footer {
+    width: 100%;
+    height: 56px;
+
+    padding: 0 16px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #E5E7EB;
+    border-top: none;
+
+    border-radius: 0 0 8px 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vendor-footer > span {
+    font-size: 11px;
+    color: #596273;
+}
+
+
+/* ================= PAGINATION ================= */
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pagination button {
+    width: 28px;
+    height: 28px;
+
+    border: none;
+    border-radius: 4px;
+
+    background-color: transparent;
+
+    color: #596273;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #F1F3F7;
+}
+
+.pagination button.active {
+    background-color: #487FFF;
+    color: #ffffff;
+}

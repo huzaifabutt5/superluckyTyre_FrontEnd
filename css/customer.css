@@ -90,6 +90,15 @@ a {
     font-size: 10px;
     flex-shrink: 0;
 }
+.menu-item span{
+    font-size: 14px;
+    font-weight: 400;
+}
+.menu-section-title{
+    font-size: 8px;
+    font-weight: 600;
+}
+
 
 .menu-item:hover {
     background-color: #f2f5fb;

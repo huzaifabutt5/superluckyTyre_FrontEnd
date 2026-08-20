@@ -8,6 +8,7 @@ body {
     font-family: Arial, Helvetica, 'Poppins', sans-serif;
     background-color: #ebecf0;
     color: #172033;
+     overflow-x: hidden;
 }
 
 a {
@@ -30,6 +31,14 @@ a {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
+}
+.menu-item span{
+    font-size: 14px;
+    font-weight: 400;
+}
+.menu-section-title{
+    font-size: 8px;
+    font-weight: 600;
 }
 
 .sidebar-logo {
@@ -62,9 +71,11 @@ a {
 }
 
 .menu-section-title {
-    font-size: 7px;
+
+    font-weight: 600;
+    font-size: 8px;
     color: #596273;
-    margin: 9px 4px 5px;
+     margin: 17px 4px 5px;
     line-height: 1;
 }
 
@@ -77,12 +88,13 @@ a {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 0 8px;
+    padding: 10px 12px;
     color: #374151;
-    font-size: 9px;
+    font-size: 14px;
     cursor: pointer;
     text-align: left;
     white-space: nowrap;
+    margin: 10px 4px 5px;
 }
 
 .menu-item img {
@@ -278,82 +290,106 @@ a {
 }
 
 
-/* summary cards */
-
 /* =========================
    SUMMARY CARDS
-========================= 
+========================= */
 
 .summary-card {
+    
+    background: #ffffff;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
-    margin: 24px 14px 24px 14px;
+    gap: 14px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    padding: 20px 16px;
+    border-radius: 12px;
+    align-items: center;
 }
 
 .card {
-    height: 128px;
-    border-radius: 10px;
-    padding: 20px;
+    position: relative;
+    height: 62px;
+    border-radius: 4px;
+    padding: 12px 16px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border: none;
-    color: #ffffff;
+}
+
+.blue-card {
+    background-color: #e5f2ff;
+    border-left: 3px solid #4b7ff5;
+}
+
+.purple-card {
+    background-color: #f0e6ff;
+    border-left: 3px solid #884dff;
+}
+
+.orange-card {
+    background-color: #fff0dd;
+    border-left: 3px solid #ff9d2e;
+}
+
+.green-card {
+    background-color: #dff9ee;
+    border-left: 3px solid #19a965;
 }
 
 .card-info {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 3px;
+    text-align: left;
+    padding-right: 26px;
 }
 
 .card-info span {
     font-size: 14px;
-    font-weight: 500;
-    color: #ffffff;
+    color: #4B5563;
 }
 
 .card-info strong {
-    font-size: 20px;
-    font-weight: 600;
-    color: #ffffff;
+    font-size: 12px;
+    color: #111827;
 }
 
 .card-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.20);
+    width: 26px;
+    height: 26px;
+    padding: 6px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 13px;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
 }
 
-.card-icon i {
-    font-size: 18px;
-    color: #ffffff;
+.blue-card .card-icon {
+    background-color: #c7e3ff;
+    color: #4b7ff5;
 }
 
-
-/* CARD COLORS 
-
-.blue-card {
-    background: #2563EB;
+.purple-card .card-icon {
+    background-color: #dfcaff;
+    color: #884dff;
 }
 
-.purple-card {
-    background: #7C3AED;
+.orange-card .card-icon {
+    background-color: #ffe0b5;
+    color: #ff9d2e;
 }
 
-.orange-card {
-    background: #F59E0B;
+.green-card .card-icon {
+    background-color: #bdf1db;
+    color: #19a965;
 }
-
-.green-card {
-    background: #16A34A;
-}
-
 
 
 /* =========================
@@ -364,7 +400,7 @@ a {
     background: #ffffff;
     border: 1px solid #E5E7EB;
     border-radius: 10px;
-    margin: 0 14px 24px 14px;
+    margin: 24px 14px 24px 14px;
     padding: 20px;
 }
 
@@ -492,10 +528,11 @@ a {
 }
 
 .date-buttons #applyDate {
-    background: #2563EB;
+    background: #f04438;;
     color: #ffffff;
     border-color: #2563EB;
 }
+
 
 
 /* =========================
@@ -582,104 +619,95 @@ a {
 }
 
 
- /*=========================
-   TABLE SECTION
-========================= */
-
-.table {
-    max-width: none;
-    margin: 0 14px 30px 14px;
-    padding: 0;
-}
-
-.table .row {
-    --bs-gutter-x: 16px;
-}
-
-.table .col-6 {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.table-card {
-    position: relative;
-    background: #ffffff;
-    border: 1px solid #E5E7EB;
-    border-radius: 10px;
-    padding: 20px;
-    margin-right: 8px;
-    min-height: 320px;
-}
-
-.table .col-6:last-child .table-card {
-    margin-right: 0;
-    margin-left: 8px;
-}
-
-.table-card h3 {
-    display: inline-block;
-    margin: 0 0 18px 0;
-    font-size: 17px;
-    font-weight: 600;
-    color: #282D44;
-}
-
-.table-card > a {
-    float: right;
-    margin-top: 3px;
-    font-size: 12px;
-    font-weight: 500;
-    color: #2563EB;
-    text-decoration: none;
-}
-
-.table-card > a:hover {
-    text-decoration: underline;
-}
-
-
 /* =========================
    TABLE
 ========================= */
+.table {
+    margin: 0 10px 30px 10px;
+    width: calc(100% - 20px);
+}
+/* Wrapper */
+.table-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   /* grid-template-columns: 1fr 1fr;*/
+    gap: 16px;
+}
 
+/* Card */
+.table-card {
+      width: 100%;
+    max-width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Header */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.table-header h3 {
+    font-size: 18px;
+    color: #111827;
+    font-weight: 700;
+    margin: 0;
+}
+
+.table-header a {
+    font-size: 12px;
+    color: #2563EB;
+    text-decoration: none;
+}
+.table-header a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive scroll */
+.table-responsive {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Table */
 .table-card table {
     width: 100%;
-    margin: 0;
-    font-size: 12px;
-    vertical-align: middle;
+   border-collapse: collapse;
 }
 
-.table-card table thead th {
-    background: #F8F9FC;
+/* Head */
+.table-card th {
+    font-size: 11px;
     color: #6B7280;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 12px 10px;
+    text-align: left;
+    padding: 10px;
     border-bottom: 1px solid #E5E7EB;
-    white-space: nowrap;
 }
 
-.table-card table tbody td {
+/* Body */
+.table-card td {
+    font-size: 12px;
     color: #374151;
-    font-size: 11px;
-    font-weight: 500;
-    padding: 13px 10px;
-    border-bottom: 1px solid #F0F0F0;
-    white-space: nowrap;
+    padding: 12px 10px;
+    border-bottom: 1px solid #F1F5F9;
 }
 
-.table-card table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-.table-card table tbody tr:hover {
+/* Hover */
+.table-card tbody tr:hover {
     background: #F9FAFB;
 }
 
-
-/* =========================
-   RESPONSIVE
-========================= */
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .table-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
 
 @media (max-width: 1200px) {
 
@@ -787,4 +815,164 @@ a {
     .table-card {
         overflow-x: auto;
     }
+}
+
+
+/*-----------------popup-----------------------------------------------*/
+
+/* Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    display: none;  /* hidden by default */
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+}
+
+/* Modal Box */
+.modal-box {
+    background: #fff;
+    width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Title */
+.modal-box h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Text */
+.modal-box p {
+    font-size: 13px;
+    color: #374151;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Common button */
+.btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* Cancel */
+.cancel-btn {
+    background: #E5E7EB;
+    color: #374151;
+}
+
+/* Logout */
+.logout-confirm {
+    background: #F04438;
+    color: #fff;
+}
+/*--------------------date popup--------------------*/
+
+/* Overlay */
+.date-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    display: none;   /* hidden by default */
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+}
+
+/* Box */
+.date-box {
+    background: #fff;
+    width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Title */
+.date-box h3 {
+    margin: 0 0 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Fields row */
+.date-fields {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Each field */
+.date-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label */
+.date-field label {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #374151;
+}
+
+/* Input */
+.date-field input {
+    padding: 8px;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* Buttons */
+.date-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Reset */
+#resetDate {
+    flex: 1;
+    padding: 10px;
+    background: #E5E7EB;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Apply */
+#applyDate {
+    flex: 1;
+    padding: 10px;
+    background: #f04438;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }

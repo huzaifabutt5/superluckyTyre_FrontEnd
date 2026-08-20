@@ -190,30 +190,151 @@
             <!-- DASHBOARD CONTENT -->
 
             <div class="dashboard-content">
-                <div class="left">
-                    <p>Tyre Shop > Vendor Management > Add New Vendor </p>
-                    <h3>Add New Vendor</h3>
-                    <div class="container bg-white">
-        <div class="row">
-           <div class="col-12 mb-2">
-            <h4>Vendor Information</h4>
-           </div>
-           <div class="container bg-white">
-              <div class="row">
-              <div class="col-12">
-                <form>
-                    <!---------------------------------------->
-                </form>
-              </div>
-           </div>
+                <p>Tyre Shop > Vendor Management > Add New Vendor </p>
+                <h3>Add New Vendor</h3>
+                <div class="vendor-form-card">
+
+                    <!-- Vendor Information -->
+                    <div class="form-section">
+
+                        <h4>Vendor Information</h4>
+
+                        <div class="form-fields">
+
+                            <!-- Vendor ID -->
+                            <div class="form-group">
+                                <label for="vendorId">Vendor ID</label>
+
+                                <input type="text" id="vendorId" name="vendorId"
+                                    placeholder="Vendor ID (Auto Generated)" readonly>
+                            </div>
 
 
-      </div>
-                  
-            
-        </main>
-      
-      
+                            <!-- Vendor Name -->
+                            <div class="form-group">
+                                <label for="vendorName">
+                                    Vendor Name <span>*</span>
+                                </label>
+
+                                <input type="text" id="vendorName" name="vendorName" placeholder="Vendor Name">
+                            </div>
+
+
+                            <!-- Vendor Email -->
+                            <div class="form-group">
+                                <label for="vendorEmail">
+                                    Vendor Email <span>*</span>
+                                </label>
+
+                                <input type="email" id="vendorEmail" name="vendorEmail" placeholder="Vendor Email">
+                            </div>
+
+
+                            <!-- Vendor Phone -->
+                            <div class="form-group">
+                                <label for="vendorPhone">
+                                    Vendor Phone <span>*</span>
+                                </label>
+
+                                <input type="text" id="vendorPhone" name="vendorPhone" placeholder="Vendor Phone">
+                            </div>
+
+
+                            <!-- Location -->
+                            <div class="form-group full-width">
+                                <label for="location">Location</label>
+
+                                <input type="text" id="location" name="location" placeholder="Location">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= ACCOUNT DETAIL ================= -->
+
+                    <div class="form-section">
+
+                        <h4>Account Detail</h4>
+
+                        <div class="form-fields">
+
+                            <!-- Account Type -->
+                            <div class="form-group">
+                                <label for="accountType">
+                                    Account Type <span>*</span>
+                                </label>
+
+                                <select id="accountType" name="accountType">
+                                    <option value="">Account Type (Select Account Type)</option>
+                                    <option value="bank">Bank Account</option>
+                                    <option value="cash">Cash Account</option>
+                                    <option value="credit">Credit Account</option>
+                                </select>
+                            </div>
+
+
+                            <!-- Bank Name -->
+                            <div class="form-group">
+                                <label for="bankName">
+                                    Bank Name <span>*</span>
+                                </label>
+
+                                <input type="text" id="bankName" name="bankName" placeholder="Bank Name">
+                            </div>
+
+
+                            <!-- Account Title -->
+                            <div class="form-group">
+                                <label for="accountTitle">
+                                    Account Title <span>*</span>
+                                </label>
+
+                                <input type="text" id="accountTitle" name="accountTitle" placeholder="Account Title">
+                            </div>
+
+
+                            <!-- Account Number -->
+                            <div class="form-group">
+                                <label for="accountNumber">
+                                    Account Number <span>*</span>
+                                </label>
+
+                                <input type="text" id="accountNumber" name="accountNumber" placeholder="Account Number">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= FORM BUTTONS ================= -->
+
+                    <div class="form-actions">
+
+                        <a href="vendor.html" class="cancel-btn">
+                            Cancel
+                        </a>
+
+                        <button type="submit" class="add-vendor-submit">
+                            Add New Vendor
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+    </div>
+
+
+    </main>
+
+
 
 
     <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
