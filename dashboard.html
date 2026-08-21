@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Lucky Tyre - ERP</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/dashboard.css">
-    <link rel="stylesheet" href="/css/media.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
 
 <body>
@@ -23,7 +21,7 @@
 
             <!-- Logo -->
             <div class="sidebar-logo">
-                <img src="/images/Logo.svg" alt="Super Lucky Tyre">
+                <img src="images/Logo.svg" alt="Super Lucky Tyre">
             </div>
 
 
@@ -31,7 +29,7 @@
             <div class="sidebar-menu ">
 
                 <a href="dashboard.html" class="menu-item active">
-                    <img src="/images/home.svg" alt="">
+                    <img src="images/home.svg" alt="">
                     <span>Dashboard</span>
                 </a>
 
@@ -41,7 +39,7 @@
                 </div>
 
                 <a href="vendor.html" class="menu-item">
-                    <img src="/images/home.svg" alt="">
+                    <img src="images/home.svg" alt="">
                     <span>Manage Vendor</span>
                 </a>
 
@@ -51,7 +49,7 @@
                 </div>
 
                 <a href="customer.html" class="menu-item">
-                    <img src="/images/home.svg" alt="">
+                    <img src="images/home.svg" alt="">
                     <span>Manage Customer</span>
                 </a>
 
@@ -61,12 +59,12 @@
                 </div>
 
                 <a href="manage-product.html" class="menu-item">
-                    <img src="/images/home.svg" alt="">
+                    <img src="images/home.svg" alt="">
                     <span>Manage Product</span>
                 </a>
 
                 <a href="stock-listing.html" class="menu-item">
-                    <img src="/images/home.svg" alt="">
+                    <img src="images/home.svg" alt="">
                     <span>Stock Listing</span>
                 </a>
 
@@ -76,17 +74,17 @@
                 </div>
 
                 <a href="sale.html" class="menu-item">
-                    <img src="/images/home.svg" alt="">
+                    <img src="images/home.svg" alt="">
                     <span>Sale</span>
                 </a>
 
                 <a href="purchase.html" class="menu-item">
-                    <img src="/images/home.svg" alt="">
+                    <img src="images/home.svg" alt="">
                     <span>Purchase</span>
                 </a>
 
                 <a href="reporting.html" class="menu-item">
-                    <img src="/images/home.svg" alt="">
+                    <img src="images/home.svg" alt="">
                     <span>Reporting</span>
                 </a>
 
@@ -96,12 +94,12 @@
                 </div>
 
                 <a href="open-balance-sheet.html" class="menu-item">
-                    <img src="/images/home.svg" alt="">
+                    <img src="images/home.svg" alt="">
                     <span>Open Balance Sheet</span>
                 </a>
 
                 <a href="pnl-report.html" class="menu-item">
-                    <img src="/images/home.svg" alt="">
+                    <img src="images/home.svg" alt="">
                     <span>PnL Report</span>
                 </a>
 
@@ -111,7 +109,7 @@
                 </div>
 
                 <a href="manage-expenses.html" class="menu-item">
-                    <img src="/images/home.svg" alt="">
+                    <img src="images/home.svg" alt="">
                     <span>Manage Expenses</span>
                 </a>
 
@@ -121,7 +119,7 @@
                 </div>
 
                 <a href="manage-role.html" class="menu-item">
-                    <img src="/images/home.svg" alt="">
+                    <img src="images/home.svg" alt="">
                     <span>Manage Role</span>
                 </a>
 
@@ -129,12 +127,13 @@
 
 
             <!-- Bottom Buttons -->
-            <div class="sidebar-bottom ">
+           <div class="sidebar-bottom ">
 
                 <a href="account-setting.html" class="menu-item account-btn">
                     <i class="bi bi-gear"></i>
                     <span>Account Setting</span>
                 </a>
+
                 <button type="button" class="menu-item logout-btn" onclick="logoutUser()">
                     <i class="bi bi-box-arrow-right"></i>
                     <span>Logout</span>
@@ -269,7 +268,7 @@
                         </select>
 
                         <button onclick="openDateModal()" class="open-date-btn">
-                            <i class="fa-regular fa-calendar"></i>
+                            <img src="images/Options.svg" alt="">
                         </button>
 
                     </div>
@@ -363,7 +362,7 @@
 
                         <div>
                             <small>PnL</small>
-                            <strong>PKR 2,000 <b>0% ↑</b></strong>
+                            <strong>PKR 2,000 <b>0% ↓</b></strong>
                         </div>
                     </div>
 
@@ -380,7 +379,7 @@
                     <div class="table-card">
                         <div class="table-header">
                             <h3>Top Vendors</h3>
-                            <a href="#">View All</a>
+                            <a href="vendor.html">View All</a>
                         </div>
 
                         <div class="table-responsive">
@@ -433,7 +432,7 @@
                     <div class="table-card">
                         <div class="table-header">
                             <h3>Top Customer</h3>
-                            <a href="#">View All</a>
+                            <a href="customer.html">View All</a>
                         </div>
 
                         <div class="table-responsive">
@@ -522,7 +521,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/js/script.js"></script>
+    <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
 

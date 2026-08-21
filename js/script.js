@@ -394,3 +394,21 @@ window.onclick = function(e) {
         closeDateModal();
     }
 };
+//------------------------------------------------------//
+function view() {
+    window.location.href = "view-vendor.html";
+}
+//-----------delete model-------------//
+function openDeleteModal() {
+    document.getElementById("deleteModal").style.display = "flex";
+}
+
+function closeDeleteModal() {
+    document.getElementById("deleteModal").style.display = "none";
+}
+
+function confirmDelete() {
+    alert("Deleted Successfully!");
+    closeDeleteModal();
+}
+
