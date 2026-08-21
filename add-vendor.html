@@ -331,13 +331,32 @@
 
 
     </main>
+   
 
 
 
 
     <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
+  <div id="logoutModal" class="modal-overlay">
 
+        <div class="modal-box">
+
+            <h3>Log Out</h3>
+
+            <p>
+                Are you sure you want to log out? You need
+                credential to login again.
+            </p>
+
+            <div class="modal-actions">
+                <button class="btn cancel-btn" onclick="closeModal()">No, I'm good!</button>
+                <button class="btn logout-confirm" onclick="confirmLogout()">Log Out</button>
+            </div>
+
+        </div>
+
+    </div>
 
 
 

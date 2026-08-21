@@ -415,3 +415,18 @@ function confirmDelete() {
 function AddNewVendor(){
      window.location.href = "vendor.html";
 }
+//==================open pay model=====================//
+function paytoVendor() {
+    document.getElementById("payModal").style.display = "flex";
+}
+
+function closePayModal() {
+    document.getElementById("payModal").style.display = "none";
+}
+/* Close on outside click */
+window.onclick = function(e) {
+    let modal = document.getElementById("payModal");
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+}

@@ -779,3 +779,7 @@ a {
 .delete-confirm:hover {
     background: #d9372c;
 }
+.logout-confirm{
+     background: #F04438;
+    color: #ffffff;
+}
