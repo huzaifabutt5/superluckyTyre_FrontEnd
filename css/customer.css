@@ -18,7 +18,6 @@ a {
 .dashboard {
     min-height: 100vh;
 }
-
 .sidebar {
     width: 272px;
     height: 100vh;
@@ -32,14 +31,8 @@ a {
     flex-direction: column;
     transition: transform 0.3s ease;
 }
-.menu-item span{
-    font-size: 14px;
-    font-weight: 400;
-}
-.menu-section-title{
-    font-size: 8px;
-    font-weight: 600;
-}
+
+/* ================= LOGO ================= */
 
 .sidebar-logo {
     width: 272px;
@@ -50,7 +43,6 @@ a {
     align-items: center;
     gap: 8px;
     flex-shrink: 0;
-    position: sticky;
 }
 
 .sidebar-logo img {
@@ -59,6 +51,8 @@ a {
     object-fit: contain;
     object-position: left center;
 }
+
+/* ================= SIDEBAR MENU ================= */
 
 .sidebar-menu {
     flex: 1;
@@ -70,35 +64,52 @@ a {
     width: 0;
 }
 
-.menu-section-title {
+/* ================= SECTION TITLE ================= */
 
+.menu-section-title {
     font-weight: 600;
     font-size: 8px;
     color: #596273;
+
+    /* margin ki jagah fixed spacing */
     margin: 17px 4px 5px;
+
     line-height: 1;
-    gap: 10px;
     padding-top: 8px;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
 }
+
+/* ================= MENU ITEM ================= */
 
 .menu-item {
     width: 100%;
-    height: 32px;
+    height: 40px;
+
     border: none;
     background-color: transparent;
-    border-radius: 5px;
+    border-radius: 8px;
+
     display: flex;
     align-items: center;
+
     gap: 10px;
-    padding: 8px 8px;
+    padding: 10px 12px;
+
     color: #374151;
     font-size: 14px;
+
     cursor: pointer;
     text-align: left;
     white-space: nowrap;
-    margin: 10px 4px 5px;
+
+    /* IMPORTANT */
+    margin: 0 0 5px 0;
+
+    /* prevents size changing */
+    box-sizing: border-box;
 }
+
+/* ================= ICON ================= */
 
 .menu-item img {
     color: #4B5563;
@@ -107,66 +118,113 @@ a {
     flex-shrink: 0;
 }
 
-.menu-item:hover {
-    width: 240px;
-    height: 40px;
-    padding: 10px 12px;
-    gap: 8px;
-    border-radius: 8px;
-    background-color: #f2f5fb;
+/* ================= TEXT ================= */
+
+.menu-item span {
+    font-size: 14px;
+    font-weight: 400;
+
+    /* IMPORTANT */
+    padding: 0;
+    height: auto;
+
+    line-height: 20px;
 }
 
-.menu-item.active {
-    width: 240px;
+/* ================= HOVER ================= */
+
+.menu-item:hover {
+    width: 100%;
     height: 40px;
+
+    border-radius: 8px;
+
+    background-color: #f2f5fb;
+
+    /* same padding as normal */
+    padding: 10px 12px;
+}
+
+/* ================= ACTIVE ================= */
+
+.menu-item.active {
+    width: 100%;
+    height: 40px;
+
     padding: 10px 12px;
     gap: 8px;
+
     border-radius: 8px;
+
     background-color: #487FFF;
     color: #ffffff;
 }
 
+/* ================= BOTTOM ================= */
+
 .sidebar-bottom {
     width: 272px;
     height: 128px;
+
     padding: 20px 16px;
+
     display: flex;
     flex-direction: column;
+
     gap: 8px;
+
     flex-shrink: 0;
+
     border-top: 1px solid #eeeeee;
+
     justify-content: center;
     align-items: center;
 }
 
+/* ================= ACCOUNT ================= */
+
 .account-btn {
-    width:240px;
+    width: 240px;
     height: 40px;
+
     padding: 10px 12px;
     gap: 8px;
+
     border-radius: 8px;
+
     background-color: #3863C7;
     color: #ffffff;
-    
 }
 
 .account-btn:hover {
+    width: 240px;
+    height: 40px;
+
     background-color: #4b7ff5;
     color: #ffffff;
 }
 
+/* ================= LOGOUT ================= */
+
 .logout-btn {
-    width:240px;
+    width: 240px;
     height: 40px;
+
     padding: 10px 12px;
     gap: 8px;
+
     border-radius: 8px;
+
     background-color: #EF4A00;
     color: #ffffff;
-    margin-top: 1px;
+
+    margin: 0;
 }
 
 .logout-btn:hover {
+    width: 240px;
+    height: 40px;
+
     background-color: #ff5b00;
     color: #ffffff;
 }
