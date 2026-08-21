@@ -14,10 +14,6 @@ a {
     text-decoration: none;
 }
 
-.dashboard {
-    min-height: 100vh;
-}
-
 .sidebar {
     width: 272px;
     height: 100vh;
@@ -32,6 +28,8 @@ a {
     transition: transform 0.3s ease;
 }
 
+/* ================= LOGO ================= */
+
 .sidebar-logo {
     width: 272px;
     height: 72px;
@@ -41,7 +39,6 @@ a {
     align-items: center;
     gap: 8px;
     flex-shrink: 0;
-    position: sticky;
 }
 
 .sidebar-logo img {
@@ -50,6 +47,8 @@ a {
     object-fit: contain;
     object-position: left center;
 }
+
+/* ================= SIDEBAR MENU ================= */
 
 .sidebar-menu {
     flex: 1;
@@ -61,91 +60,165 @@ a {
     width: 0;
 }
 
+/* ================= SECTION TITLE ================= */
+
 .menu-section-title {
-    font-size: 7px;
+    font-weight: 600;
+    font-size: 8px;
     color: #596273;
-    margin: 9px 4px 5px;
+
+    margin: 17px 4px 5px;
+
     line-height: 1;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
+
+/* ================= MENU ITEM ================= */
 
 .menu-item {
     width: 100%;
-    height: 24px;
+    height: 40px;
+
     border: none;
     background-color: transparent;
-    border-radius: 5px;
+    border-radius: 8px;
+
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 0 8px;
+
+    gap: 10px;
+    padding: 10px 12px;
+
     color: #374151;
-    font-size: 9px;
+    font-size: 14px;
+
     cursor: pointer;
     text-align: left;
     white-space: nowrap;
+
+    /* IMPORTANT */
+    margin: 0 0 5px 0;
+
+    box-sizing: border-box;
 }
+
+/* ================= ICON ================= */
 
 .menu-item img {
-    width: 13px;
-    font-size: 10px;
+    color: #4B5563;
+    height: 20px;
+    width: 20px;
     flex-shrink: 0;
 }
-.menu-item span{
+
+/* ================= TEXT ================= */
+
+.menu-item span {
     font-size: 14px;
     font-weight: 400;
-}
-.menu-section-title{
-    font-size: 8px;
-    font-weight: 600;
+
+    /* IMPORTANT */
+    padding: 0;
+    height: auto;
+
+    line-height: 20px;
 }
 
+/* ================= HOVER ================= */
 
 .menu-item:hover {
+    width: 100%;
+    height: 40px;
+
+    border-radius: 8px;
+
     background-color: #f2f5fb;
+
+    /* same padding as normal */
+    padding: 10px 12px;
 }
 
+/* ================= ACTIVE ================= */
+
 .menu-item.active {
-    width: 240px;
+    width: 100%;
     height: 40px;
+
     padding: 10px 12px;
     gap: 8px;
+
+    border-radius: 8px;
+
     background-color: #487FFF;
     color: #ffffff;
 }
 
+/* ================= BOTTOM ================= */
+
 .sidebar-bottom {
+    width: 272px;
+    height: 128px;
+
     padding: 20px 16px;
+
     display: flex;
     flex-direction: column;
+
     gap: 8px;
+
     flex-shrink: 0;
+
     border-top: 1px solid #eeeeee;
+
+    justify-content: center;
+    align-items: center;
 }
 
+/* ================= ACCOUNT ================= */
+
 .account-btn {
-    width:240px;
+    width: 240px;
     height: 40px;
+
     padding: 10px 12px;
     gap: 8px;
+
+    border-radius: 8px;
+
     background-color: #3863C7;
     color: #ffffff;
 }
 
 .account-btn:hover {
+    width: 240px;
+    height: 40px;
+
     background-color: #4b7ff5;
     color: #ffffff;
 }
 
+/* ================= LOGOUT ================= */
+
 .logout-btn {
-    width:240px;
+    width: 240px;
     height: 40px;
+
     padding: 10px 12px;
     gap: 8px;
+
+    border-radius: 8px;
+
     background-color: #EF4A00;
     color: #ffffff;
+
+    margin: 0;
 }
 
 .logout-btn:hover {
+    width: 240px;
+    height: 40px;
+
     background-color: #ff5b00;
     color: #ffffff;
 }
@@ -201,7 +274,7 @@ a {
 .search-box i {
     width: 18px;
     height: 18px;
-    
+
     color: #596273;
 }
 
@@ -215,7 +288,7 @@ a {
     font-size: 16px;
     font-weight: 400;
     color: #4B5563;
-   
+
 }
 
 .search-box input::placeholder {
@@ -233,7 +306,7 @@ a {
     justify-content: flex-end;
     margin-left: auto;
     flex-shrink: 0;
-    
+
 }
 
 .notification-btn {
@@ -268,37 +341,48 @@ a {
     height: 100%;
     object-fit: cover;
 }
-.dashboard-content{
+
+.dashboard-content {
     margin-top: 84px;
 }
-.dashboard-content p{
+
+.dashboard-content p {
     font-size: 12px;
     font-weight: 500;
-    color:#6B7280 ;
-    margin-left: 14px;
-    margin-bottom: 4px;
+    color: #6B7280;
+   /* margin-left: 14px;
+    margin-bottom: 4px;*/
+    margin: 14px 24px;
 }
-.dashboard-content h3{
+
+.dashboard-content h3 {
     font-size: 28px;
     font-weight: 600;
-    color:#282D44 ;
-    margin-left: 14px;
+    color: #282D44;
+   /* margin-left: 14px;*/
+    margin: 14px 24px;
     justify-content: space-between;
 }
+
 /* =========================================================
-   MAIN FORM CARD
+   VENDOR FORM CARD
 ========================================================= */
 
 .vendor-form-card {
-    width: 100%;
+    width: calc(100% - 48px);
+    margin: 0 24px;
 
-    background-color: #ffffff;
+    background-color: transparent;
 
-    border: 1px solid #E5E7EB;
-    border-radius: 8px;
+    box-sizing: border-box;
 
     overflow: hidden;
+    .form-section + .form-section {
+    margin-top: 20px;
 }
+}
+
+
 /* =========================================================
    FORM SECTION
 ========================================================= */
@@ -306,34 +390,60 @@ a {
 .form-section {
     width: 100%;
 
-    padding: 16px 16px 20px 16px;
+    background-color: #ffffff;
 
-    border-bottom: 1px solid #E5E7EB;
+    border-radius: 8px;
+
+    padding: 0 20px 20px 20px;
+
+    box-sizing: border-box;
+
+    margin: 0;
 }
 
 
-/* Section heading */
+/* =========================================================
+   SECTION HEADING
+========================================================= */
 
 .form-section h4 {
-    font-size: 13px;
+    width: 100%;
+    height: 49px;
+
+    margin: 0 0 20px 0;
+    padding: 12px 0;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid #D1D5DB80;
+
+    color: #111827;
+
+    font-size: 18px;
     font-weight: 600;
 
-    color: #282D44;
-
-    margin: 0 0 16px 0;
+    line-height: 20px;
 }
+
 
 /* =========================================================
    FORM GRID
 ========================================================= */
 
 .form-fields {
+    width: 100%;
+
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
     column-gap: 8px;
-    row-gap: 14px;
+    row-gap: 12px;
+
+    box-sizing: border-box;
 }
 
 
@@ -343,11 +453,16 @@ a {
 
 .form-group {
     width: 100%;
+    min-width: 0;
 
     display: flex;
     flex-direction: column;
+
+    box-sizing: border-box;
 }
-/* Full width field */
+
+
+/* Location full width */
 
 .form-group.full-width {
     grid-column: 1 / -1;
@@ -359,18 +474,25 @@ a {
 ========================================================= */
 
 .form-group label {
-    font-size: 10px;
+    margin: 0 0 6px 0;
+
+    color: #4B5563;
+
+    font-size: 14px;
     font-weight: 600;
 
-    color: #596273;
-
-    margin-bottom: 6px;
+    line-height: 24px;
 }
-/* Required star */
+
 
 .form-group label span {
     color: #EF4444;
+
+    font-size: 14px;
+    font-weight: 600;
 }
+
+
 /* =========================================================
    INPUT + SELECT
 ========================================================= */
@@ -382,6 +504,8 @@ a {
 
     padding: 0 10px;
 
+    box-sizing: border-box;
+
     background-color: #ffffff;
 
     border: 1px solid #D1D5DB;
@@ -389,34 +513,50 @@ a {
 
     outline: none;
 
-    font-size: 11px;
-    font-weight: 400;
+    color: #4B5563;
 
-    color: #374151;
+    font-family: inherit;
+
+    font-size: 16px;
+    font-weight: 400;
 }
-/* Placeholder */
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
 
 .form-group input::placeholder {
-    color: #9CA3AF;
+    color: #4B5563;
+
+    opacity: 1;
 }
 
 
-/* Select */
+/* =========================================================
+   SELECT
+========================================================= */
 
 .form-group select {
-    color: #6B7280;
+    color: #4B5563;
 
     cursor: pointer;
 }
 
 
-/* Focus */
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
 
 .form-group input:focus,
 .form-group select:focus {
     border-color: #487FFF;
 }
-/* Readonly Vendor ID */
+
+
+/* =========================================================
+   READONLY VENDOR ID
+========================================================= */
 
 .form-group input[readonly] {
     background-color: #F5F6FA;
@@ -425,36 +565,48 @@ a {
 
     cursor: not-allowed;
 }
+
 /* =========================================================
    FORM ACTIONS
 ========================================================= */
 
 .form-actions {
     width: 100%;
+    height: 64px;
 
-    min-height: 64px;
+    margin: 16px 0 0 0;
+    padding: 12px 20px;
 
-    padding: 12px 16px;
+    box-sizing: border-box;
 
     display: flex;
+
     align-items: center;
+
     justify-content: flex-end;
 
-    gap: 8px;
+    gap: 12px;
 
     background-color: #ffffff;
+
+    border-radius: 8px;
 }
+
+
 /* =========================================================
    CANCEL BUTTON
 ========================================================= */
 
 .cancel-btn {
-    min-width: 90px;
-    height: 38px;
+    width: 166px;
+    height: 40px;
 
     padding: 0 14px;
 
+    box-sizing: border-box;
+
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -463,30 +615,41 @@ a {
     color: #596273;
 
     border: none;
-    border-radius: 5px;
+
+    border-radius: 8px;
 
     text-decoration: none;
 
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 400;
 
     cursor: pointer;
+
+    white-space: nowrap;
 }
+
+
 .cancel-btn:hover {
     background-color: #E5E7EB;
+
     color: #374151;
 }
+
+
 /* =========================================================
    ADD NEW VENDOR BUTTON
 ========================================================= */
 
 .add-vendor-submit {
-    min-width: 120px;
-    height: 38px;
+    width: 166px;
+    height: 40px;
 
     padding: 0 14px;
 
+    box-sizing: border-box;
+
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -495,19 +658,138 @@ a {
     color: #ffffff;
 
     border: none;
-    border-radius: 5px;
 
-    font-size: 11px;
-    font-weight: 500;
+    border-radius: 8px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 400;
 
     cursor: pointer;
+
+    white-space: nowrap;
 }
+
+
 .add-vendor-submit:hover {
     background-color: #3863C7;
 }
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .vendor-form-card {
+        width: calc(100% - 32px);
+
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .form-section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .form-actions {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .vendor-form-card {
+        width: calc(100% - 24px);
+
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+
+    .form-fields {
+        grid-template-columns: 1fr;
+
+        row-gap: 12px;
+    }
+
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+
+    .form-section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    .form-actions {
+        width: 100%;
+
+        margin-top: 12px;
+
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= 
+
+@media (max-width: 480px) {
+
+    .vendor-form-card {
+        width: calc(100% - 16px);
+
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+
+    .form-section {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .form-section h4 {
+        font-size: 13px;
+    }
+
+
+    .form-actions {
+        padding-left: 12px;
+        padding-right: 12px;
+
+        gap: 6px;
+    }
+
+
+    .cancel-btn {
+        width: 85px;
+    }
+
+
+    .add-vendor-submit {
+        width: 120px;
+    }
+}
 /* =========================================================
    RESPONSIVE - TABLET
-========================================================= */
+========================================================= 
 
 @media (max-width: 992px) {
 
@@ -525,9 +807,10 @@ a {
     }
 
 }
+
 /* =========================================================
    RESPONSIVE - MOBILE
-========================================================= */
+========================================================= 
 
 @media (max-width: 768px) {
 
@@ -550,6 +833,7 @@ a {
     .form-group.full-width {
         grid-column: auto;
     }
+
     .form-section {
         padding: 14px;
     }
@@ -568,9 +852,10 @@ a {
     }
 
 }
+
 /* =========================================================
    SMALL MOBILE
-========================================================= */
+========================================================= *
 
 @media (max-width: 480px) {
 
@@ -590,6 +875,7 @@ a {
     .form-section {
         padding: 12px;
     }
+
     .form-group input,
     .form-group select {
         height: 36px;
@@ -605,4 +891,4 @@ a {
         flex: none;
     }
 
-}
+}*/

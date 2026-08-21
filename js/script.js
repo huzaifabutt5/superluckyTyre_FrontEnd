@@ -411,4 +411,7 @@ function confirmDelete() {
     alert("Deleted Successfully!");
     closeDeleteModal();
 }
-
+//---------------------add new vendor------------------//
+function AddNewVendor(){
+     window.location.href = "vendor.html";
+}
