@@ -39,7 +39,7 @@
                     VENDOR MANAGEMENT
                 </div>
 
-                <a href="vendor.html" class="menu-item active">
+                <a href="vendor.html" class="menu-item ">
                     <img src="images/home.svg" alt="">
                     <span>Manage Vendor</span>
                 </a>
@@ -49,7 +49,7 @@
                     CUSTOMER MANAGEMENT
                 </div>
 
-                <a href="customer.html" class="menu-item">
+                <a href="customer.html" class="menu-item active">
                     <img src="images/home.svg" alt="">
                     <span>Manage Customer</span>
                 </a>
@@ -190,8 +190,8 @@
 
             <div class="dashboard-content">
                 <div class="left">
-                    <p>Tyre Shop > Vendor Management > View Vendor</p>
-                    <h3>View Vendor</h3>
+                    <p>Tyre Shop > Customer Management > View Customer</p>
+                    <h3>View Customer</h3>
                 </div>
             </div>
 
@@ -202,7 +202,7 @@
 
                 <div class="cards blue">
                     <div class="card-infor">
-                        <span>Total Purchase</span>
+                        <span>Today Purchase</span>
                         <strong>Rs. 53,659,748</strong>
                     </div>
                     <div class="card-icons">
@@ -232,13 +232,13 @@
                 <!------------------ action buttons-------------->
                 <div class="form-actions">
 
-                    <a class="pay-vendor-btn" onclick="paytoVendor()">
-                        Pay to Vendor
+                    <a class="pay-vendor-btn" onclick="openGetModal()">
+                        Get Payment
                     </a>
 
                     <button type="button" disabled class="take-from-vendor" onclick="ClosePayModel()">
 
-                        Take From Vendor </button>
+                        Pay to Customer </button>
 
                 </div>
 
@@ -284,8 +284,6 @@
                             <th>Transaction ID</th>
                             <th>Payable Amount</th>
                             <th>Paid Amount</th>
-                            <th>Receivable</th>
-                            <th>Received</th>
                             <th>Open Balance</th>
                             <th>Action</th>
                         </tr>
@@ -297,17 +295,16 @@
                             <td>1</td>
                             <td>June 15,2026</td>
                             <td>N/A</td>
-                            <td>5 Products</td>
+                            <td>N/A</td>
                             <td>N/A</td>
                             <td>Bank Transfer</td>
-                            <td>TrX 6tgbGY7l89</td>
+                            <td>xcghfHY5cv953</td>
                             <td>N/A</td>
                             <td><span class="negative">PKR -150,000 </span></td>
-                            <td>N/A</td>
-                            <td><span class="negative">PKR -150,000 </span></td>
-                            <td>PKR 0</td>
+                            <td>PKR 150,000</td>
+
                             <td>
-                                <button class="action-btn view-btn" onclick="view()">
+                                <button class="action-btn view-btn" onclick="customerview()">
                                     <i class="bi bi-eye"></i>
                                 </button>
 
@@ -321,18 +318,16 @@
                         <tr>
                             <td>2</td>
                             <td>June 15,2026</td>
-                            <td><span class="invoice-dot"> Invoice - 0001 </span></td>
-                            <td>5 Products</td>
+                            <td>Invoice - 0002</td>
+                            <td>1 Products</td>
                             <td><span class="badge purchase">purshase</span></td>
                             <td>Cash</td>
                             <td>N/A</td>
-                            <td>N/A</td>
-                            <td><span class="negative">PKR -150,000 </span></td>
-                            <td>N/A</td>
-                            <td><span class="negative">PKR -150,000 </span></td>
+                            <td>PKR 150,000</td>
+                            <td>PKR 150,000</td>
                             <td>PKR 150,000</td>
                             <td>
-                                <button class="action-btn view-btn" onclick="view()">
+                                <button class="action-btn view-btn" onclick="customerview()">
                                     <i class="bi bi-eye"></i>
                                 </button>
 
@@ -346,18 +341,16 @@
                         <tr>
                             <td>3</td>
                             <td>June 15,2026</td>
-                            <td>Invoice-0002</td>
-                            <td>7 Products</td>
+                            <td><span class="invoice-dot">Invoice-0003</span></td>
+                            <td>1 Products</td>
                             <td><span class="badge purchase">purshase</span></td>
                             <td>Cash</td>
                             <td>N/A</td>
-                            <td>PKR 450,000</td>
                             <td>PKR 150,000</td>
-                            <td>PKR 450,000</td>
                             <td>PKR 150,000</td>
-                            <td>PKR 300,000</td>
+                            <td>PKR 150,000</td>
                             <td>
-                                <button class="action-btn view-btn" onclick="view()">
+                                <button class="action-btn view-btn" onclick="customerview()">
                                     <i class="bi bi-eye"></i>
                                 </button>
 
@@ -370,18 +363,17 @@
                         <tr>
                             <td>4</td>
                             <td>June 15,2026</td>
-                            <td>Invoice-0003</td>
-                            <td>10 Products</td>
-                            <td><span class="badge purchase">purshase</span></td>
-                            <td>Cash</td>
                             <td>N/A</td>
-                            <td>PKR 450,000</td>
-                            <td>PKR 150,000</td>
                             <td>N/A</td>
+                            <td>N/A</td>
+                            <td>Bank Transfer</td>
+                            <td>xcghfHY5cv953</td>
+                            <td>N/A</td>
+                            <td><span class="negative">PKR -150,000 </span></td>
                             <td>PKR 150,000</td>
-                            <td>PKR 450,000</td>
+
                             <td>
-                                <button class="action-btn view-btn" onclick="view()">
+                                <button class="action-btn view-btn" onclick="customerview()">
                                     <i class="bi bi-eye"></i>
                                 </button>
 
@@ -394,18 +386,16 @@
                         <tr>
                             <td>5</td>
                             <td>June 15,2026</td>
-                            <td>Invoice-0004</td>
-                            <td>15 Products</td>
-                            <td><span class="badge purchase">purshase</span></td>
-                            <td>Cash</td>
                             <td>N/A</td>
-                            <td>PKR 450,000</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>Bank Transfer</td>
+                            <td>xcghfHY5cv953</td>
+                            <td>N/A</td>
+                            <td><span class="negative">PKR -150,000 </span></td>
                             <td>PKR 150,000</td>
-                            <td>PKR 450,000</td>
-                            <td>PKR 150,000</td>
-                            <td>PKR 200,000</td>
                             <td>
-                                <button class="action-btn view-btn" onclick="view()">
+                                <button class="action-btn view-btn" onclick="customerview()">
                                     <i class="bi bi-eye"></i>
                                 </button>
 
@@ -418,18 +408,16 @@
                         <tr>
                             <td>6</td>
                             <td>June 15,2026</td>
-                            <td>Invoice-0005</td>
-                            <td>5 Products</td>
+                            <td><span class="invoice-dot">Invoice-0006</span></td>
+                            <td>1 Products</td>
                             <td><span class="badge purchase">purshase</span></td>
                             <td>Cash</td>
                             <td>N/A</td>
-                            <td>PKR 450,000</td>
                             <td>PKR 150,000</td>
-                            <td>PKR 450,000</td>
                             <td>PKR 150,000</td>
-                            <td>PKR 500,000</td>
+                            <td>PKR 150,000</td>
                             <td>
-                                <button class="action-btn view-btn" onclick="view()">
+                                <button class="action-btn view-btn" onclick="customerview()">
                                     <i class="bi bi-eye"></i>
                                 </button>
 
@@ -442,18 +430,16 @@
                         <tr>
                             <td>7</td>
                             <td>June 15,2026</td>
-                            <td>Invoice-0006</td>
-                            <td>29 Products</td>
+                            <td>Invoice - 0007</td>
+                            <td>1 Products</td>
                             <td><span class="badge purchase">purshase</span></td>
                             <td>Cash</td>
                             <td>N/A</td>
-                            <td>PKR 450,000</td>
                             <td>PKR 150,000</td>
-                            <td>PKR 450,000</td>
                             <td>PKR 150,000</td>
-                            <td>PKR 400,000</td>
+                            <td>PKR 150,000</td>
                             <td>
-                                <button class="action-btn view-btn" onclick="view()">
+                                <button class="action-btn view-btn" onclick="customerview()">
                                     <i class="bi bi-eye"></i>
                                 </button>
 
@@ -464,20 +450,18 @@
                         </tr>
 
                         <tr>
-                            <td>8</td>
+                            <td>1</td>
                             <td>June 15,2026</td>
-                            <td>Invoice-0007</td>
-                            <td>5 Products</td>
-                            <td><span class="badge purchase">purshase</span></td>
-                            <td>Cash</td>
                             <td>N/A</td>
-                            <td>PKR 450,000</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>Bank Transfer</td>
+                            <td>xcghfHY5cv953</td>
+                            <td>N/A</td>
+                            <td><span class="negative">PKR -150,000 </span></td>
                             <td>PKR 150,000</td>
-                            <td>PKR 450,000</td>
-                            <td>PKR 150,000</td>
-                            <td>PKR 600,000</td>
                             <td>
-                                <button class="action-btn view-btn" onclick="view()">
+                                <button class="action-btn view-btn" onclick="customerview()">
                                     <i class="bi bi-eye"></i>
                                 </button>
 
@@ -489,20 +473,18 @@
                         </tr>
 
                         <tr>
-                            <td>9</td>
+                            <td>1</td>
                             <td>June 15,2026</td>
-                            <td>Invoice-0008</td>
-                            <td>50 Products</td>
-                            <td><span class="badge purchase">purshase</span></td>
-                            <td>Cash</td>
                             <td>N/A</td>
-                            <td>PKR 450,000</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>Bank Transfer</td>
+                            <td>xcghfHY5cv953</td>
+                            <td>N/A</td>
+                            <td><span class="negative">PKR -150,000 </span></td>
                             <td>PKR 150,000</td>
-                            <td>PKR 450,000</td>
-                            <td>PKR 150,000</td>
-                            <td>PKR 200,000</td>
                             <td>
-                                <button class="action-btn view-btn" onclick="view()">
+                                <button class="action-btn view-btn" onclick="customerview()">
                                     <i class="bi bi-eye"></i>
                                 </button>
 
@@ -515,18 +497,16 @@
                         <tr>
                             <td>10</td>
                             <td>June 15,2026</td>
-                            <td>Invoice-0001</td>
-                            <td>100 Products</td>
+                            <td>Invoice-0010</td>
+                            <td>1 Products</td>
                             <td><span class="badge purchase">purshase</span></td>
                             <td>Cash</td>
                             <td>N/A</td>
-                            <td>PKR 450,000</td>
                             <td>PKR 150,000</td>
-                            <td>PKR 450,000</td>
                             <td>PKR 150,000</td>
                             <td>PKR 300,000</td>
                             <td>
-                                <button class="action-btn view-btn" onclick="view()">
+                                <button class="action-btn view-btn" onclick="customerview()">
                                     <i class="bi bi-eye"></i>
                                 </button>
 
@@ -589,41 +569,43 @@
         </div>
 
     </div>
-    <!--pay model-->
-    <div id="payModal" class="modal-overlay">
+    <!-- GET PAYMENT MODAL -->
+    <div id="getModal" class="gp-overlay">
 
-        <div class="pay-modal-box">
+    <div class="gp-box">
 
-            <h3>Pay Amount</h3>
+        <h3>Get Amount</h3>
 
-            <label>Payable Amount</label>
-            <input type="text" value="Rs. 20,000" disabled>
+        <label>Payable Amount</label>
+        <input type="text" value="Rs. 20,000" disabled>
 
-            <label>Paid Amount</label>
-            <input type="text" placeholder="Enter Amount (That Customer Pay)">
+        <label>Paid Amount</label>
+        <input type="text" placeholder="Enter Amount (That Customer Pay)">
 
-            <label>Payment Type</label>
-            <select>
-                <option>-- Select Option --</option>
-                <option>Cash</option>
-                <option>Bank Transfer</option>
-            </select>
+        <label>Payment Type</label>
+        <select>
+            <option>-- Select Option --</option>
+            <option>Cash</option>
+            <option>Bank Transfer</option>
+        </select>
 
-            <label>Transaction ID</label>
-            <input type="text" placeholder="Transaction ID">
-            <div class="pay-amount-btn">
+        <label>Transaction ID</label>
+        <input type="text" placeholder="Transaction ID">
 
-                <button type="button" class="cancel-btn"  onclick="cancel()">
-                    Cancel
-                </button>
+        <div class="gp-actions">
 
-                <button type="button" class="paytovendor">
-                    Pay to Vendor
-                </button>
+            <button type="button" class="gp-cancel" onclick="closeGetModal()">
+                Cancel
+            </button>
 
-            </div>
+            <button type="button" class="gp-submit">
+                Get Payment
+            </button>
+
         </div>
+
     </div>
+</div>
 
 
 

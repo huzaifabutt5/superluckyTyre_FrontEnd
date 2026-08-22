@@ -416,6 +416,7 @@ function AddNewVendor(){
      window.location.href = "vendor.html";
 }
 //==================open pay model=====================//
+
 function paytoVendor() {
     document.getElementById("payModal").style.display = "flex";
 }
@@ -423,9 +424,42 @@ function paytoVendor() {
 function closePayModal() {
     document.getElementById("payModal").style.display = "none";
 }
-/* Close on outside click */
+ window.onclick = function (e) {
+        let modal = document.getElementById("PayModal");
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+
+function cancel() {
+    document.getElementById("payModal").style.display = "none";
+    window.location.reload();
+}
+//--====customer js====================================================================================================//
+
+
+function customerview() {
+    window.location.href = "view-customer.html";
+}
+function AddNewCustomer(){
+     window.location.href = "customer.html";
+}
+
+
+//==================open pay model=====================//
+// OPEN MODAL
+function openGetModal() {
+    document.getElementById("getModal").style.display = "flex";
+}
+
+// CLOSE MODAL
+function closeGetModal() {
+    document.getElementById("getModal").style.display = "none";
+}
+
+// CLOSE ON OUTSIDE CLICK
 window.onclick = function(e) {
-    let modal = document.getElementById("payModal");
+    let modal = document.getElementById("getModal");
     if (e.target === modal) {
         modal.style.display = "none";
     }
