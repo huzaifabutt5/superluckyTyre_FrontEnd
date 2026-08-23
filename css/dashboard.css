@@ -14,6 +14,7 @@ body {
 a {
     text-decoration: none;
 }
+
 @media (max-width: 991px) {
 
     .sidebar {
@@ -399,6 +400,9 @@ a {
     margin-left: 14px;
     margin-bottom: 24px;
     justify-content: space-between;
+}
+.dashboard-content b{
+    color: #282D44;
 }
 
 /* =========================
@@ -1360,7 +1364,7 @@ a {
 
 .form-actions {
 
-     width: 100%;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
     gap: 12px;
@@ -1438,6 +1442,7 @@ a {
 
     white-space: nowrap;
 }
+
 @media (max-width: 768px) {
     .form-actions {
         flex-direction: column;
@@ -1561,7 +1566,7 @@ a {
     align-self: stretch;
     border-bottom: 1px solid rgba(209, 213, 219, 0.50);
     background: #FFF;
-    border-top-left-radius:8px ;
+    border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 
 
@@ -1591,7 +1596,7 @@ a {
 
 /* Entries section */
 
-.vendor-table-top > div:first-child {
+.vendor-table-top>div:first-child {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -1662,7 +1667,7 @@ a {
 /* ================= TABLE ================= */
 
 .table-wrapper {
-
+     
     margin: 0 16px 1px 16px;
     overflow-x: auto;
 
@@ -1673,30 +1678,32 @@ a {
 }
 
 .table-wrapper table {
-    width: 100%;
-    min-width: 1050px;
+   
+    margin-left: 24px;
+    margin-right: 24px;
 
     border-collapse: collapse;
 
     table-layout: auto;
-    border-radius: 8px;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
 }
 
 
 /* Table Header */
 
 .table-wrapper thead {
-    background-color:#F5F6FA;
+    background-color: #F5F6FA;
     border-radius: 8px;
-    
+
 }
 
 .table-wrapper th {
     height: 40px;
 
     padding: 16px;
-    
-    
+
+
 
     border-top: 1px solid #E5E7EB;
     border-bottom: 1px solid #E5E7EB;
@@ -1732,12 +1739,14 @@ a {
 .table-wrapper tbody tr:hover {
     background-color: #F9FAFB;
 }
+
 /*===============DOT===========*/
 .invoice-dot {
-     position: relative;
+    position: relative;
     padding-left: 10px;
-    
+
 }
+
 .invoice-dot::before {
     content: "";
     width: 8px;
@@ -1749,6 +1758,7 @@ a {
     top: 50%;
     transform: translateY(-50%);
 }
+
 .badge.purchase {
     height: 25px;
     background: #45B36926;
@@ -1758,6 +1768,7 @@ a {
     font-size: 14px;
     font-weight: 500;
 }
+
 .negative {
     color: #EF4A00;
 }
@@ -1787,13 +1798,15 @@ a {
     background-color: #E8F0FF;
     color: #487FFF;
 }
+
 .edit-btn {
     background-color: #45B36926;
     color: #45B366;
 }
+
 .delete-btn {
     background-color: #EF477026;
-    color:#b00404f0 ;
+    color: #b00404f0;
 }
 
 /* ================= TABLE FOOTER ================= */
@@ -1816,7 +1829,7 @@ a {
     justify-content: space-between;
 }
 
-.vendor-footer > span {
+.vendor-footer>span {
     font-size: 11px;
     color: #596273;
 }
@@ -1854,6 +1867,7 @@ a {
     background-color: #487FFF;
     color: #ffffff;
 }
+
 /* ================= ADD NEW VENDOR BUTTON ================= */
 
 .add-vendor-btn {
@@ -1882,7 +1896,8 @@ a {
 
     cursor: pointer;
 }
-.add-vendor-btn span{
+
+.add-vendor-btn span {
     font-weight: 400;
     font-size: 14px;
 }
@@ -1891,6 +1906,7 @@ a {
     background-color: #3863C7;
     color: #ffffff;
 }
+
 /*================ADD NEW VENDER CSS================================================================*/
 /* =========================================================
    VENDOR FORM CARD
@@ -1905,9 +1921,10 @@ a {
     box-sizing: border-box;
 
     overflow: hidden;
-    .form-section + .form-section {
-    margin-top: 20px;
-}
+
+    .form-section+.form-section {
+        margin-top: 20px;
+    }
 }
 
 
@@ -2059,6 +2076,7 @@ a {
 
     opacity: 1;
 }
+
 /* =========================================================
    SELECT
 ========================================================= */
@@ -2201,16 +2219,19 @@ a {
 .add-vendor-submit:hover {
     background-color: #3863C7;
 }
+
 /*========delete model button======*/
 
-.del-confirm{
+.del-confirm {
     background-color: #EF4A00;
     color: #FFFFFF;
 }
-.delete-confirm{
+
+.delete-confirm {
     background-color: #EF4A00;
     color: #FFFFFF;
 }
+
 /*========get payment popup================*/
 /* OVERLAY */
 .gp-overlay {
@@ -2220,7 +2241,7 @@ a {
     width: 100%;
     height: 100%;
 
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
 
     display: none;
     justify-content: center;
@@ -2297,4 +2318,972 @@ a {
 
 .gp-submit:hover {
     background: #3863C7;
+}
+
+/*======================================stock listing page=========================================*/
+.summarycard {
+    background: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 16px;
+    padding: 20px 16px;
+    border-radius: 12px;
+}
+
+/* CARD */
+.card {
+    position: relative;
+    height: 62px;
+    border-radius: 4px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    border: none;
+}
+
+
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 4px;
+    border-radius: 4px;
+}
+
+.blue-cards {
+    background: linear-gradient(180deg, #EEF7FF 0%, #DFF0FF 100%);
+}
+
+.blue-cards::before {
+    background: #487FFF;
+}
+
+.purple-cards {
+    background: linear-gradient(180deg, #F3ECFF 0%, #E0D4FA 100%);
+}
+
+.purple-cards::before {
+    background: #884DFF;
+}
+
+.orange-cards {
+    background: linear-gradient(180deg, #FFE4C2 0%, #FFE4C2 100%);
+}
+
+.orange-cards::before {
+    background: #FF9D2E;
+}
+
+.card-information {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.card-information span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6B7280;
+}
+
+.card-information strong {
+    font-size: 12px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.cards-icon {
+    position: absolute;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 12px;
+    top: 55%;
+    transform: translateY(-50%);
+}
+
+
+.blue-cards .cards-icon {
+    background: #BFDCFF;
+    color: #487FFF;
+}
+
+.purple-cards .cards-icon {
+    background: #F0E9FD;
+    color: #8252E9;
+}
+
+.orange-cards .cards-icon {
+    background: #FFD6A3;
+    color: #EF4A00;
+}
+
+/* =========================================================
+   STOCK LISTING CARD
+========================================================= */
+
+.stock-listing-card {
+    width: calc(100% - 40px);
+    max-width: 1116px;
+
+    margin: 20px auto 24px auto;
+
+    background: #ffffff;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.stock-listing-header {
+    height: 64px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.stock-listing-header h3 {
+    margin: 0;
+    padding: 0;
+
+    color: #111827;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+
+/* =========================================================
+   TOP AREA
+   Entries + Search
+========================================================= */
+
+.stock-listing-top {
+    min-height: 74px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+
+/* Entries */
+
+.stock-entries {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #596273;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.stock-entries select {
+    width: 48px;
+    height: 40px;
+
+    padding: 0 5px;
+
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #4B5563;
+
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+
+    outline: none;
+    cursor: pointer;
+}
+
+.stock-entries span {
+    color: #4B5563;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+/* Search */
+
+.stock-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stock-search label {
+    color: #4B5563;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.stock-search input {
+    width: 200px;
+    height: 40px;
+
+    padding: 10px 16px;
+
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #4B5563;
+
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+
+    outline: none;
+    box-sizing: border-box;
+}
+
+.stock-search input::placeholder {
+    color: #4B5563;
+}
+
+.stock-search input:focus {
+    border-color: #487fff;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.stock-table-wrapper {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+
+    overflow-x: auto;
+    overflow-y: visible;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN TABLE
+========================================================= */
+
+.stock-product-table {
+    margin-left: 26px;
+    margin-right: 26px;
+    border: 1px solid #EBECEF;
+    border-radius: 8px;
+    ;
+
+    border-collapse: separate;
+    border-spacing: 0;
+
+    table-layout: fixed;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   MAIN TABLE HEADER
+========================================================= */
+
+.stock-product-table thead {
+    background: #EBECEF;
+}
+
+.stock-product-table th {
+    height: 44px;
+
+    padding: 0 14px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    color: #111827;
+
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 600;
+
+    text-align: left;
+    vertical-align: middle;
+
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+
+/* Column widths */
+
+.stock-product-table th:nth-child(1) {
+    width: 44px;
+}
+
+.stock-product-table th:nth-child(2) {
+    width: 35%;
+}
+
+.stock-product-table th:nth-child(3) {
+    width: 16%;
+}
+
+.stock-product-table th:nth-child(4) {
+    width: 15%;
+}
+
+.stock-product-table th:nth-child(5) {
+    width: 15%;
+}
+
+.stock-product-table th:nth-child(6) {
+    width: 14%;
+}
+
+
+/* =========================================================
+   PRODUCT ROW
+========================================================= */
+
+.stock-product-row {
+    height: 54px;
+
+    cursor: pointer;
+
+    background: #ffffff;
+
+    transition: background-color 0.15s ease;
+}
+
+.stock-product-row:hover {
+    background: #fafbfc;
+}
+
+.stock-product-row td {
+    height: 54px;
+
+    padding: 0 14px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    color: #596273;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    vertical-align: middle;
+
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.stock-arrow-col {
+    width: 44px !important;
+
+    padding-left: 12px !important;
+    padding-right: 4px !important;
+
+    text-align: center !important;
+}
+
+.stock-arrow {
+    display: inline-block;
+
+    color: #4B5563;
+
+    font-size: 13px;
+    line-height: 1;
+
+    transition: transform 0.2s ease;
+}
+
+
+/* Arrow changes from ▶ to ▼ through rotation */
+
+.stock-product-row.stock-open .stock-arrow {
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   PRODUCT NAME
+========================================================= */
+
+.stock-product-name-cell {
+    height: 54px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 1px;
+
+    box-sizing: border-box;
+}
+
+.stock-product-name {
+    color: #596273;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    line-height: 24px;
+}
+
+.stock-size-code {
+    color: #487fff;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    line-height: 14px;
+}
+
+
+/* =========================================================
+   BATCH BADGE
+========================================================= */
+
+.stock-batch-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 24px;
+
+    padding: 5px 10px;
+
+    background: #EBECEF;
+    color: #4B5563;
+
+    border-radius: 44px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    line-height: 14px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.stock-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 24px;
+
+    padding: 5px 10px;
+
+    border-radius: 44px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    line-height: 16px;
+
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+
+/* In Stock */
+
+.stock-in {
+    background: #487FFF26;
+    color: #487FFF;
+}
+
+
+/* Low Stock */
+
+.stock-low {
+    background: #FFCAB2;
+    color: #EF4A00;
+}
+
+
+/* Out of Stock */
+
+.stock-out {
+    background: #64748B1A;
+    color: #4B556352;
+}
+
+
+/* =========================================================
+   DETAILS ROW
+========================================================= */
+
+/* Important:
+   table-row itself is hidden when closed
+*/
+
+.stock-details-row {
+    display: none;
+    background: #ffffff;
+}
+
+.stock-details-row.stock-details-open {
+    display: table-row;
+}
+
+.stock-details-row>td {
+    padding: 0 !important;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   MULTI VENDOR DETAILS BOX
+========================================================= */
+
+.stock-details-box {
+    width: 100%;
+
+    padding: 0 20px 16px 20px;
+
+    background: #F1F1F3;
+
+    box-sizing: border-box;
+}
+
+
+/* Details heading */
+
+.stock-details-box h4 {
+    height: 36px;
+
+    margin: 0;
+    padding: 10px 0 8px 0;
+
+    color: #111827;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    line-height: 24px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   INNER BATCH TABLE WRAPPER
+========================================================= */
+
+.stock-details-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   INNER BATCH TABLE
+========================================================= */
+
+.stock-batch-table {
+    width: 100%;
+    min-width: 850px;
+
+    border-collapse: separate;
+    border-spacing: 0;
+
+    background: #ffffff;
+
+    table-layout: fixed;
+}
+
+
+/* Inner Header */
+
+.stock-batch-table thead {
+    background: #F5F6FA;
+   
+}
+
+.stock-batch-table th {
+    height: 42px;
+
+    padding: 0 14px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    color: #111827;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    text-align: left;
+    vertical-align: middle;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+}
+
+
+/* Inner table column widths */
+
+.stock-batch-table th:nth-child(1) {
+    width: 7%;
+}
+
+.stock-batch-table th:nth-child(2) {
+    width: 17%;
+}
+
+.stock-batch-table th:nth-child(3) {
+    width: 16%;
+}
+
+.stock-batch-table th:nth-child(4) {
+    width: 18%;
+}
+
+.stock-batch-table th:nth-child(5) {
+    width: 12%;
+}
+
+.stock-batch-table th:nth-child(6) {
+    width: 15%;
+}
+
+.stock-batch-table th:nth-child(7) {
+    width: 15%;
+}
+
+
+/* Inner Body */
+
+.stock-batch-table td {
+    height: 48px;
+
+    padding: 0 14px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    color: #4B5563;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    vertical-align: middle;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+}
+
+.stock-batch-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.stock-listing-footer {
+    min-height: 58px;
+
+    padding: 12px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+}
+
+
+.stock-listing-footer>span {
+    color: #596273;
+
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.stock-pagination {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stock-pagination button {
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 5px;
+
+    background: transparent;
+    color: #596273;
+
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stock-pagination button:hover {
+    background: #f1f3f5;
+}
+
+.stock-pagination .stock-page-active {
+    background: #487fff;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVE - 992px
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .stock-listing-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .stock-table-wrapper {
+        width: calc(100% - 32px);
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .stock-listing-header {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .stock-listing-top {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .stock-listing-footer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .stock-details-box {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 768px
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .stock-listing-header {
+        height: 48px;
+    }
+
+    .stock-listing-header h3 {
+        font-size: 15px;
+    }
+
+
+    .stock-listing-top {
+        min-height: auto;
+
+        padding-top: 14px;
+        padding-bottom: 14px;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 14px;
+    }
+
+
+    .stock-search {
+        justify-content: space-between;
+    }
+
+    .stock-search input {
+        width: 180px;
+    }
+
+
+    .stock-table-wrapper {
+        width: calc(100% - 24px);
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+
+    .stock-product-table {
+        min-width: 820px;
+    }
+
+
+    .stock-product-table th {
+        height: 42px;
+        font-size: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .stock-product-row,
+    .stock-product-row td {
+        height: 52px;
+    }
+
+
+    .stock-product-row td {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 13px;
+    }
+
+
+    .stock-product-name-cell {
+        height: 52px;
+    }
+
+
+    .stock-product-name {
+        font-size: 13px;
+    }
+
+
+    .stock-size-code {
+        font-size: 10px;
+    }
+
+
+    .stock-details-box {
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-bottom: 12px;
+    }
+
+
+    .stock-details-box h4 {
+        font-size: 13px;
+    }
+
+
+    .stock-listing-footer {
+        padding: 12px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .stock-listing-top {
+        padding: 12px;
+    }
+
+    .stock-table-wrapper {
+        width: calc(100% - 16px);
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+
+    .stock-search {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+
+    .stock-search input {
+        width: 100%;
+    }
+
+
+    .stock-listing-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+
+    .stock-pagination {
+        align-self: flex-end;
+    }
+
+
+    .stock-details-box {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
 }

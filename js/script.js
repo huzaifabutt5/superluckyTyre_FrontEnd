@@ -464,3 +464,30 @@ window.onclick = function(e) {
         modal.style.display = "none";
     }
 }
+//===========product js=================//
+function AddNewProduct(){
+     window.location.href = "manage-product.html";
+}
+//============stock listing js============//
+function toggleStockDetails(row) {
+
+    const detailsRow = row.nextElementSibling;
+
+    const isOpen = detailsRow.classList.contains("stock-details-open");
+
+    // Close all other rows
+    document.querySelectorAll(".stock-details-row").forEach(function (item) {
+        item.classList.remove("stock-details-open");
+    });
+
+    document.querySelectorAll(".stock-product-row").forEach(function (item) {
+        item.classList.remove("stock-open");
+    });
+
+
+    // Open clicked row
+    if (!isOpen) {
+        detailsRow.classList.add("stock-details-open");
+        row.classList.add("stock-open");
+    }
+}

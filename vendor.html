@@ -7,7 +7,9 @@
     <title>Manage-vendor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
@@ -188,7 +190,7 @@
 
             <div class="dashboard-content">
                 <div class="left">
-                    <p>Tyre Shop > Vendor Management > Vendor Listing </p>
+                    <p>Tyre Shop > Vendor Management > <b>Vendor Listing</b> </p>
                     <h3>Vendor Listing</h3>
                     <a href="add-vendor.html" class="add-vendor-btn">
                         <i class="fa-solid fa-plus"></i>
@@ -211,6 +213,7 @@
                             <label>Search:</label>
                             <input type="text" placeholder="Search Vendor">
                         </div>
+                       
 
                     </div>
 
@@ -254,7 +257,7 @@
                                     <td>PKR 225,900</td>
                                     <td>
                                         <button class="action-btn view-btn" onclick="view()">
-                                              <i class="bi bi-eye"></i>
+                                            <i class="bi bi-eye"></i>
                                         </button>
 
                                         <button class="action-btn edit-btn">
@@ -280,8 +283,8 @@
                                     <td>PKR 225,900</td>
                                     <td>PKR 225,900</td>
                                     <td>
-                                        <button class="action-btn view-btn "onclick="view()">
-                                        
+                                        <button class="action-btn view-btn " onclick="view()">
+
                                             <i class="bi bi-eye"></i>
                                         </button>
 
@@ -438,14 +441,14 @@
                                     <td>PKR 225,900</td>
                                     <td>PKR 225,900</td>
                                     <td>
-                                        <button class="action-btn view-btn"onclick="view()">
+                                        <button class="action-btn view-btn" onclick="view()">
                                             <i class="bi bi-eye"></i>
                                         </button>
 
                                         <button class="action-btn edit-btn">
                                             <i class="fa-solid fa-pen"></i>
                                         </button>
-                                        <button class="action-btn delete-btn onclick="openDeleteModal()"">
+                                        <button class="action-btn delete-btn onclick=" openDeleteModal()"">
                                             <i class="bi bi-trash"></i>
                                         </button>
 
@@ -472,7 +475,7 @@
                                         <button class="action-btn edit-btn">
                                             <i class="fa-solid fa-pen"></i>
                                         </button>
-                                        <button class="action-btn delete-btn onclick="openDeleteModal()"">
+                                        <button class="action-btn delete-btn onclick=" openDeleteModal()"">
                                             <i class="bi bi-trash"></i>
                                         </button>
                                     </td>
@@ -527,64 +530,64 @@
         </main>
 
 
-<!-- DELETE MODAL -->
-<div id="deleteModal" class="modal-overlay">
+        <!-- DELETE MODAL -->
+        <div id="deleteModal" class="modal-overlay">
 
-    <div class="modal-box">
+            <div class="modal-box">
 
-        <h3>Delete Record</h3>
+                <h3>Delete Record</h3>
 
-        <p>
-            Are you sure you want to delete this record? 
-            You can't undo this action.
-        </p>
+                <p>
+                    Are you sure you want to delete this record?
+                    You can't undo this action.
+                </p>
 
-        <div class="modal-actions">
-            <button class="btn cancel-btn" onclick="closeDeleteModal()">
-                No, thanks!
-            </button>
+                <div class="modal-actions">
+                    <button class="btn cancel-btn" onclick="closeDeleteModal()">
+                        No, thanks!
+                    </button>
 
-            <button class="btn delete-confirm" onclick="confirmDelete()">
-                Delete
-            </button>
-        </div>
+                    <button class="btn delete-confirm" onclick="confirmDelete()">
+                        Delete
+                    </button>
+                </div>
 
-    </div>
-
-</div>
-       
- <!-- Overlay -->
-    <div id="logoutModal" class="modal-overlay">
-
-        <div class="modal-box">
-
-            <h3>Log Out</h3>
-
-            <p>
-                Are you sure you want to log out? You need
-                credential to login again.
-            </p>
-
-            <div class="modal-actions">
-                <button class="btn cancel-btn" onclick="closeModal()">No, I'm good!</button>
-                <button class="btn logout-confirm" onclick="confirmLogout()">Log Out</button>
             </div>
 
         </div>
 
-    </div>
+        <!-- Overlay -->
+        <div id="logoutModal" class="modal-overlay">
+
+            <div class="modal-box">
+
+                <h3>Log Out</h3>
+
+                <p>
+                    Are you sure you want to log out? You need
+                    credential to login again.
+                </p>
+
+                <div class="modal-actions">
+                    <button class="btn cancel-btn" onclick="closeModal()">No, I'm good!</button>
+                    <button class="btn logout-confirm" onclick="confirmLogout()">Log Out</button>
+                </div>
+
+            </div>
+
+        </div>
 
 
-    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
 
 
 
 
 
-    <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
 
 </body>
 

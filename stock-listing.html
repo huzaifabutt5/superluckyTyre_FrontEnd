@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock-Listing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo">
+                <img src="images/Logo.svg" alt="Super Lucky Tyre">
+            </div>
+
+
+            <!-- sidebar Menu -->
+            <div class="sidebar-menu ">
+
+                <a href="dashboard.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Dashboard</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    VENDOR MANAGEMENT
+                </div>
+
+                <a href="vendor.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Vendor</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    CUSTOMER MANAGEMENT
+                </div>
+
+                <a href="customer.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Customer</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    PRODUCT MANAGEMENT
+                </div>
+
+                <a href="manage-product.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Product</span>
+                </a>
+
+                <a href="stock-listing.html" class="menu-item active">
+                    <img src="images/home.svg" alt="">
+                    <span>Stock Listing</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    SALE / PURCHASE MANAGEMENT
+                </div>
+
+                <a href="sale.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Sale</span>
+                </a>
+
+                <a href="purchase.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Purchase</span>
+                </a>
+
+                <a href="reporting.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Reporting</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    PROFIT & LOSS MANAGEMENT
+                </div>
+
+                <a href="open-balance-sheet.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Open Balance Sheet</span>
+                </a>
+
+                <a href="pnl-report.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>PnL Report</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    EXPENSE MANAGEMENT
+                </div>
+
+                <a href="manage-expenses.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Expenses</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    ROLE MANAGEMENT
+                </div>
+
+                <a href="manage-role.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Role</span>
+                </a>
+
+            </div>
+
+
+            <!-- Bottom Buttons -->
+            <div class="sidebar-bottom ">
+
+                <a href="account-setting.html" class="menu-item account-btn">
+                    <i class="bi bi-gear"></i>
+                    <span>Account Setting</span>
+                </a>
+
+                <button type="button" class="menu-item logout-btn" onclick="logoutUser()">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN AREA -->
+        <main class="main-area">
+
+            <!-- TOP NAVBAR -->
+            <header class="top-header">
+
+                <button type="button" class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">
+
+                    <img src="images/SVG.svg" alt="Menu">
+
+                </button>
+
+
+                <div class="search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input type="text" placeholder="Search">
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <div class="profile">
+
+                        <img src="images/notification.svg" alt="Profile">
+
+                    </div>
+
+
+
+                    <div class="profile">
+
+                        <img src="images/settings.svg" alt="Profile">
+
+                    </div>
+
+                </div>
+
+            </header>
+            <!-- DASHBOARD CONTENT -->
+
+            <div class="dashboard-content">
+                <div class="left">
+                    <p>Tyre Shop > Product Management > <b>Stock Listing</b></p>
+                    <h3>Stock Listing</h3>
+                </div>
+            </div>
+
+            <!-- cards -->
+            <div class="summarycard">
+
+                <div class="card blue-cards">
+                    <div class="card-information">
+                        <span>Total Stock Cost</span>
+                        <strong>Rs. 53,659,748</strong>
+                    </div>
+                    <div class="cards-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+
+                </div>
+
+                <div class="card purple-cards">
+                    <div class="card-information">
+                        <span>Product Quality</span>
+                        <strong>53,659</strong>
+                    </div>
+                    <div class="cards-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                </div>
+                <div class="card blue-cards">
+                    <div class="card-information">
+                        <span>No. of Vendors</span>
+                        <strong>9,748</strong>
+                    </div>
+                    <div class="cards-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                </div>
+
+                <div class="card orange-cards">
+                    <div class="card-information">
+                        <span>Low Stock Alerts</span>
+                        <strong>48</strong>
+                    </div>
+                    <div class="cards-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="stock-listing-card">
+
+                <!-- Heading -->
+                <div class="stock-listing-header">
+                    <h3>All Product Listing</h3>
+                </div>
+
+
+                <!-- Top Area -->
+                <div class="stock-listing-top">
+
+                    <div class="stock-entries">
+                        <select>
+                            <option>10</option>
+                            <option>20</option>
+                            <option>30</option>
+                        </select>
+
+                        <span>entries per page</span>
+                    </div>
+
+
+                    <div class="stock-search">
+                        <label>Search:</label>
+                        <input type="text" placeholder="Search Product">
+                    </div>
+
+                </div>
+
+                <div class="stock-listing-wrapper">
+
+                    <table class="stock-product-table">
+
+                        <thead>
+                            <tr>
+                                <th class="stock-arrow-col"></th>
+                                <th>Complete Product Name</th>
+                                <th>Brand Name</th>
+                                <th>Batches</th>
+                                <th>Total Quantity</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <!-- PRODUCT 1 -->
+                            <tr class="stock-product-row" onclick="toggleStockDetails(this)">
+                                <td class="stock-arrow-col">
+                                    <span class="stock-arrow">▶</span>
+                                </td>
+
+                                <td class="stock-product-name-cell">
+                                    <span class="stock-product-name">General Euro Tycoon</span>
+                                    <span class="stock-size-code">195/65 R 15</span>
+                                </td>
+
+                                <td>16"</td>
+
+                                <td>
+                                    <span class="stock-batch-badge">2 Batches</span>
+                                </td>
+
+                                <td>3 pcs</td>
+
+                                <td>
+                                    <span class="stock-status stock-low">Low Stock</span>
+                                </td>
+                            </tr>
+
+                            <!-- PRODUCT 1 DETAILS -->
+                            <tr class="stock-details-row">
+                                <td colspan="6">
+
+                                    <div class="stock-details-box">
+
+                                        <h4>Multi Vendor Batches</h4>
+
+                                        <div class="stock-details-table-wrapper">
+
+                                            <table class="stock-batch-table">
+
+                                                <thead>
+                                                    <tr>
+                                                        <th>SL</th>
+                                                        <th>Batch ID#</th>
+                                                        <th>Date</th>
+                                                        <th>Vendor Name</th>
+                                                        <th>DOT</th>
+                                                        <th>Cost Price</th>
+                                                        <th>Quantity Left</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>STOCK-001</td>
+                                                        <td>June 15, 2026</td>
+                                                        <td>Usama Aslam</td>
+                                                        <td>42676</td>
+                                                        <td>PKR 16,000</td>
+                                                        <td>3 pcs</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>STOCK-002</td>
+                                                        <td>June 15, 2026</td>
+                                                        <td>Huzaifa Butt</td>
+                                                        <td>42676</td>
+                                                        <td>PKR 16,000</td>
+                                                        <td>3 pcs</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>STOCK-003</td>
+                                                        <td>June 15, 2026</td>
+                                                        <td>Asad ullah</td>
+                                                        <td>42676</td>
+                                                        <td>PKR 16,000</td>
+                                                        <td>3 pcs</td>
+                                                    </tr>
+
+                                                </tbody>
+
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+
+
+                            <!-- PRODUCT 2 -->
+                            <tr class="stock-product-row" onclick="toggleStockDetails(this)">
+                                <td class="stock-arrow-col">
+                                    <span class="stock-arrow">▶</span>
+                                </td>
+
+                                <td class="stock-product-name-cell">
+                                    <span class="stock-product-name">Sporty Comfort Max</span>
+                                    <span class="stock-size-code">205/55 R 16</span>
+                                </td>
+
+                                <td>17"</td>
+
+                                <td>
+                                    <span class="stock-batch-badge">5 Batches</span>
+                                </td>
+
+                                <td>8 pcs</td>
+
+                                <td>
+                                    <span class="stock-status stock-in">In Stock</span>
+                                </td>
+                            </tr>
+
+                            <!-- PRODUCT 2 DETAILS -->
+                            <tr class="stock-details-row">
+                                <td colspan="6">
+
+                                    <div class="stock-details-box">
+
+                                        <h4>Multi Vendor Batches</h4>
+
+                                        <div class="stock-details-table-wrapper">
+
+                                            <table class="stock-batch-table">
+
+                                                <thead>
+                                                    <tr>
+                                                        <th>SL</th>
+                                                        <th>Batch ID#</th>
+                                                        <th>Date</th>
+                                                        <th>Vendor Name</th>
+                                                        <th>DOT</th>
+                                                        <th>Cost Price</th>
+                                                        <th>Quantity Left</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>STOCK-004</td>
+                                                        <td>June 15, 2026</td>
+                                                        <td>Usama Aslam</td>
+                                                        <td>42676</td>
+                                                        <td>PKR 16,000</td>
+                                                        <td>3 pcs</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>STOCK-005</td>
+                                                        <td>June 15, 2026</td>
+                                                        <td>Huzaifa Butt</td>
+                                                        <td>42676</td>
+                                                        <td>PKR 16,000</td>
+                                                        <td>5 pcs</td>
+                                                    </tr>
+
+                                                </tbody>
+
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+
+
+                            <!-- PRODUCT 3 -->
+                            <tr class="stock-product-row" onclick="toggleStockDetails(this)">
+                                <td class="stock-arrow-col">
+                                    <span class="stock-arrow">▶</span>
+                                </td>
+
+                                <td class="stock-product-name-cell">
+                                    <span class="stock-product-name">All-Weather Pro</span>
+                                    <span class="stock-size-code">195/70 R 14</span>
+                                </td>
+
+                                <td>15"</td>
+
+                                <td>
+                                    <span class="stock-batch-badge">4 Batches</span>
+                                </td>
+
+                                <td>10 pcs</td>
+
+                                <td>
+                                    <span class="stock-status stock-in">In Stock</span>
+                                </td>
+                            </tr>
+
+                            <tr class="stock-details-row">
+                                <td colspan="6">
+
+                                    <div class="stock-details-box">
+
+                                        <h4>Multi Vendor Batches</h4>
+
+                                        <div class="stock-details-table-wrapper">
+
+                                            <table class="stock-batch-table">
+
+                                                <thead>
+                                                    <tr>
+                                                        <th>SL</th>
+                                                        <th>Batch ID#</th>
+                                                        <th>Date</th>
+                                                        <th>Vendor Name</th>
+                                                        <th>DOT</th>
+                                                        <th>Cost Price</th>
+                                                        <th>Quantity Left</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>STOCK-006</td>
+                                                        <td>June 15, 2026</td>
+                                                        <td>Usama Aslam</td>
+                                                        <td>42676</td>
+                                                        <td>PKR 16,000</td>
+                                                        <td>10 pcs</td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+
+
+                            <!-- PRODUCT 4 -->
+                            <tr class="stock-product-row" onclick="toggleStockDetails(this)">
+                                <td class="stock-arrow-col">
+                                    <span class="stock-arrow">▶</span>
+                                </td>
+
+                                <td class="stock-product-name-cell">
+                                    <span class="stock-product-name">EcoDrive Performer</span>
+                                    <span class="stock-size-code">215/60 R 16</span>
+                                </td>
+
+                                <td>18"</td>
+
+                                <td>
+                                    <span class="stock-batch-badge">3 Batches</span>
+                                </td>
+
+                                <td>6 pcs</td>
+
+                                <td>
+                                    <span class="stock-status stock-low">Low Stock</span>
+                                </td>
+                            </tr>
+
+                            <tr class="stock-details-row">
+                                <td colspan="6">
+
+                                    <div class="stock-details-box">
+
+                                        <h4>Multi Vendor Batches</h4>
+
+                                        <div class="stock-details-table-wrapper">
+
+                                            <table class="stock-batch-table">
+
+                                                <thead>
+                                                    <tr>
+                                                        <th>SL</th>
+                                                        <th>Batch ID#</th>
+                                                        <th>Date</th>
+                                                        <th>Vendor Name</th>
+                                                        <th>DOT</th>
+                                                        <th>Cost Price</th>
+                                                        <th>Quantity Left</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>STOCK-007</td>
+                                                        <td>June 15, 2026</td>
+                                                        <td>Usama Aslam</td>
+                                                        <td>42676</td>
+                                                        <td>PKR 16,000</td>
+                                                        <td>3 pcs</td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+
+
+                            <!-- PRODUCT 5 -->
+                            <tr class="stock-product-row" onclick="toggleStockDetails(this)">
+                                <td class="stock-arrow-col">
+                                    <span class="stock-arrow">▶</span>
+                                </td>
+
+                                <td class="stock-product-name-cell">
+                                    <span class="stock-product-name">Off-Road Adventure</span>
+                                    <span class="stock-size-code">225/75 R 16</span>
+                                </td>
+
+                                <td>20"</td>
+
+                                <td>
+                                    <span class="stock-batch-badge">2 Batches</span>
+                                </td>
+
+                                <td>5 pcs</td>
+
+                                <td>
+                                    <span class="stock-status stock-out">Out of Stock</span>
+                                </td>
+                            </tr>
+
+                            <tr class="stock-details-row">
+                                <td colspan="6">
+
+                                    <div class="stock-details-box">
+
+                                        <h4>Multi Vendor Batches</h4>
+
+                                        <div class="stock-details-table-wrapper">
+
+                                            <table class="stock-batch-table">
+
+                                                <thead>
+                                                    <tr>
+                                                        <th>SL</th>
+                                                        <th>Batch ID#</th>
+                                                        <th>Date</th>
+                                                        <th>Vendor Name</th>
+                                                        <th>DOT</th>
+                                                        <th>Cost Price</th>
+                                                        <th>Quantity Left</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>STOCK-008</td>
+                                                        <td>June 15, 2026</td>
+                                                        <td>Huzaifa Butt</td>
+                                                        <td>42676</td>
+                                                        <td>PKR 16,000</td>
+                                                        <td>0 pcs</td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+
+
+                            <!-- PRODUCT 6 -->
+                            <tr class="stock-product-row" onclick="toggleStockDetails(this)">
+                                <td class="stock-arrow-col">
+                                    <span class="stock-arrow">▶</span>
+                                </td>
+
+                                <td class="stock-product-name-cell">
+                                    <span class="stock-product-name">WinterSafe Grip</span>
+                                    <span class="stock-size-code">185/65 R 15</span>
+                                </td>
+
+                                <td>16"</td>
+
+                                <td>
+                                    <span class="stock-batch-badge">6 Batches</span>
+                                </td>
+
+                                <td>12 pcs</td>
+
+                                <td>
+                                    <span class="stock-status stock-in">In Stock</span>
+                                </td>
+                            </tr>
+
+                            <tr class="stock-details-row">
+                                <td colspan="6">
+
+                                    <div class="stock-details-box">
+
+                                        <h4>Multi Vendor Batches</h4>
+
+                                        <div class="stock-details-table-wrapper">
+
+                                            <table class="stock-batch-table">
+
+                                                <thead>
+                                                    <tr>
+                                                        <th>SL</th>
+                                                        <th>Batch ID#</th>
+                                                        <th>Date</th>
+                                                        <th>Vendor Name</th>
+                                                        <th>DOT</th>
+                                                        <th>Cost Price</th>
+                                                        <th>Quantity Left</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>STOCK-009</td>
+                                                        <td>June 15, 2026</td>
+                                                        <td>Usama Aslam</td>
+                                                        <td>42676</td>
+                                                        <td>PKR 16,000</td>
+                                                        <td>12 pcs</td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- Footer -->
+                <div class="stock-listing-footer">
+
+                    <span>
+                        Showing 1 to 6 of 6 entries
+                    </span>
+
+                    <div class="stock-pagination">
+
+                        <button>«</button>
+                        <button>‹</button>
+                        <button class="stock-page-active">1</button>
+                        <button>2</button>
+                        <button>›</button>
+                        <button>»</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </main>
+
+    </div>
+
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!---------------------popup---------------------->
+
+
+
+    <!-- ================= LOGOUT POPUP ================= -->
+
+    <!-- Overlay -->
+    <div id="logoutModal" class="modal-overlay">
+
+        <div class="modal-box">
+
+            <h3>Log Out</h3>
+
+            <p>
+                Are you sure you want to log out? You need
+                credential to login again.
+            </p>
+
+            <div class="modal-actions">
+                <button class="btn cancel-btn" onclick="closeModal()">No, I'm good!</button>
+                <button class="btn logout-confirm" onclick="confirmLogout()">Log Out</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+
+</html>
