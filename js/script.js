@@ -1,4 +1,4 @@
- function toggleSidebar() {
+function toggleSidebar() {
 
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("sidebarOverlay");
@@ -388,7 +388,7 @@ document.getElementById("applyDate").onclick = function () {
 };
 
 // close on outside click
-window.onclick = function(e) {
+window.onclick = function (e) {
     let modal = document.getElementById("dateModal");
     if (e.target === modal) {
         closeDateModal();
@@ -412,8 +412,8 @@ function confirmDelete() {
     closeDeleteModal();
 }
 //---------------------add new vendor------------------//
-function AddNewVendor(){
-     window.location.href = "vendor.html";
+function AddNewVendor() {
+    window.location.href = "vendor.html";
 }
 //==================open pay model=====================//
 
@@ -424,12 +424,12 @@ function paytoVendor() {
 function closePayModal() {
     document.getElementById("payModal").style.display = "none";
 }
- window.onclick = function (e) {
-        let modal = document.getElementById("PayModal");
-        if (e.target === modal) {
-            modal.style.display = "none";
-        }
+window.onclick = function (e) {
+    let modal = document.getElementById("PayModal");
+    if (e.target === modal) {
+        modal.style.display = "none";
     }
+}
 
 function cancel() {
     document.getElementById("payModal").style.display = "none";
@@ -441,8 +441,8 @@ function cancel() {
 function customerview() {
     window.location.href = "view-customer.html";
 }
-function AddNewCustomer(){
-     window.location.href = "customer.html";
+function AddNewCustomer() {
+    window.location.href = "customer.html";
 }
 
 
@@ -458,15 +458,15 @@ function closeGetModal() {
 }
 
 // CLOSE ON OUTSIDE CLICK
-window.onclick = function(e) {
+window.onclick = function (e) {
     let modal = document.getElementById("getModal");
     if (e.target === modal) {
         modal.style.display = "none";
     }
 }
 //===========product js=================//
-function AddNewProduct(){
-     window.location.href = "manage-product.html";
+function AddNewProduct() {
+    window.location.href = "manage-product.html";
 }
 //============stock listing js============//
 function toggleStockDetails(row) {
@@ -490,4 +490,15 @@ function toggleStockDetails(row) {
         detailsRow.classList.add("stock-details-open");
         row.classList.add("stock-open");
     }
+}
+function productListing(){
+    window.location.href= "manage-product.html";
+}
+
+//-----------report js------------------//
+function purchasereturn(){
+    window.location.href="report-purchase.html";
+}
+function salereturn(){
+    window.location.href="reporting.html";
 }
