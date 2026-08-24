@@ -502,3 +502,7 @@ function purchasereturn(){
 function salereturn(){
     window.location.href="reporting.html";
 }
+//=============== pnl report js=======================//
+function getreport(){
+     window.location.href="get-report.html";
+}

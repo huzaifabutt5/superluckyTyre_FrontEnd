@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pnl-Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo">
+                <img src="images/Logo.svg" alt="Super Lucky Tyre">
+            </div>
+
+
+            <!-- sidebar Menu -->
+            <div class="sidebar-menu ">
+
+                <a href="dashboard.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Dashboard</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    VENDOR MANAGEMENT
+                </div>
+
+                <a href="vendor.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Vendor</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    CUSTOMER MANAGEMENT
+                </div>
+
+                <a href="customer.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Customer</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    PRODUCT MANAGEMENT
+                </div>
+
+                <a href="manage-product.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Product</span>
+                </a>
+
+                <a href="stock-listing.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Stock Listing</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    SALE / PURCHASE MANAGEMENT
+                </div>
+
+                <a href="sale.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Sale</span>
+                </a>
+
+                <a href="purchase.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Purchase</span>
+                </a>
+
+                <a href="reporting.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Reporting</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    PROFIT & LOSS MANAGEMENT
+                </div>
+
+                <a href="open-balance-sheet.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Open Balance Sheet</span>
+                </a>
+
+                <a href="pnl-report.html" class="menu-item active">
+                    <img src="images/home.svg" alt="">
+                    <span>PnL Report</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    EXPENSE MANAGEMENT
+                </div>
+
+                <a href="manage-expenses.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Expenses</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    ROLE MANAGEMENT
+                </div>
+
+                <a href="manage-role.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Role</span>
+                </a>
+
+            </div>
+
+
+            <!-- Bottom Buttons -->
+            <div class="sidebar-bottom ">
+
+                <a href="account-setting.html" class="menu-item account-btn">
+                    <i class="bi bi-gear"></i>
+                    <span>Account Setting</span>
+                </a>
+
+                <button type="button" class="menu-item logout-btn" onclick="logoutUser()">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN AREA -->
+        <main class="main-area">
+
+            <!-- TOP NAVBAR -->
+            <header class="top-header">
+
+                <button type="button" class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">
+
+                    <img src="images/SVG.svg" alt="Menu">
+
+                </button>
+
+
+                <div class="search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input type="text" placeholder="Search">
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <div class="profile">
+
+                        <img src="images/notification.svg" alt="Profile">
+
+                    </div>
+
+
+
+                    <div class="profile">
+
+                        <img src="images/settings.svg" alt="Profile">
+
+                    </div>
+
+                </div>
+
+            </header>
+            <!-- DASHBOARD CONTENT -->
+
+            <div class="dashboard-content">
+                <div class="left">
+                    <p>Tyre Shop > Profit & Loss Management > <b>Pnl Report</b></p>
+                    <h3>Pnl Report</h3>
+                </div>
+            </div>
+            <div class="pnl-search">
+
+                <h3>Search Pnl Report</h3>
+                </div>
+
+                <div class="pnl-form">
+
+
+                    <!-- FROM DATE -->
+                    <div class="form-group">
+                        <label>From Date <span>*</span></label>
+                        <input type="date" placeholder="DD/MM/YYYY">
+                    </div>
+
+                    <!-- END DATE -->
+                    <div class="form-group">
+                        <label>End Date <span>*</span></label>
+                        <input type="date" placeholder="DD/MM/YYYY">
+                    </div>
+
+                    <!-- BUTTON -->
+                    <div class="form-btn" onclick="getreport()">
+                        <button>Get Report</button>
+                    </div>
+
+                </div>
+            
+
+
+
+
+
+
+        </main>
+
+    </div>
+
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!---------------------popup---------------------->
+
+
+
+    <!-- ================= LOGOUT POPUP ================= -->
+
+    <!-- Overlay -->
+    <div id="logoutModal" class="modal-overlay">
+
+        <div class="modal-box">
+
+            <h3>Log Out</h3>
+
+            <p>
+                Are you sure you want to log out? You need
+                credential to login again.
+            </p>
+
+            <div class="modal-actions">
+                <button class="btn cancel-btn" onclick="closeModal()">No, I'm good!</button>
+                <button class="btn logout-confirm" onclick="confirmLogout()">Log Out</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+
+</html>
