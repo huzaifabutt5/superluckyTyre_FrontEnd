@@ -4488,3 +4488,197 @@ button:active {
 .expense-search input:focus {
     border-color: #487FFF;
 }
+/*=====================ADD  NEW EXPENSE PAGE ===================================================*/
+/* CARD */
+.expense-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius:8px ;
+    padding: 20px;
+}
+/* FORM */
+.expense-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+/* ROW */
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+/* GROUP */
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.form-group.full-width {
+    width: 100%;
+}
+
+/* LABEL */
+.form-group label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #374151;
+}
+
+.form-group label span {
+    font-weight: 600;
+    font-size: 14px;
+    color: red;
+}
+
+/* INPUT */
+.form-group input,
+.form-group textarea {
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    padding: 10px;
+    color: #4B5563;
+    font-size: 16px;
+    outline: none;
+    background: #FFFFFF;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+/* BUTTON SECTION */
+.add-expense-actions {
+
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 20px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* BUTTONS */
+.btn-cancel {
+    
+    width: 166px;
+    padding: 10px 12px;
+    border: none;
+    background: #F6F6F6;
+    color: #4B5563;
+    font-size: 14px;
+    font: 400;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    width: 166px;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 12px;
+    border: none;
+    background: #487FFF;
+    color: #FFFFFF;
+    border-radius: 8px;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .expense-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-cancel,
+    .btn-submit {
+        width: 100%;
+    }
+}
+/* ============================= */
+/* TABLET VIEW (≤992px) */
+/* ============================= */
+
+@media (max-width: 992px) {
+
+    .expense-card {
+        padding: 16px;
+    }
+
+    .form-row {
+        flex-wrap: wrap;
+    }
+
+    .form-group {
+        flex: 1 1 calc(50% - 8px); /* 2 columns */
+    }
+
+    .full-width {
+        flex: 1 1 100%;
+    }
+}
+
+/* ============================= */
+/* MOBILE VIEW (≤576px) */
+/* ============================= */
+
+@media (max-width: 576px) {
+
+    .expense-container {
+        padding: 12px;
+    }
+
+    .page-header h2 {
+        font-size: 18px;
+    }
+
+    .expense-card {
+        padding: 14px;
+    }
+
+    .card-title {
+        font-size: 14px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .form-group textarea {
+        height: 80px;
+    }
+
+    /* BUTTONS MOBILE */
+    .expense-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .btn-cancel,
+    .btn-submit {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+}

@@ -506,3 +506,8 @@ function salereturn(){
 function getreport(){
      window.location.href="get-report.html";
 }
+
+//===========ADD NEW EXPENSE=====================//
+function addnewexpense(){
+    window.location.href="manage-expenses.html";
+}
