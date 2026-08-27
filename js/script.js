@@ -1,30 +1,48 @@
-function toggleSidebar() {
+function opensetting(){
+    window.location.href ="account-setting.html";
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const sidebarMenu = document.querySelector(".sidebar-menu");
 
+    if (sidebarMenu) {
+        // 1. Saved scroll position restore karein
+        const savedScrollPos = sessionStorage.getItem("sidebarScrollPos");
+        if (savedScrollPos !== null) {
+            sidebarMenu.scrollTop = parseInt(savedScrollPos, 10);
+        }
+
+        // 2. Click hote hi scroll position ko save karein
+        const menuLinks = sidebarMenu.querySelectorAll("a.menu-item");
+        menuLinks.forEach(link => {
+            link.addEventListener("click", function () {
+                sessionStorage.setItem("sidebarScrollPos", sidebarMenu.scrollTop);
+            });
+        });
+    }
+});
+
+// AAPKA TOGGLE SIDEBAR FUNCTION
+function toggleSidebar() {
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("sidebarOverlay");
 
-    if (!sidebar) {
-        return;
-    }
+    if (!sidebar) return;
 
     if (window.innerWidth <= 991) {
-
         sidebar.classList.toggle("sidebar-show");
 
         if (overlay) {
             overlay.classList.toggle("sidebar-show");
         }
-
     }
-
 }
-window.addEventListener("resize", function () {
 
+// AAPKA RESIZE EVENT LISTENER
+window.addEventListener("resize", function () {
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("sidebarOverlay");
 
     if (window.innerWidth > 991) {
-
         if (sidebar) {
             sidebar.classList.remove("sidebar-show");
         }
@@ -32,9 +50,7 @@ window.addEventListener("resize", function () {
         if (overlay) {
             overlay.classList.remove("sidebar-show");
         }
-
     }
-
 });
 
 
@@ -371,21 +387,35 @@ function closeDateModal() {
     document.getElementById("dateModal").style.display = "none";
 }
 
-// reset dates
-document.getElementById("resetDate").onclick = function () {
-    document.getElementById("fromDate").value = "";
-    document.getElementById("toDate").value = "";
-};
+// reset dates (Safe Code)
+const resetDateBtn = document.getElementById("resetDate");
+if (resetDateBtn) {
+    resetDateBtn.onclick = function () {
+        const fromDate = document.getElementById("fromDate");
+        const toDate = document.getElementById("toDate");
+        
+        if (fromDate) fromDate.value = "";
+        if (toDate) toDate.value = "";
+    };
+}
 
-// apply filter
-document.getElementById("applyDate").onclick = function () {
-    let from = document.getElementById("fromDate").value;
-    let to = document.getElementById("toDate").value;
+// apply filter (Safe Code)
+const applyDateBtn = document.getElementById("applyDate");
+if (applyDateBtn) {
+    applyDateBtn.onclick = function () {
+        let fromInput = document.getElementById("fromDate");
+        let toInput = document.getElementById("toDate");
 
-    console.log("From:", from, "To:", to);
+        let from = fromInput ? fromInput.value : "";
+        let to = toInput ? toInput.value : "";
 
-    closeDateModal();
-};
+        console.log("From:", from, "To:", to);
+
+        if (typeof closeDateModal === "function") {
+            closeDateModal();
+        }
+    };
+}
 
 // close on outside click
 window.onclick = function (e) {
@@ -491,23 +521,653 @@ function toggleStockDetails(row) {
         row.classList.add("stock-open");
     }
 }
-function productListing(){
-    window.location.href= "manage-product.html";
+function productListing() {
+    window.location.href = "manage-product.html";
 }
 
 //-----------report js------------------//
-function purchasereturn(){
-    window.location.href="report-purchase.html";
-}
-function salereturn(){
-    window.location.href="reporting.html";
-}
+ function switchTab(tabType) {
+            const salePanel = document.getElementById('saleTabContent');
+            const purchasePanel = document.getElementById('purchaseTabContent');
+            const saleLabel = document.getElementById('tabSaleLabel');
+            const purchaseLabel = document.getElementById('tabPurchaseLabel');
+
+            if (tabType === 'sale') {
+                salePanel.classList.add('active');
+                purchasePanel.classList.remove('active');
+                saleLabel.classList.add('active');
+                purchaseLabel.classList.remove('active');
+            } else {
+                purchasePanel.classList.add('active');
+                salePanel.classList.remove('active');
+                purchaseLabel.classList.add('active');
+                saleLabel.classList.remove('active');
+            }
+        }
 //=============== pnl report js=======================//
-function getreport(){
-     window.location.href="get-report.html";
+function getreport() {
+    window.location.href = "get-report.html";
 }
 
 //===========ADD NEW EXPENSE=====================//
-function addnewexpense(){
-    window.location.href="manage-expenses.html";
+function addnewexpense() {
+    window.location.href = "manage-expenses.html";
 }
+//============add new role dropdown===========//
+document.addEventListener("DOMContentLoaded", function () {
+    
+    // 1. DROPDOWN CODE
+    const accessSelectBox = document.getElementById("accessSelectBox");
+    const accessDropdown = document.getElementById("accessDropdown");
+    const accessPlaceholder = document.getElementById("accessPlaceholder");
+    const selectedAccess = document.getElementById("selectedAccess");
+
+    // Clear check taake crash na ho
+    if (accessSelectBox && accessDropdown) {
+        
+        accessSelectBox.addEventListener("click", function (e) {
+            e.stopPropagation();
+            accessDropdown.classList.toggle("show");
+        });
+
+        accessDropdown.addEventListener("click", function (e) {
+            e.stopPropagation();
+        });
+
+        const checkboxes = accessDropdown.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function (checkbox) {
+            checkbox.addEventListener("change", function () {
+                if (selectedAccess && accessPlaceholder) {
+                    selectedAccess.innerHTML = "";
+                    const checked = accessDropdown.querySelectorAll('input[type="checkbox"]:checked');
+
+                    if (checked.length === 0) {
+                        accessPlaceholder.style.display = "inline";
+                    } else {
+                        accessPlaceholder.style.display = "none";
+
+                        checked.forEach(function (cb) {
+                            const chip = document.createElement("span");
+                            chip.className = "access-item";
+                            chip.innerHTML = `${cb.getAttribute("data-name")} <span class="access-item-remove">&times;</span>`;
+
+                            chip.querySelector(".access-item-remove").addEventListener("click", function (ev) {
+                                ev.stopPropagation();
+                                cb.checked = false;
+                                accessSelectBox.click(); // re-trigger render
+                            });
+
+                            selectedAccess.appendChild(chip);
+                        });
+                    }
+                }
+            });
+        });
+
+        document.addEventListener("click", function () {
+            accessDropdown.classList.remove("show");
+        });
+    }
+
+    // 2. LINE 375 VALA SAFE MODAL CODE (Null Check ke sath)
+    const openBtn = document.getElementById("openPasswordModal"); // ya jo bhi ID line 375 par hai
+    const modal = document.getElementById("passwordModal");
+    const cancelBtn = document.getElementById("cancelPasswordModal");
+
+    // 'IF' condition lagane se null error khatam ho jayega
+    if (openBtn) {
+        openBtn.onclick = function() {
+            if (modal) modal.classList.add("active");
+        };
+    }
+
+    if (cancelBtn) {
+        cancelBtn.onclick = function() {
+            if (modal) modal.classList.remove("active");
+        };
+    }
+});
+
+function addrole() {
+    window.location.href = "manage-role.html";
+}
+function removerole(){
+     window.location.href = "add-new-role.html";
+}
+
+
+//====================================== Account settings==================================//
+document.addEventListener("DOMContentLoaded", function () {
+    const openBtn = document.getElementById("openPasswordModal");
+    const modal = document.getElementById("passwordModal");
+    const cancelBtn = document.getElementById("cancelPasswordModal");
+    const updateBtn = document.getElementById("updatePassword");
+
+    // OPEN MODAL
+    if (openBtn && modal) {
+        openBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            modal.classList.add("active");
+        });
+    }
+
+    // CLOSE WITH CANCEL BUTTON
+    if (cancelBtn && modal) {
+        cancelBtn.addEventListener("click", function () {
+            modal.classList.remove("active");
+        });
+    }
+
+    // CLICK OUTSIDE TO CLOSE
+    if (modal) {
+        modal.addEventListener("click", function (e) {
+            if (e.target === modal) {
+                modal.classList.remove("active");
+            }
+        });
+    }
+
+    // UPDATE BUTTON ACTION (OPTIONAL)
+    if (updateBtn && modal) {
+        updateBtn.addEventListener("click", function () {
+            // Aapka update code yahan aayega
+            modal.classList.remove("active");
+        });
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // DOM Elements
+    const openEmailModalBtn = document.querySelector(".change-email-btn"); // Aapka Change Email Trigger Button
+    const emailModalOverlay = document.getElementById("emailModalOverlay");
+    
+    const emailStep1 = document.getElementById("emailStep1");
+    const emailStep2 = document.getElementById("emailStep2");
+    
+    const continueEmailStep = document.getElementById("continueEmailStep");
+    const cancelEmailModal1 = document.getElementById("cancelEmailModal1");
+    const cancelEmailModal2 = document.getElementById("cancelEmailModal2");
+    const updateEmailAddressBtn = document.getElementById("updateEmailAddressBtn");
+
+    // Helper to Reset Steps
+    function resetEmailModal() {
+        if (emailModalOverlay) emailModalOverlay.classList.remove("active");
+        setTimeout(() => {
+            if (emailStep1 && emailStep2) {
+                emailStep1.classList.add("active");
+                emailStep2.classList.remove("active");
+            }
+        }, 200);
+    }
+
+    // Open Modal (Step 1)
+    if (openEmailModalBtn && emailModalOverlay) {
+        openEmailModalBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            emailModalOverlay.classList.add("active");
+        });
+    }
+
+    // Switch from Step 1 -> Step 2
+    if (continueEmailStep) {
+        continueEmailStep.addEventListener("click", function () {
+            // Optional: Yahan Step 1 Validation logic add kar sakti hain
+            emailStep1.classList.remove("active");
+            emailStep2.classList.add("active");
+        });
+    }
+
+    // Close Modal on Cancel
+    if (cancelEmailModal1) cancelEmailModal1.addEventListener("click", resetEmailModal);
+    if (cancelEmailModal2) cancelEmailModal2.addEventListener("click", resetEmailModal);
+
+    // Outside Click Close
+    if (emailModalOverlay) {
+        emailModalOverlay.addEventListener("click", function (e) {
+            if (e.target === emailModalOverlay) {
+                resetEmailModal();
+            }
+        });
+    }
+
+    // Update Action Finish
+    if (updateEmailAddressBtn) {
+        updateEmailAddressBtn.addEventListener("click", function () {
+            // Success Logic
+            resetEmailModal();
+        });
+    }
+});
+
+
+//==========================sale page js=======================
+
+/*let currentStep = 1;
+const totalSteps = 3;
+
+function updateStepperUI() {
+    for (let i = 1; i <= totalSteps; i++) {
+        const stepElement = document.getElementById(`stepIndicator${i}`);
+        if (!stepElement) continue;
+
+        stepElement.classList.remove("active", "completed");
+
+        if (i < currentStep) {
+            stepElement.classList.add("completed");
+        } else if (i === currentStep) {
+            stepElement.classList.add("active");
+        }
+    }
+}
+
+function nextStep() {
+    if (currentStep < totalSteps) {
+        currentStep++;
+        updateStepperUI();
+    }
+}
+
+function prevStep() {
+    if (currentStep > 1) {
+        currentStep--;
+        updateStepperUI();
+    }
+}
+
+function jumpToStep(stepNum) {
+    if (stepNum >= 1 && stepNum <= totalSteps) {
+        currentStep = stepNum;
+        updateStepperUI();
+    }
+}
+
+
+
+function openVariantModal(productName, productCode) {
+    const modal = document.getElementById("variantModal");
+    const nameElem = document.getElementById("modalProductName");
+    const codeElem = document.getElementById("modalProductCode");
+
+    if (nameElem) nameElem.innerText = productName;
+    if (codeElem) codeElem.innerText = productCode;
+
+    if (modal) modal.classList.add("show");
+}
+
+function closeVariantModal() {
+    const modal = document.getElementById("variantModal");
+    if (modal) modal.classList.remove("show");
+}
+
+function changeQty(btn, delta) {
+    const input = btn.parentElement.querySelector(".qty-val");
+    if (!input) return;
+
+    let val = parseInt(input.value) || 1;
+    val += delta;
+    if (val < 1) val = 1;
+    
+    input.value = val < 10 ? '0' + val : val;
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Stepper setup
+    updateStepperUI();
+
+    // Apply button click event handler
+    const applyBtn = document.querySelector('.btn-apply');
+    if (applyBtn) {
+        applyBtn.addEventListener('click', function() {
+            // 1. Modal overlay/popup close karein
+            closeVariantModal();
+
+            // 2. Right Side Cart Panel Show Karein
+            const cartSidebar = document.getElementById('cartSidebar');
+            if (cartSidebar) {
+                cartSidebar.classList.add('show');
+            }
+        });
+    }
+
+    // Cart items delete logic (Optional: Event delegation for dynamically added items)
+    const cartItemsList = document.getElementById('cartItemsList');
+    if (cartItemsList) {
+        cartItemsList.addEventListener('click', function(e) {
+            if (e.target && e.target.classList.contains('btn-delete-item')) {
+                const itemRow = e.target.closest('.cart-item');
+                if (itemRow) itemRow.remove();
+
+                // If cart gets empty, hide sidebar automatically
+                if (cartItemsList.querySelectorAll('.cart-item').length === 0) {
+                    const cartSidebar = document.getElementById('cartSidebar');
+                    if (cartSidebar) cartSidebar.classList.remove('show');
+                }
+            }
+        });
+    }
+});*/
+
+
+// ==========================================
+// 1. STEPPER UI
+// ==========================================
+
+let currentStep = 1;
+const totalSteps = 3;
+
+
+function updateStepperUI() {
+
+    for (let i = 1; i <= totalSteps; i++) {
+
+        const stepElement =
+            document.getElementById(`stepIndicator${i}`);
+
+        if (!stepElement) continue;
+
+        stepElement.classList.remove(
+            "active",
+            "completed"
+        );
+
+
+        if (i < currentStep) {
+
+            stepElement.classList.add("completed");
+
+        }
+        else if (i === currentStep) {
+
+            stepElement.classList.add("active");
+
+        }
+
+    }
+
+}
+
+
+function nextStep() {
+
+    if (currentStep < totalSteps) {
+
+        currentStep++;
+
+        updateStepperUI();
+
+    }
+
+}
+
+
+function prevStep() {
+
+    if (currentStep > 1) {
+
+        currentStep--;
+
+        updateStepperUI();
+
+    }
+
+}
+
+
+function jumpToStep(stepNum) {
+
+    if (
+        stepNum >= 1 &&
+        stepNum <= totalSteps
+    ) {
+
+        currentStep = stepNum;
+
+        updateStepperUI();
+
+    }
+
+}
+
+
+// ==========================================
+// 2. VARIANT MODAL
+// ==========================================
+
+function openVariantModal(
+    productName,
+    productCode
+) {
+
+    const modal =
+        document.getElementById("variantModal");
+
+    const nameElem =
+        document.getElementById("modalProductName");
+
+    const codeElem =
+        document.getElementById("modalProductCode");
+
+
+    if (nameElem) {
+
+        nameElem.innerText = productName;
+
+    }
+
+
+    if (codeElem) {
+
+        codeElem.innerText = productCode;
+
+    }
+
+
+    if (modal) {
+
+        modal.classList.add("show");
+
+    }
+
+}
+
+
+function closeVariantModal() {
+
+    const modal =
+        document.getElementById("variantModal");
+
+
+    if (modal) {
+
+        modal.classList.remove("show");
+
+    }
+
+}
+
+
+// ==========================================
+// 3. QUANTITY
+// ==========================================
+
+function changeQty(btn, delta) {
+
+    const input =
+        btn.parentElement.querySelector(".qty-val");
+
+
+    if (!input) return;
+
+
+    let val =
+        parseInt(input.value) || 1;
+
+
+    val += delta;
+
+
+    if (val < 1) {
+
+        val = 1;
+
+    }
+
+
+    input.value =
+        val < 10
+            ? "0" + val
+            : val;
+
+}
+
+
+// ==========================================
+// 4. PAGE INITIALIZATION
+// ==========================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        updateStepperUI();
+
+
+
+        // ==================================
+        // APPLY TO ORDER
+        // ==================================
+
+        const applyBtn =
+            document.querySelector(
+                ".btn-apply"
+            );
+
+
+        if (applyBtn) {
+
+            applyBtn.addEventListener(
+                "click",
+                function () {
+
+                    closeVariantModal();
+
+
+                    const cartSidebar =
+                        document.getElementById(
+                            "cartSidebar"
+                        );
+
+
+                    if (cartSidebar) {
+
+                        cartSidebar.classList.add(
+                            "show"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        // ==================================
+        // DELETE CART ITEM
+        // ==================================
+
+        const cartItemsList =
+            document.getElementById(
+                "cartItemsList"
+            );
+
+
+        if (cartItemsList) {
+
+            cartItemsList.addEventListener(
+                "click",
+                function (event) {
+
+                    if (
+                        event.target.classList.contains(
+                            "btn-delete-item"
+                        )
+                    ) {
+
+                        const itemRow =
+                            event.target.closest(
+                                ".cart-item"
+                            );
+
+
+                        if (itemRow) {
+
+                            itemRow.remove();
+
+                        }
+
+
+                        if (
+                            cartItemsList.querySelectorAll(
+                                ".cart-item"
+                            ).length === 0
+                        ) {
+
+                            const cartSidebar =
+                                document.getElementById(
+                                    "cartSidebar"
+                                );
+
+
+                            if (cartSidebar) {
+
+                                cartSidebar.classList.remove(
+                                    "show"
+                                );
+
+                            }
+
+                        }
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        // ==================================
+        // CLOSE MODAL WHEN CLICKING OUTSIDE
+        // ==================================
+
+        const variantModal =
+            document.getElementById(
+                "variantModal"
+            );
+
+
+        if (variantModal) {
+
+            variantModal.addEventListener(
+                "click",
+                function (event) {
+
+                    if (
+                        event.target ===
+                        variantModal
+                    ) {
+
+                        closeVariantModal();
+
+                    }
+
+                }
+            );
+
+        }
+
+    }
+);

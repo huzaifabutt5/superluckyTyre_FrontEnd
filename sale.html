@@ -169,7 +169,7 @@
 
                 <div class="header-right">
 
-                    <div class="profile">
+                    <div class="profiles">
 
                         <img src="images/notification.svg" alt="Profile">
 
@@ -177,7 +177,7 @@
 
 
 
-                    <div class="profile">
+                    <div class="profile" onclick="opensetting()">
 
                         <img src="images/settings.svg" alt="Profile">
 
@@ -192,210 +192,550 @@
                 <div class="left">
                     <p>Tyre Shop > Sale/Purchase Management > <b>Sale</b></p>
                     <h3>Sale Product</h3>
-                    <button class="sale-return-btn">
-                        <i class="bi bi-arrow-counterclockwise"></i>
-                        Sale Return
+                </div>
+            </div>
+            <a href="sale-return.html" class="add-vendor-btn">
+                <i class="bi bi-arrow-counterclockwise"></i>
+                <span>Sale Return</span>
+            </a>
+            <div class="stepper-wrapper">
+                <div class="sale-stepper">
+
+                    <!-- STEP 1 -->
+                    <div class="step-item active" id="stepIndicator1" onclick="jumpToStep(1)">
+                        <span class="step-text"><B class="side">Step 1:</B> Select Product</span>
+                        <span class="step-dot"></span>
+                    </div>
+
+                    <!-- STEP 2 -->
+                    <div class="step-item" id="stepIndicator2" onclick="jumpToStep(2)">
+                        <span class="step-text"><b class="side">Step 2:</b> Select Customer</span>
+                        <span class="step-dot"></span>
+                    </div>
+
+                    <!-- STEP 3 -->
+                    <div class="step-item" id="stepIndicator3" onclick="jumpToStep(3)">
+                        <span class="step-text"><b class="side">Step 3:</b> Confirm Order & Pay</span>
+                        <span class="step-dot"></span>
+                    </div>
+
+                </div>
+
+                <!-- STEP 1: ALL PRODUCTS VIEW CONTAINER -->
+
+               <!-- MAIN SALE TABLE AREA -->
+<div class="sale-main-wrapper">
+
+    <!-- ============================= -->
+    <!-- LEFT PRODUCTS TABLE -->
+    <!-- ============================= -->
+
+    <div class="left-products-section">
+
+        <!-- Header -->
+        <div class="products-header">
+            <h4 class="title">All Products</h4>
+        </div>
+
+
+        <!-- Entries + Search -->
+        <div class="products-container">
+
+            <div class="entries-control">
+
+                <select class="select-entries">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                </select>
+
+                <span>entries per page</span>
+
+            </div>
+
+
+            <div class="search-control">
+
+                <label>Search:</label>
+
+                <input
+                    type="text"
+                    placeholder="Search Product"
+                    class="search-input"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- Products Cards -->
+        <div class="product-card-table">
+
+            <div class="products-grid">
+
+                <div class="product-card"
+                    onclick="openVariantModal('Sporty Euro Racer', '205/55 R 16')">
+
+                    <h5>Sporty Euro Racer</h5>
+
+                    <span class="product-code">
+                        205/55 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('Luxury Touring Pro', '225/60 R 16')">
+
+                    <h5>Luxury Touring Pro</h5>
+
+                    <span class="product-code">
+                        225/60 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('All-Season Comfort', '195/70 R 14')">
+
+                    <h5>All-Season Comfort</h5>
+
+                    <span class="product-code">
+                        195/70 R 14
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('Eco-Friendly Green Tyre', '185/65 R 15')">
+
+                    <h5>Eco-Friendly Green Tyre</h5>
+
+                    <span class="product-code">
+                        185/65 R 15
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('Heavy Duty Workhorse', '215/75 R 15')">
+
+                    <h5>Heavy Duty Workhorse</h5>
+
+                    <span class="product-code">
+                        215/75 R 15
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('Performance Grip Master', '245/40 R 18')">
+
+                    <h5>Performance Grip Master</h5>
+
+                    <span class="product-code">
+                        245/40 R 18
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('Winter Snow Defender', '195/80 R 14')">
+
+                    <h5>Winter Snow Defender</h5>
+
+                    <span class="product-code">
+                        195/80 R 14
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('Rugged Off-Road Champion', '265/70 R 17')">
+
+                    <h5>Rugged Off-Road Champion</h5>
+
+                    <span class="product-code">
+                        265/70 R 17
+                    </span>
+
+                </div>
+                <div class="product-card"
+                    onclick="openVariantModal('Sporty Euro Racer', '205/55 R 16')">
+
+                    <h5>Sporty Euro Racer</h5>
+
+                    <span class="product-code">
+                        205/55 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('Luxury Touring Pro', '225/60 R 16')">
+
+                    <h5>Luxury Touring Pro</h5>
+
+                    <span class="product-code">
+                        225/60 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('All-Season Comfort', '195/70 R 14')">
+
+                    <h5>All-Season Comfort</h5>
+
+                    <span class="product-code">
+                        195/70 R 14
+                    </span>
+
+                </div>
+                <div class="product-card"
+                    onclick="openVariantModal('Sporty Euro Racer', '205/55 R 16')">
+
+                    <h5>Sporty Euro Racer</h5>
+
+                    <span class="product-code">
+                        205/55 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('Luxury Touring Pro', '225/60 R 16')">
+
+                    <h5>Luxury Touring Pro</h5>
+
+                    <span class="product-code">
+                        225/60 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('All-Season Comfort', '195/70 R 14')">
+
+                    <h5>All-Season Comfort</h5>
+
+                    <span class="product-code">
+                        195/70 R 14
+                    </span>
+
+                </div>
+                <div class="product-card"
+                    onclick="openVariantModal('Sporty Euro Racer', '205/55 R 16')">
+
+                    <h5>Sporty Euro Racer</h5>
+
+                    <span class="product-code">
+                        205/55 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('Luxury Touring Pro', '225/60 R 16')">
+
+                    <h5>Luxury Touring Pro</h5>
+
+                    <span class="product-code">
+                        225/60 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('All-Season Comfort', '195/70 R 14')">
+
+                    <h5>All-Season Comfort</h5>
+
+                    <span class="product-code">
+                        195/70 R 14
+                    </span>
+
+                </div>
+                <div class="product-card"
+                    onclick="openVariantModal('Sporty Euro Racer', '205/55 R 16')">
+
+                    <h5>Sporty Euro Racer</h5>
+
+                    <span class="product-code">
+                        205/55 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('Luxury Touring Pro', '225/60 R 16')">
+
+                    <h5>Luxury Touring Pro</h5>
+
+                    <span class="product-code">
+                        225/60 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('All-Season Comfort', '195/70 R 14')">
+
+                    <h5>All-Season Comfort</h5>
+
+                    <span class="product-code">
+                        195/70 R 14
+                    </span>
+
+                </div>
+                <div class="product-card"
+                    onclick="openVariantModal('Sporty Euro Racer', '205/55 R 16')">
+
+                    <h5>Sporty Euro Racer</h5>
+
+                    <span class="product-code">
+                        205/55 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('Luxury Touring Pro', '225/60 R 16')">
+
+                    <h5>Luxury Touring Pro</h5>
+
+                    <span class="product-code">
+                        225/60 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('All-Season Comfort', '195/70 R 14')">
+
+                    <h5>All-Season Comfort</h5>
+
+                    <span class="product-code">
+                        195/70 R 14
+                    </span>
+
+                </div>
+                <div class="product-card"
+                    onclick="openVariantModal('Sporty Euro Racer', '205/55 R 16')">
+
+                    <h5>Sporty Euro Racer</h5>
+
+                    <span class="product-code">
+                        205/55 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('Luxury Touring Pro', '225/60 R 16')">
+
+                    <h5>Luxury Touring Pro</h5>
+
+                    <span class="product-code">
+                        225/60 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('All-Season Comfort', '195/70 R 14')">
+
+                    <h5>All-Season Comfort</h5>
+
+                    <span class="product-code">
+                        195/70 R 14
+                    </span>
+
+                </div>
+                <div class="product-card"
+                    onclick="openVariantModal('Sporty Euro Racer', '205/55 R 16')">
+
+                    <h5>Sporty Euro Racer</h5>
+
+                    <span class="product-code">
+                        205/55 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('Luxury Touring Pro', '225/60 R 16')">
+
+                    <h5>Luxury Touring Pro</h5>
+
+                    <span class="product-code">
+                        225/60 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('All-Season Comfort', '195/70 R 14')">
+
+                    <h5>All-Season Comfort</h5>
+
+                    <span class="product-code">
+                        195/70 R 14
+                    </span>
+
+                </div>
+                <div class="product-card"
+                    onclick="openVariantModal('Sporty Euro Racer', '205/55 R 16')">
+
+                    <h5>Sporty Euro Racer</h5>
+
+                    <span class="product-code">
+                        205/55 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('Luxury Touring Pro', '225/60 R 16')">
+
+                    <h5>Luxury Touring Pro</h5>
+
+                    <span class="product-code">
+                        225/60 R 16
+                    </span>
+
+                </div>
+
+
+                <div class="product-card"
+                    onclick="openVariantModal('All-Season Comfort', '195/70 R 14')">
+
+                    <h5>All-Season Comfort</h5>
+
+                    <span class="product-code">
+                        195/70 R 14
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- RIGHT CART TABLE -->
+    <!-- ============================= -->
+
+    <aside class="cart-sidebar" id="cartSidebar">
+
+        <div class="cart-header">
+
+            <h4>Cart Detail</h4>
+
+        </div>
+
+
+        <div class="cart-items-list" id="cartItemsList">
+
+            <div class="cart-item">
+
+                <div class="cart-item-info">
+
+                    <div class="item-title">
+                        All-Season Comfort
+                    </div>
+
+                    <div class="item-code">
+                        195/70 R 14
+                    </div>
+
+                    <div class="item-qty-calc">
+                        3 X 5,000
+                    </div>
+
+                </div>
+
+
+                <div class="cart-item-right">
+
+                    <button class="btn-delete-item">
+                        <i class="bi bi-trash"></i>
                     </button>
-                </div>
-                <div class="steps-wrapper">
 
-                    <label class="step-box">
-                        <input type="radio" name="step" checked />
-                        <div class="step-content">
-                            <span class="step-title">Step 1:</span>
-                            <span class="step-text">Select Product</span>
-                            <span class="radio-circle"></span>
-                        </div>
-                    </label>
-
-                    <label class="step-box">
-                        <input type="radio" name="step" />
-                        <div class="step-content">
-                            <span class="step-title">Step 2:</span>
-                            <span class="step-text">Select Customer</span>
-                            <span class="radio-circle"></span>
-                        </div>
-                    </label>
-
-                    <label class="step-box">
-                        <input type="radio" name="step" />
-                        <div class="step-content">
-                            <span class="step-title">Step 3:</span>
-                            <span class="step-text">Confirm Order & Pay</span>
-                            <span class="radio-circle"></span>
-                        </div>
-                    </label>
-
-                </div>
-
-
-                <div class="all-invoices">
-                    <h3>All Products</h3>
-                </div>
-
-                <!-- Top Bar -->
-                <div class="products-top">
-                    <div class="entries">
-                        <select>
-                            <option>10</option>
-                            <option>20</option>
-                            <option>30</option>
-                        </select>
-                        <span>entries per page</span>
-                    </div>
-
-                    <div class="product-search">
-                        <label>Search:</label>
-                        <input type="text" placeholder="Search Product">
-                    </div>
-                </div>
-                <!-- Products Section -->
-                <div class="products-card">
-                    <!-- Products Grid -->
-                    <div class="products-grid">
-
-                        <!-- ITEM -->
-                        <div class="product-item">
-                            <h4>Sporty Euro Racer</h4>
-                            <span>205/55 R 16</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>Luxury Touring Pro</h4>
-                            <span>225/60 R 18</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>All-Season Comfort</h4>
-                            <span>195/70 R 14</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>Eco-Friendly Green Tyre</h4>
-                            <span>185/65 R 15</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>Heavy Duty Workhorse</h4>
-                            <span>215/75 R 15</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>Performance Grip Master</h4>
-                            <span>245/40 R 18</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>Winter Snow Defender</h4>
-                            <span>195/60 R 14</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>Rugged Off-Road Champion</h4>
-                            <span>265/70 R 17</span>
-                        </div>
-                        <div class="product-item">
-                            <h4>Luxury Touring Pro</h4>
-                            <span>225/60 R 18</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>All-Season Comfort</h4>
-                            <span>195/70 R 14</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>Eco-Friendly Green Tyre</h4>
-                            <span>185/65 R 15</span>
-                        </div>
-                        <div class="product-item">
-                            <h4>Luxury Touring Pro</h4>
-                            <span>225/60 R 18</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>All-Season Comfort</h4>
-                            <span>195/70 R 14</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>Eco-Friendly Green Tyre</h4>
-                            <span>185/65 R 15</span>
-                        </div>
-                        <div class="product-item">
-                            <h4>Luxury Touring Pro</h4>
-                            <span>225/60 R 18</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>All-Season Comfort</h4>
-                            <span>195/70 R 14</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>Eco-Friendly Green Tyre</h4>
-                            <span>185/65 R 15</span>
-                        </div>
-                        <div class="product-item">
-                            <h4>Luxury Touring Pro</h4>
-                            <span>225/60 R 18</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>All-Season Comfort</h4>
-                            <span>195/70 R 14</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>Eco-Friendly Green Tyre</h4>
-                            <span>185/65 R 15</span>
-                        </div>
-                        <div class="product-item">
-                            <h4>Luxury Touring Pro</h4>
-                            <span>225/60 R 18</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>All-Season Comfort</h4>
-                            <span>195/70 R 14</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>Eco-Friendly Green Tyre</h4>
-                            <span>185/65 R 15</span>
-                        </div>
-                        <div class="product-item">
-                            <h4>Luxury Touring Pro</h4>
-                            <span>225/60 R 18</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>All-Season Comfort</h4>
-                            <span>195/70 R 14</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>Eco-Friendly Green Tyre</h4>
-                            <span>185/65 R 15</span>
-                        </div>
-                        <div class="product-item">
-                            <h4>All-Season Comfort</h4>
-                            <span>195/70 R 14</span>
-                        </div>
-
-                        <div class="product-item">
-                            <h4>Eco-Friendly Green Tyre</h4>
-                            <span>185/65 R 15</span>
-                        </div>
-
-
+                    <div class="item-total-price">
+                        ≈ 15,000
                     </div>
 
                 </div>
 
             </div>
 
-    </div>
+        </div>
+
+
+        <!-- Cart Summary -->
+
+        <div class="cart-summary-footer">
+
+            <div class="summary-row">
+                <span class="row-head">Total Products</span>
+                <span id="summaryQty" class="summary-qty">10pcs</span>
+            </div>
+
+            <div class="summary-row">
+                <span class="row-head">COG</span>
+                <span id="summaryCog" class="summary-cog">Rs. 50,000</span>
+            </div>
+
+            <div class="summary-row">
+                <span class="row-head">Net Profit</span>
+                <span class="text-green" id="summaryProfit">
+                    Rs. 12,500
+                </span>
+            </div>
+
+            <div class="summary-row total-row">
+                <span class="row-head">Net Total</span>
+                <span class="text-blue" id="summaryTotal">
+                    Rs. 62,500
+                </span>
+            </div>
+
+            <button class="btn-continue">
+                Continue
+            </button>
+
+        </div>
+
+    </aside>
+
+</div>
 
 
 
@@ -403,7 +743,8 @@
 
 
 
-    </main>
+
+        </main>
 
     </div>
 
@@ -435,8 +776,95 @@
         </div>
 
     </div>
+    <!-- SELECT PRODUCT VARIANT POPUP MODAL -->
+    <div class="modal-overlay" id="variantModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Select Product Variant</h3>
+            </div>
 
-  
+            <div class="modal-body">
+                <input type="text" class="modal-search" placeholder="Search DOT, Vendor or Batch ID#">
+
+                <div class="variant-list">
+                    <!-- Variant Item 1 -->
+                    <div class="variant-card">
+                        <div class="variant-header-row">
+                            <div class="variant-title-wrap">
+                                <span class="variant-name" id="modalProductName">Sporty Euro Racer</span>
+                                <span class="badge-dot">DOT 2224</span>
+                            </div>
+                            <span class="badge-batch">Batch ID# 16287</span>
+                        </div>
+                        <div class="variant-meta">
+                            Code: <span id="modalProductCode" class="variant-code">205/55 R 16</span> &nbsp;|&nbsp; Stock: <b>18pcs</b>
+                            &nbsp;|&nbsp; COG: <b>Rs. 1500</b>
+                        </div>
+                        <div class="variant-action-row">
+                            <div class="price-input-wrap">
+                                <label>Selling Price</label>
+                                <input type="text" placeholder="Selling Price" class="input-price">
+                            </div>
+                            <button class="btn-add-cart active">+ Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Variant Item 2 -->
+                    <div class="variant-card">
+                        <div class="variant-header-row">
+                            <div class="variant-title-wrap">
+                                <span class="variant-name">Sporty Euro Racer</span>
+                                <span class="badge-dot">DOT 2224</span>
+                            </div>
+                            <span class="badge-batch">Batch ID# 16287</span>
+                        </div>
+                        <div class="variant-meta">
+                            Code: 205/55 R 16 &nbsp;|&nbsp; Stock: <b>18pcs</b> &nbsp;|&nbsp; COG: <b>Rs. 1300</b>
+                        </div>
+                        <div class="variant-action-row">
+                            <div class="price-input-wrap">
+                                <label>Selling Price</label>
+                                <input type="text" placeholder="Selling Price" class="input-price">
+                            </div>
+                            <div class="qty-counter">
+                                <button onclick="changeQty(this, -1)">-</button>
+                                <input type="text" value="01" readonly class="qty-val">
+                                <button onclick="changeQty(this, 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Variant Item 3 -->
+                    <div class="variant-card">
+                        <div class="variant-header-row">
+                            <div class="variant-title-wrap">
+                                <span class="variant-name">Sporty Euro Racer</span>
+                                <span class="badge-dot">DOT 2224</span>
+                            </div>
+                            <span class="badge-batch">Batch ID# 16287</span>
+                        </div>
+                        <div class="variant-meta">
+                            Code: 205/55 R 16 &nbsp;|&nbsp; Stock: <b>18pcs</b> &nbsp;|&nbsp; COG: <b>Rs. 1200</b>
+                        </div>
+                        <div class="variant-action-row">
+                            <div class="price-input-wrap">
+                                <label>Selling Price</label>
+                                <input type="text" placeholder="Selling Price" class="input-price">
+                            </div>
+                            <button class="btn-add-carts" disable>+ Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-cancel" onclick="closeVariantModal()">Cancel</button>
+                <button class="btn-apply" onclick="closeVariantModal()">Apply to Order</button>
+            </div>
+        </div>
+    </div>
+
+
 
 
 

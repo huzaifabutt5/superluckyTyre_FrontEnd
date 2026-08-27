@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Lucky Tyre - ERP</title>
+    <title>Add New Expense</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link
@@ -169,7 +169,7 @@
 
                 <div class="header-right">
 
-                    <div class="profile">
+                    <div class="profiles">
 
                         <img src="images/notification.svg" alt="Profile">
 
@@ -177,9 +177,9 @@
 
 
 
-                    <div class="profile">
+                    <div class="profile " onclick="opensetting()">
 
-                        <img src="images/settings.svg" alt="Profile">
+                        <img src="images/settings.svg" alt="Profile" >
 
                     </div>
 
@@ -202,25 +202,25 @@
         <div class="expense-form">
 
             <!-- ROW 1 -->
-            <div class="form-row">
-                <div class="form-group">
+            <div class="form-rows">
+                <div class="form-groups">
                     <label>Date <span>*</span></label>
                     <input type="text" placeholder="DD/MM/YYYY">
                 </div>
 
-                <div class="form-group">
+                <div class="form-groups">
                     <label>Expense Name <span>*</span></label>
                     <input type="text" placeholder="Expense Name">
                 </div>
 
-                <div class="form-group">
+                <div class="form-groups">
                     <label>Amount <span>*</span></label>
                     <input type="text" placeholder="Amount">
                 </div>
             </div>
 
             <!-- ROW 2 -->
-            <div class="form-group full-width">
+            <div class="form-groups full-width">
                 <label>Description <span>*</span></label>
                 <textarea placeholder="Description"></textarea>
             </div>

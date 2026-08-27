@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
     <div class="dashboard">
 
         <!-- SIDEBAR -->
@@ -169,7 +170,7 @@
 
                 <div class="header-right">
 
-                    <div class="profile">
+                    <div class="profiles">
 
                         <img src="images/notification.svg" alt="Profile">
 
@@ -177,7 +178,7 @@
 
 
 
-                    <div class="profile">
+                    <div class="profile" onclick="opensetting()">
 
                         <img src="images/settings.svg" alt="Profile">
 
@@ -190,340 +191,343 @@
 
             <div class="dashboard-content">
                 <div class="left">
-                    <p>Tyre Shop > Vendor Management > <b>Vendor Listing</b> </p>
+                    <p>Tyre Shop > Vendor > <b>Vendor Listing</b></p>
                     <h3>Vendor Listing</h3>
-                    <a href="add-vendor.html" class="add-vendor-btn">
-                        <i class="fa-solid fa-plus"></i>
-                        <span>Add New Vendor</span>
-                    </a>
-                    <!--vendor table-->
-                    <div class="vendor-table-top">
+                </div>
+            </div>
+            <a href="add-vendor.html" class="add-vendor-btn">
+                <i class="fa-solid fa-plus"></i>
+                <span>Add New Vendor</span>
+            </a>
 
-                        <div>
-                            <select>
-                                <option>10</option>
-                                <option>20</option>
-                                <option>30</option>
-                            </select>
+            <!--vendor table-->
+            <div class="vendor-table-top">
 
-                            <span>entries per page</span>
-                        </div>
+                <div>
+                    <select>
+                        <option>10</option>
+                        <option>20</option>
+                        <option>30</option>
+                    </select>
 
-                        <div class="vendor-search">
-                            <label>Search:</label>
-                            <input type="text" placeholder="Search Vendor">
-                        </div>
-                       
+                    <span>entries per page</span>
+                </div>
 
-                    </div>
+                <div class="vendor-search">
+                    <label>Search:</label>
+                    <input type="text" placeholder="Search Vendor">
+                </div>
 
 
-                    <!-- TABLE START -->
-                    <div class="table-wrapper">
+            </div>
 
-                        <table>
 
-                            <thead>
-                                <tr>
-                                    <th>SL</th>
-                                    <th>Vendor ID</th>
-                                    <th>Vendor Name</th>
-                                    <th>Vendor Email</th>
-                                    <th>Vendor Phone</th>
-                                    <th>Address</th>
-                                    <th>Bank Name</th>
-                                    <th>Account Title</th>
-                                    <th>AC/IBAN</th>
-                                    <th>Payable</th>
-                                    <th>Receivable</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
+            <!-- TABLE START -->
+            <div class="table-wrapper">
 
-                            <tbody>
+                <table>
 
-                                <tr>
-                                    <td>1</td>
-                                    <td>TYRPNT-VN-0001</td>
-                                    <td>Usama Aslam</td>
-                                    <td>theeusama@gmail.com</td>
-                                    <td>+92 320 7852636</td>
-                                    <td>Karachi, Pakistan</td>
-                                    <td>Meezan Bank</td>
-                                    <td>Usama Aslam</td>
+                    <thead>
+                        <tr>
+                            <th>SL</th>
+                            <th>Vendor ID</th>
+                            <th>Vendor Name</th>
+                            <th>Vendor Email</th>
+                            <th>Vendor Phone</th>
+                            <th>Address</th>
+                            <th>Bank Name</th>
+                            <th>Account Title</th>
+                            <th>AC/IBAN</th>
+                            <th>Payable</th>
+                            <th>Receivable</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
 
-                                    <td>PK36SCBL0000001123456789</td>
-                                    <td>PKR 225,900</td>
-                                    <td>PKR 225,900</td>
-                                    <td>
-                                        <button class="action-btn view-btn" onclick="view()">
-                                            <i class="bi bi-eye"></i>
-                                        </button>
+                    <tbody>
 
-                                        <button class="action-btn edit-btn">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </button>
-                                        <button class="action-btn delete-btn" onclick="openDeleteModal()">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>TYRPNT-VN-0001</td>
+                            <td>Usama Aslam</td>
+                            <td>theeusama@gmail.com</td>
+                            <td>+92 320 7852636</td>
+                            <td>Karachi, Pakistan</td>
+                            <td>Meezan Bank</td>
+                            <td>Usama Aslam</td>
 
-                                <tr>
-                                    <td>2</td>
-                                    <td>TYRPNT-VN-0002</td>
-                                    <td>Hamza Iqbal</td>
-                                    <td>theeusama@gmail.com</td>
-                                    <td>+92 320 7852636</td>
-                                    <td>Lahore, Pakistan</td>
-                                    <td>HBL Bank</td>
-                                    <td>Hamza Iqbal</td>
+                            <td>PK36SCBL0000001123456789</td>
+                            <td>PKR 225,900</td>
+                            <td>PKR 225,900</td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="view()">
+                                    <i class="bi bi-eye"></i>
+                                </button>
 
-                                    <td>PK23HBLM0000001234567890</td>
-                                    <td>PKR 225,900</td>
-                                    <td>PKR 225,900</td>
-                                    <td>
-                                        <button class="action-btn view-btn " onclick="view()">
+                                <button class="action-btn edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button class="action-btn delete-btn" onclick="openDeleteModal()">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
 
-                                            <i class="bi bi-eye"></i>
-                                        </button>
+                        <tr>
+                            <td>2</td>
+                            <td>TYRPNT-VN-0002</td>
+                            <td>Hamza Iqbal</td>
+                            <td>theeusama@gmail.com</td>
+                            <td>+92 320 7852636</td>
+                            <td>Lahore, Pakistan</td>
+                            <td>HBL Bank</td>
+                            <td>Hamza Iqbal</td>
 
-                                        <button class="action-btn edit-btn">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </button>
-                                        <button class="action-btn delete-btn" onclick="openDeleteModal()">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                            <td>PK23HBLM0000001234567890</td>
+                            <td>PKR 225,900</td>
+                            <td>PKR 225,900</td>
+                            <td>
+                                <button class="action-btn view-btn " onclick="view()">
 
-                                <tr>
-                                    <td>3</td>
-                                    <td>TYRPNT-VN-0003</td>
-                                    <td>Asad ullah</td>
-                                    <td>theeusama@gmail.com</td>
-                                    <td>+92 320 7852636</td>
-                                    <td>Islamabad, Pakistan</td>
-                                    <td>Allied Bank</td>
-                                    <td>Asad ullah</td>
+                                    <i class="bi bi-eye"></i>
+                                </button>
 
-                                    <td>PK56MEBL0000001234567894</td>
-                                    <td>PKR 225,900</td>
-                                    <td>PKR 225,900</td>
-                                    <td>
-                                        <button class="action-btn view-btn" onclick="view()">
-                                            <i class="bi bi-eye"></i>
-                                        </button>
+                                <button class="action-btn edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button class="action-btn delete-btn" onclick="openDeleteModal()">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
 
-                                        <button class="action-btn edit-btn">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </button>
-                                        <button class="action-btn delete-btn" onclick="openDeleteModal()">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>TYRPNT-VN-0003</td>
+                            <td>Asad ullah</td>
+                            <td>theeusama@gmail.com</td>
+                            <td>+92 320 7852636</td>
+                            <td>Islamabad, Pakistan</td>
+                            <td>Allied Bank</td>
+                            <td>Asad ullah</td>
 
-                                <tr>
-                                    <td>4</td>
-                                    <td>TYRPNT-VN-0004</td>
-                                    <td>Anees</td>
-                                    <td>theeusama@gmail.com</td>
-                                    <td>+92 320 7852636</td>
-                                    <td>Faisalabad, Pakistan</td>
-                                    <td>UBL Bank</td>
-                                    <td>Anees</td>
-                                    <td>PK12UBL000001122334455</td>
-                                    <td>PKR 225,900</td>
-                                    <td>PKR 225,900</td>
-                                    <td>
-                                        <button class="action-btn view-btn" onclick="view()">
-                                            <i class="bi bi-eye"></i>
-                                        </button>
+                            <td>PK56MEBL0000001234567894</td>
+                            <td>PKR 225,900</td>
+                            <td>PKR 225,900</td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="view()">
+                                    <i class="bi bi-eye"></i>
+                                </button>
 
-                                        <button class="action-btn edit-btn">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </button>
-                                        <button class="action-btn delete-btn" onclick="openDeleteModal()">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                <button class="action-btn edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button class="action-btn delete-btn" onclick="openDeleteModal()">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
 
-                                <tr>
-                                    <td>5</td>
-                                    <td>TYRPNT-VN-0005</td>
-                                    <td>Usama Aslam</td>
-                                    <td>theeusama@gmail.com</td>
-                                    <td>+92 320 7852636</td>
-                                    <td>Multan, Pakistan</td>
-                                    <td>Askari Bank</td>
-                                    <td>Usama Aslam</td>
-                                    <td>PK20ASY50000001456789012</td>
-                                    <td>PKR 225,900</td>
-                                    <td>PKR 225,900</td>
-                                    <td>
-                                        <button class="action-btn view-btn" onclick="view()">
-                                            <i class="bi bi-eye"></i>
-                                        </button>
+                        <tr>
+                            <td>4</td>
+                            <td>TYRPNT-VN-0004</td>
+                            <td>Anees</td>
+                            <td>theeusama@gmail.com</td>
+                            <td>+92 320 7852636</td>
+                            <td>Faisalabad, Pakistan</td>
+                            <td>UBL Bank</td>
+                            <td>Anees</td>
+                            <td>PK12UBL000001122334455</td>
+                            <td>PKR 225,900</td>
+                            <td>PKR 225,900</td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="view()">
+                                    <i class="bi bi-eye"></i>
+                                </button>
 
-                                        <button class="action-btn edit-btn">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </button>
-                                        <button class="action-btn delete-btn" onclick="openDeleteModal()">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                <button class="action-btn edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button class="action-btn delete-btn" onclick="openDeleteModal()">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
 
-                                <tr>
-                                    <td>6</td>
-                                    <td>TYRPNT-VN-0006</td>
-                                    <td>Hamza Iqbal</td>
-                                    <td>theeusama@gmail.com</td>
-                                    <td>+92 320 7852636</td>
-                                    <td>Peshawar, Pakistan</td>
-                                    <td>MCB Bank</td>
-                                    <td>Hamza Iqbal</td>
-                                    <td>PK45ALF0000001678901234</td>
-                                    <td>PKR 225,900</td>
-                                    <td>PKR 225,900</td>
-                                    <td>
-                                        <button class="action-btn view-btn" onclick="view()">
-                                            <i class="bi bi-eye"></i>
-                                        </button>
+                        <tr>
+                            <td>5</td>
+                            <td>TYRPNT-VN-0005</td>
+                            <td>Usama Aslam</td>
+                            <td>theeusama@gmail.com</td>
+                            <td>+92 320 7852636</td>
+                            <td>Multan, Pakistan</td>
+                            <td>Askari Bank</td>
+                            <td>Usama Aslam</td>
+                            <td>PK20ASY50000001456789012</td>
+                            <td>PKR 225,900</td>
+                            <td>PKR 225,900</td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="view()">
+                                    <i class="bi bi-eye"></i>
+                                </button>
 
-                                        <button class="action-btn edit-btn">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </button>
-                                        <button class="action-btn delete-btn" onclick="openDeleteModal()">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                <button class="action-btn edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button class="action-btn delete-btn" onclick="openDeleteModal()">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
 
-                                <tr>
-                                    <td>7</td>
-                                    <td>TYRPNT-VN-0007</td>
-                                    <td>Asad ullah</td>
-                                    <td>theeusama@gmail.com</td>
-                                    <td>+92 320 7852636</td>
-                                    <td>Quetta, Pakistan</td>
-                                    <td>Silk Bank</td>
-                                    <td>Asad ullah</td>
-                                    <td>PK78MCB0000001890123456</td>
-                                    <td>PKR 225,900</td>
-                                    <td>PKR 225,900</td>
-                                    <td>
-                                        <button class="action-btn view-btn" onclick="view()">
-                                            <i class="bi bi-eye"></i>
-                                        </button>
+                        <tr>
+                            <td>6</td>
+                            <td>TYRPNT-VN-0006</td>
+                            <td>Hamza Iqbal</td>
+                            <td>theeusama@gmail.com</td>
+                            <td>+92 320 7852636</td>
+                            <td>Peshawar, Pakistan</td>
+                            <td>MCB Bank</td>
+                            <td>Hamza Iqbal</td>
+                            <td>PK45ALF0000001678901234</td>
+                            <td>PKR 225,900</td>
+                            <td>PKR 225,900</td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="view()">
+                                    <i class="bi bi-eye"></i>
+                                </button>
 
-                                        <button class="action-btn edit-btn">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </button>
-                                        <button class="action-btn delete-btn" onclick="openDeleteModal()">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                <button class="action-btn edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button class="action-btn delete-btn" onclick="openDeleteModal()">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
 
-                                <tr>
-                                    <td>8</td>
-                                    <td>TYRPNT-VN-0008</td>
-                                    <td>Anees</td>
-                                    <td>theeusama@gmail.com</td>
-                                    <td>+92 320 7852636</td>
-                                    <td>Rawalpindi, Pakistan</td>
-                                    <td>Summit Bank</td>
-                                    <td>Anees</td>
-                                    <td>PK90BAKN0000001987654321</td>
-                                    <td>PKR 225,900</td>
-                                    <td>PKR 225,900</td>
-                                    <td>
-                                        <button class="action-btn view-btn" onclick="view()">
-                                            <i class="bi bi-eye"></i>
-                                        </button>
+                        <tr>
+                            <td>7</td>
+                            <td>TYRPNT-VN-0007</td>
+                            <td>Asad ullah</td>
+                            <td>theeusama@gmail.com</td>
+                            <td>+92 320 7852636</td>
+                            <td>Quetta, Pakistan</td>
+                            <td>Silk Bank</td>
+                            <td>Asad ullah</td>
+                            <td>PK78MCB0000001890123456</td>
+                            <td>PKR 225,900</td>
+                            <td>PKR 225,900</td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="view()">
+                                    <i class="bi bi-eye"></i>
+                                </button>
 
-                                        <button class="action-btn edit-btn">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </button>
-                                        <button class="action-btn delete-btn onclick=" openDeleteModal()"">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
+                                <button class="action-btn edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button class="action-btn delete-btn" onclick="openDeleteModal()">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
 
-                                    </td>
-                                </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>TYRPNT-VN-0008</td>
+                            <td>Anees</td>
+                            <td>theeusama@gmail.com</td>
+                            <td>+92 320 7852636</td>
+                            <td>Rawalpindi, Pakistan</td>
+                            <td>Summit Bank</td>
+                            <td>Anees</td>
+                            <td>PK90BAKN0000001987654321</td>
+                            <td>PKR 225,900</td>
+                            <td>PKR 225,900</td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="view()">
+                                    <i class="bi bi-eye"></i>
+                                </button>
 
-                                <tr>
-                                    <td>9</td>
-                                    <td>TYRPNT-VN-0009</td>
-                                    <td>Huzaifa</td>
-                                    <td>theeusama@gmail.com</td>
-                                    <td>+92 320 7852636</td>
-                                    <td>Gujranwala, Pakistan</td>
-                                    <td>Soneri Bank</td>
-                                    <td>Huzaifa</td>
-                                    <td>PK34BOP0000001234567890</td>
-                                    <td>PKR 225,900</td>
-                                    <td>PKR 225,900</td>
-                                    <td>
-                                        <button class="action-btn view-btn" onclick="view()">
-                                            <i class="bi bi-eye"></i>
-                                        </button>
+                                <button class="action-btn edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button class="action-btn delete-btn onclick=" openDeleteModal()"">
+                                    <i class="bi bi-trash"></i>
+                                </button>
 
-                                        <button class="action-btn edit-btn">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </button>
-                                        <button class="action-btn delete-btn onclick=" openDeleteModal()"">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                            </td>
+                        </tr>
 
-                                <tr>
-                                    <td>10</td>
-                                    <td>TYRPNT-VN-0010</td>
-                                    <td>Huzaifa</td>
-                                    <td>theeusama@gmail.com</td>
-                                    <td>+92 320 7852636</td>
-                                    <td>Sialkot, Pakistan</td>
-                                    <td>Faysal Bank</td>
-                                    <td>Huzaifa</td>
-                                    <td>PK67ABL000001654327890</td>
-                                    <td>PKR 225,900</td>
-                                    <td>PKR 225,900</td>
-                                    <td>
-                                        <button class="action-btn view-btn" onclick="view()">
-                                            <i class="bi bi-eye"></i>
-                                        </button>
+                        <tr>
+                            <td>9</td>
+                            <td>TYRPNT-VN-0009</td>
+                            <td>Huzaifa</td>
+                            <td>theeusama@gmail.com</td>
+                            <td>+92 320 7852636</td>
+                            <td>Gujranwala, Pakistan</td>
+                            <td>Soneri Bank</td>
+                            <td>Huzaifa</td>
+                            <td>PK34BOP0000001234567890</td>
+                            <td>PKR 225,900</td>
+                            <td>PKR 225,900</td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="view()">
+                                    <i class="bi bi-eye"></i>
+                                </button>
 
-                                        <button class="action-btn edit-btn">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </button>
-                                        <button class="action-btn delete-btn" onclick="openDeleteModal()">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                <button class="action-btn edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button class="action-btn delete-btn onclick=" openDeleteModal()"">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
 
-                            </tbody>
+                        <tr>
+                            <td>10</td>
+                            <td>TYRPNT-VN-0010</td>
+                            <td>Huzaifa</td>
+                            <td>theeusama@gmail.com</td>
+                            <td>+92 320 7852636</td>
+                            <td>Sialkot, Pakistan</td>
+                            <td>Faysal Bank</td>
+                            <td>Huzaifa</td>
+                            <td>PK67ABL000001654327890</td>
+                            <td>PKR 225,900</td>
+                            <td>PKR 225,900</td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="view()">
+                                    <i class="bi bi-eye"></i>
+                                </button>
 
-                        </table>
+                                <button class="action-btn edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button class="action-btn delete-btn" onclick="openDeleteModal()">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
 
-                    </div>
-                    <div class="vendor-footer">
-                        <span>Showing 1 to 10 of 20 entries</span>
+                    </tbody>
 
-                        <div class="pagination">
-                            <button>«</button>
-                            <button>‹</button>
-                            <button class="active">1</button>
-                            <button>2</button>
-                            <button>›</button>
-                            <button>»</button>
-                        </div>
-                    </div>
+                </table>
+
+            </div>
+            <div class="vendor-footer">
+                <span>Showing 1 to 10 of 20 entries</span>
+
+                <div class="pagination">
+                    <button>«</button>
+                    <button>‹</button>
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>›</button>
+                    <button>»</button>
+                </div>
+            </div>
 
 
 

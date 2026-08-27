@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Setting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo">
+                <img src="images/Logo.svg" alt="Super Lucky Tyre">
+            </div>
+
+
+            <!-- sidebar Menu -->
+            <div class="sidebar-menu ">
+
+                <a href="dashboard.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Dashboard</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    VENDOR MANAGEMENT
+                </div>
+
+                <a href="vendor.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Vendor</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    CUSTOMER MANAGEMENT
+                </div>
+
+                <a href="customer.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Customer</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    PRODUCT MANAGEMENT
+                </div>
+
+                <a href="manage-product.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Product</span>
+                </a>
+
+                <a href="stock-listing.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Stock Listing</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    SALE / PURCHASE MANAGEMENT
+                </div>
+
+                <a href="sale.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Sale</span>
+                </a>
+
+                <a href="purchase.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Purchase</span>
+                </a>
+
+                <a href="reporting.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Reporting</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    PROFIT & LOSS MANAGEMENT
+                </div>
+
+                <a href="open-balance-sheet.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Open Balance Sheet</span>
+                </a>
+
+                <a href="pnl-report.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>PnL Report</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    EXPENSE MANAGEMENT
+                </div>
+
+                <a href="manage-expenses.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Expenses</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    ROLE MANAGEMENT
+                </div>
+
+                <a href="manage-role.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Role</span>
+                </a>
+
+            </div>
+
+
+            <!-- Bottom Buttons -->
+            <div class="sidebar-bottom ">
+
+                <a href="account-setting.html" class="menu-item account-btn">
+                    <i class="bi bi-gear"></i>
+                    <span>Account Setting</span>
+                </a>
+
+                <button type="button" class="menu-item logout-btn" onclick="logoutUser()">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN AREA -->
+        <main class="main-area">
+
+            <!-- TOP NAVBAR -->
+            <header class="top-header">
+
+                <button type="button" class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">
+
+                </button>
+
+                
+
+            </header>
+
+            <div class="dashboard-content">
+                <div class="left">
+                    <p>Tyre Shop > <b>Account Setting</b></p>
+                    <h3>Account Setting</h3>
+                </div>
+            </div>
+
+
+            <!-- Account Settings Card -->
+            <div class="account-settings-card">
+
+
+                <!-- Profile Picture Section -->
+                <div class="profile-section">
+
+                    <div class="profile-picture">
+                        <img src="images/profile.png" alt="Profile Picture" id="profileImage">
+                    </div>
+
+
+                    <div class="profile-content">
+
+                        <h3>Profile Picture</h3>
+
+                        <div class="profile-buttons">
+
+                            <button type="button" class="upload-image-btn"
+                                onclick="document.getElementById('profileUpload').click()">
+                                <i class="bi bi-plus"></i>
+                                Upload Image
+                            </button>
+
+                            <button type="button" class="remove-image-btn" id="removeImageBtn">
+                                Remove
+                            </button>
+
+                        </div>
+
+
+                        <input type="file" id="profileUpload" accept=".jpg,.jpeg,.png" hidden>
+
+
+                        <p class="image-info">
+                            we only support jpeg, jpg, png image less then 2MB
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Divider -->
+                <div class="settings-divider"></div>
+
+
+                <!-- Name Fields -->
+                <div class="settings-form-row">
+
+                    <div class="settings-form-group">
+
+                        <label for="firstName">
+                            First Name
+                        </label>
+
+                        <input type="text" id="firstName" placeholder="Usama">
+
+                    </div>
+
+
+                    <div class="settings-form-group">
+
+                        <label for="lastName">
+                            Last Name
+                        </label>
+
+                        <input type="text" id="lastName" placeholder="Aslam">
+
+                    </div>
+
+                </div>
+
+
+                <!-- Phone & Email -->
+                <div class="settings-form-row">
+
+                    <div class="settings-form-group">
+
+                        <label for="phoneNumber">
+                            Phone Number
+                        </label>
+
+                        <input type="text" id="phoneNumber" placeholder="0320 7852636">
+
+                    </div>
+
+
+                    <div class="settings-form-group email-group">
+
+                        <label for="emailAddress">
+                            Email Address
+                        </label>
+
+                        <div class="email-input-row">
+
+                            <input type="email" id="emailAddress" placeholder="theeusamaa@gmail.com">
+
+                            <button type="button" class="change-email-btn">
+                                Change Email
+                            </button>
+
+                        </div>
+
+                        <span class="login-info">
+                            Used to login your account
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Divider -->
+                <div class="settings-divider"></div>
+
+
+                <!-- Change Password -->
+                <div class="change-password-section">
+
+                    <div class="password-content">
+
+                        <h3>Change Password</h3>
+
+                        <p>
+                            Use your old password to change it.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="change-password-btn" id="openPasswordModal">
+                        Change Password
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Bottom Actions -->
+            <div class="account-settings-actions">
+
+                <button type="button" class="settings-cancel-btn">
+                    Cancel
+                </button>
+
+                <button type="button" class="settings-save-btn">
+                    Save
+                </button>
+
+            </div>
+
+    </div>
+
+
+
+
+
+    </main>
+
+    </div>
+
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!---------------------popup---------------------->
+
+
+
+    <!-- ================= LOGOUT POPUP ================= -->
+
+    <!-- Overlay -->
+    <div id="logoutModal" class="modal-overlay">
+
+        <div class="modal-box">
+
+            <h3>Log Out</h3>
+
+            <p>
+                Are you sure you want to log out? You need
+                credential to login again.
+            </p>
+
+            <div class="modal-actions">
+                <button class="btn cancel-btn" onclick="closeModal()">No, I'm good!</button>
+                <button class="btn logout-confirm" onclick="confirmLogout()">Log Out</button>
+            </div>
+
+        </div>
+
+    </div>
+    <!--open setting model-->
+
+
+    <div class="password-modal-overlay" id="passwordModal">
+
+        <div class="password-modal" id="passwordModalBox">
+
+            <!-- Modal Header -->
+            <div class="password-modal-header">
+
+                <h3>Change Password</h3>
+
+            </div>
+
+
+            <!-- Modal Body -->
+            <div class="password-modal-body">
+
+                <!-- Current Password -->
+                <div class="password-form-group">
+
+                    <label for="currentPassword">
+                        Current Password <span>*</span>
+                    </label>
+
+                    <input type="password" id="currentPassword" placeholder="Current Password">
+
+                </div>
+
+
+                <!-- New Password -->
+                <div class="password-form-group">
+
+                    <label for="newPassword">
+                        New Password <span>*</span>
+                    </label>
+
+                    <input type="password" id="newPassword" placeholder="New Password">
+
+                </div>
+
+
+                <!-- Confirm Password -->
+                <div class="password-form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password <span>*</span>
+                    </label>
+
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+                </div>
+
+            </div>
+
+
+            <!-- Modal Footer -->
+            <div class="password-modal-footer">
+
+                <button type="button" class="password-cancel-btn" id="cancelPasswordModal">
+                    Cancel
+                </button>
+
+                <button type="button" class="password-update-btn" id="updatePassword">
+                    Update Password
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CHANGE EMAIL MODAL (2-STEP FLOW) -->
+<div class="email-modal-overlay" id="emailModalOverlay">
+    <div class="email-modal-card">
+        
+        <!-- HEADER -->
+        <div class="email-modal-header">
+            <h3>Change Email Address</h3>
+        </div>
+
+        <!-- STEP 1: Current Email & OTP Verification -->
+        <div class="email-modal-step active" id="emailStep1">
+            <div class="email-form-group">
+                <label for="currentEmail">Email Address</label>
+                <div class="input-with-btn">
+                    <input type="email" id="currentEmail" placeholder="theeusamaa@gmail.com">
+                    <button type="button" class="btn-get-otp" id="getOtpBtn1">Get OTP</button>
+                </div>
+            </div>
+
+            <div class="email-form-group">
+                <label for="verifyOtp1">Verify OTP</label>
+                <input type="text" id="verifyOtp1" placeholder="XXX-XXX">
+            </div>
+
+            <div class="email-modal-footer">
+                <button type="button" class="btn-modal-cancel" id="cancelEmailModal1">Cancel</button>
+                <button type="button" class="btn-modal-primary" id="continueEmailStep">Continue</button>
+            </div>
+        </div>
+
+        <!-- STEP 2: New Email & OTP Verification -->
+        <div class="email-modal-step" id="emailStep2">
+            <div class="email-form-group">
+                <label for="step1EmailDisabled">Email Address</label>
+                <div class="input-with-btn">
+                    <input type="email" id="step1EmailDisabled" placeholder="theeusamaa@gmail.com" disabled readonly>
+                    <button type="button" class="btn-get-otp disabled" disabled>Get OTP</button>
+                </div>
+            </div>
+
+            <div class="email-form-group">
+                <label for="verifyOtpStep1Disabled">Verify OTP</label>
+                <input type="text" id="verifyOtpStep1Disabled" placeholder="XXX-XXX" disabled readonly>
+            </div>
+
+            <div class="email-form-group">
+                <label for="newEmail">New Email Address</label>
+                <div class="input-with-btn">
+                    <input type="email" id="newEmail" placeholder="theeusamaa@gmail.com">
+                    <button type="button" class="btn-get-otp" id="getOtpBtn2">Get OTP</button>
+                </div>
+            </div>
+
+            <div class="email-form-group">
+                <label for="verifyOtp2">Verify OTP</label>
+                <input type="text" id="verifyOtp2" placeholder="XXX-XXX">
+            </div>
+
+            <div class="email-modal-footer">
+                <button type="button" class="btn-modal-cancel" id="cancelEmailModal2">Cancel</button>
+                <button type="button" class="btn-modal-primary" id="updateEmailAddressBtn">Update Email Address</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+
+</html>
