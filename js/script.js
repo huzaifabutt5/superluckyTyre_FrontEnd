@@ -743,13 +743,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //==========================sale page js=======================
 
-/*let currentStep = 1;
+
+let currentStep = 1;
 const totalSteps = 3;
 
+
 function updateStepperUI() {
+
+    // step colors
     for (let i = 1; i <= totalSteps; i++) {
         const stepElement = document.getElementById(`stepIndicator${i}`);
-        if (!stepElement) continue;
 
         stepElement.classList.remove("active", "completed");
 
@@ -759,133 +762,15 @@ function updateStepperUI() {
             stepElement.classList.add("active");
         }
     }
-}
 
-function nextStep() {
-    if (currentStep < totalSteps) {
-        currentStep++;
-        updateStepperUI();
-    }
-}
-
-function prevStep() {
-    if (currentStep > 1) {
-        currentStep--;
-        updateStepperUI();
-    }
-}
-
-function jumpToStep(stepNum) {
-    if (stepNum >= 1 && stepNum <= totalSteps) {
-        currentStep = stepNum;
-        updateStepperUI();
-    }
-}
-
-
-
-function openVariantModal(productName, productCode) {
-    const modal = document.getElementById("variantModal");
-    const nameElem = document.getElementById("modalProductName");
-    const codeElem = document.getElementById("modalProductCode");
-
-    if (nameElem) nameElem.innerText = productName;
-    if (codeElem) codeElem.innerText = productCode;
-
-    if (modal) modal.classList.add("show");
-}
-
-function closeVariantModal() {
-    const modal = document.getElementById("variantModal");
-    if (modal) modal.classList.remove("show");
-}
-
-function changeQty(btn, delta) {
-    const input = btn.parentElement.querySelector(".qty-val");
-    if (!input) return;
-
-    let val = parseInt(input.value) || 1;
-    val += delta;
-    if (val < 1) val = 1;
-    
-    input.value = val < 10 ? '0' + val : val;
-}
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    // Stepper setup
-    updateStepperUI();
-
-    // Apply button click event handler
-    const applyBtn = document.querySelector('.btn-apply');
-    if (applyBtn) {
-        applyBtn.addEventListener('click', function() {
-            // 1. Modal overlay/popup close karein
-            closeVariantModal();
-
-            // 2. Right Side Cart Panel Show Karein
-            const cartSidebar = document.getElementById('cartSidebar');
-            if (cartSidebar) {
-                cartSidebar.classList.add('show');
-            }
-        });
-    }
-
-    // Cart items delete logic (Optional: Event delegation for dynamically added items)
-    const cartItemsList = document.getElementById('cartItemsList');
-    if (cartItemsList) {
-        cartItemsList.addEventListener('click', function(e) {
-            if (e.target && e.target.classList.contains('btn-delete-item')) {
-                const itemRow = e.target.closest('.cart-item');
-                if (itemRow) itemRow.remove();
-
-                // If cart gets empty, hide sidebar automatically
-                if (cartItemsList.querySelectorAll('.cart-item').length === 0) {
-                    const cartSidebar = document.getElementById('cartSidebar');
-                    if (cartSidebar) cartSidebar.classList.remove('show');
-                }
-            }
-        });
-    }
-});*/
-
-
-// ==========================================
-// 1. STEPPER UI
-// ==========================================
-
-let currentStep = 1;
-const totalSteps = 3;
-
-
-function updateStepperUI() {
-
+    // content switch
     for (let i = 1; i <= totalSteps; i++) {
+        const content = document.getElementById(`stepContent${i}`);
 
-        const stepElement =
-            document.getElementById(`stepIndicator${i}`);
-
-        if (!stepElement) continue;
-
-        stepElement.classList.remove(
-            "active",
-            "completed"
-        );
-
-
-        if (i < currentStep) {
-
-            stepElement.classList.add("completed");
-
+        if (content) {
+            content.style.display = (i === currentStep) ? "block" : "none";
         }
-        else if (i === currentStep) {
-
-            stepElement.classList.add("active");
-
-        }
-
     }
-
 }
 
 
@@ -1171,3 +1056,29 @@ document.addEventListener(
 
     }
 );
+
+function showSuccess() {
+    document.getElementById("successModal").style.display = "flex";
+}
+window.onclick = function (e) {
+    let modal = document.getElementById("successModal");
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+}
+//==========================return sale js======================
+function getInvoice() {
+    document.getElementById("invoiceDetails").style.display = "block";
+
+    const hasNegative = document.querySelector(".negative");
+
+    if (hasNegative) {
+        document.getElementById("returnBtn").classList.remove("btn-disabled");
+        document.getElementById("paybackBtn").classList.remove("btn-disabled");
+
+        document.getElementById("returnBtn").classList.add("btn-active", "btn-orange");
+        document.getElementById("paybackBtn").classList.add("btn-active", "btn-blue");
+
+        document.getElementById("cancelBtn").classList.add("btn-active");
+    }
+}
