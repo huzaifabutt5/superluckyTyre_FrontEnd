@@ -1,17 +1,16 @@
-function opensetting(){
-    window.location.href ="account-setting.html";
+function opensetting() {
+    window.location.href = "account-setting.html";
 }
 document.addEventListener("DOMContentLoaded", function () {
     const sidebarMenu = document.querySelector(".sidebar-menu");
 
     if (sidebarMenu) {
-        // 1. Saved scroll position restore karein
+
         const savedScrollPos = sessionStorage.getItem("sidebarScrollPos");
         if (savedScrollPos !== null) {
             sidebarMenu.scrollTop = parseInt(savedScrollPos, 10);
         }
 
-        // 2. Click hote hi scroll position ko save karein
         const menuLinks = sidebarMenu.querySelectorAll("a.menu-item");
         menuLinks.forEach(link => {
             link.addEventListener("click", function () {
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// AAPKA TOGGLE SIDEBAR FUNCTION
+
 function toggleSidebar() {
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("sidebarOverlay");
@@ -37,7 +36,7 @@ function toggleSidebar() {
     }
 }
 
-// AAPKA RESIZE EVENT LISTENER
+
 window.addEventListener("resize", function () {
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("sidebarOverlay");
@@ -393,13 +392,13 @@ if (resetDateBtn) {
     resetDateBtn.onclick = function () {
         const fromDate = document.getElementById("fromDate");
         const toDate = document.getElementById("toDate");
-        
+
         if (fromDate) fromDate.value = "";
         if (toDate) toDate.value = "";
     };
 }
 
-// apply filter (Safe Code)
+// apply filter 
 const applyDateBtn = document.getElementById("applyDate");
 if (applyDateBtn) {
     applyDateBtn.onclick = function () {
@@ -526,24 +525,24 @@ function productListing() {
 }
 
 //-----------report js------------------//
- function switchTab(tabType) {
-            const salePanel = document.getElementById('saleTabContent');
-            const purchasePanel = document.getElementById('purchaseTabContent');
-            const saleLabel = document.getElementById('tabSaleLabel');
-            const purchaseLabel = document.getElementById('tabPurchaseLabel');
+function switchTab(tabType) {
+    const salePanel = document.getElementById('saleTabContent');
+    const purchasePanel = document.getElementById('purchaseTabContent');
+    const saleLabel = document.getElementById('tabSaleLabel');
+    const purchaseLabel = document.getElementById('tabPurchaseLabel');
 
-            if (tabType === 'sale') {
-                salePanel.classList.add('active');
-                purchasePanel.classList.remove('active');
-                saleLabel.classList.add('active');
-                purchaseLabel.classList.remove('active');
-            } else {
-                purchasePanel.classList.add('active');
-                salePanel.classList.remove('active');
-                purchaseLabel.classList.add('active');
-                saleLabel.classList.remove('active');
-            }
-        }
+    if (tabType === 'sale') {
+        salePanel.classList.add('active');
+        purchasePanel.classList.remove('active');
+        saleLabel.classList.add('active');
+        purchaseLabel.classList.remove('active');
+    } else {
+        purchasePanel.classList.add('active');
+        salePanel.classList.remove('active');
+        purchaseLabel.classList.add('active');
+        saleLabel.classList.remove('active');
+    }
+}
 //=============== pnl report js=======================//
 function getreport() {
     window.location.href = "get-report.html";
@@ -555,16 +554,15 @@ function addnewexpense() {
 }
 //============add new role dropdown===========//
 document.addEventListener("DOMContentLoaded", function () {
-    
+
     // 1. DROPDOWN CODE
     const accessSelectBox = document.getElementById("accessSelectBox");
     const accessDropdown = document.getElementById("accessDropdown");
     const accessPlaceholder = document.getElementById("accessPlaceholder");
     const selectedAccess = document.getElementById("selectedAccess");
 
-    // Clear check taake crash na ho
     if (accessSelectBox && accessDropdown) {
-        
+
         accessSelectBox.addEventListener("click", function (e) {
             e.stopPropagation();
             accessDropdown.classList.toggle("show");
@@ -574,34 +572,38 @@ document.addEventListener("DOMContentLoaded", function () {
             e.stopPropagation();
         });
 
+        
+        function updateSelectedItems() {
+            if (!selectedAccess || !accessPlaceholder) return;
+
+            selectedAccess.innerHTML = "";
+            const checked = accessDropdown.querySelectorAll('input[type="checkbox"]:checked');
+
+            if (checked.length === 0) {
+                accessPlaceholder.style.display = "inline";
+            } else {
+                accessPlaceholder.style.display = "none";
+
+                checked.forEach(function (cb) {
+                    const chip = document.createElement("span");
+                    chip.className = "access-item";
+                    chip.innerHTML = `${cb.getAttribute("data-name")} <span class="access-item-remove">&times;</span>`;
+
+                    
+                    chip.querySelector(".access-item-remove").addEventListener("click", function (ev) {
+                        ev.stopPropagation(); 
+                        cb.checked = false;   
+                        updateSelectedItems(); 
+                    });
+
+                    selectedAccess.appendChild(chip);
+                });
+            }
+        }
+
         const checkboxes = accessDropdown.querySelectorAll('input[type="checkbox"]');
         checkboxes.forEach(function (checkbox) {
-            checkbox.addEventListener("change", function () {
-                if (selectedAccess && accessPlaceholder) {
-                    selectedAccess.innerHTML = "";
-                    const checked = accessDropdown.querySelectorAll('input[type="checkbox"]:checked');
-
-                    if (checked.length === 0) {
-                        accessPlaceholder.style.display = "inline";
-                    } else {
-                        accessPlaceholder.style.display = "none";
-
-                        checked.forEach(function (cb) {
-                            const chip = document.createElement("span");
-                            chip.className = "access-item";
-                            chip.innerHTML = `${cb.getAttribute("data-name")} <span class="access-item-remove">&times;</span>`;
-
-                            chip.querySelector(".access-item-remove").addEventListener("click", function (ev) {
-                                ev.stopPropagation();
-                                cb.checked = false;
-                                accessSelectBox.click(); // re-trigger render
-                            });
-
-                            selectedAccess.appendChild(chip);
-                        });
-                    }
-                }
-            });
+            checkbox.addEventListener("change", updateSelectedItems);
         });
 
         document.addEventListener("click", function () {
@@ -609,20 +611,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 2. LINE 375 VALA SAFE MODAL CODE (Null Check ke sath)
-    const openBtn = document.getElementById("openPasswordModal"); // ya jo bhi ID line 375 par hai
+    // Modal logic
+    const openBtn = document.getElementById("openPasswordModal"); 
     const modal = document.getElementById("passwordModal");
     const cancelBtn = document.getElementById("cancelPasswordModal");
 
-    // 'IF' condition lagane se null error khatam ho jayega
     if (openBtn) {
-        openBtn.onclick = function() {
+        openBtn.onclick = function () {
             if (modal) modal.classList.add("active");
         };
     }
 
     if (cancelBtn) {
-        cancelBtn.onclick = function() {
+        cancelBtn.onclick = function () {
             if (modal) modal.classList.remove("active");
         };
     }
@@ -631,10 +632,10 @@ document.addEventListener("DOMContentLoaded", function () {
 function addrole() {
     window.location.href = "manage-role.html";
 }
-function removerole(){
-     window.location.href = "add-new-role.html";
-}
 
+function removerole() {
+    window.location.href = "add-new-role.html";
+}
 
 //====================================== Account settings==================================//
 document.addEventListener("DOMContentLoaded", function () {
@@ -667,10 +668,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // UPDATE BUTTON ACTION (OPTIONAL)
+    // UPDATE BUTTON ACTION 
     if (updateBtn && modal) {
         updateBtn.addEventListener("click", function () {
-            // Aapka update code yahan aayega
+    
             modal.classList.remove("active");
         });
     }
@@ -681,16 +682,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // DOM Elements
     const openEmailModalBtn = document.querySelector(".change-email-btn"); // Aapka Change Email Trigger Button
     const emailModalOverlay = document.getElementById("emailModalOverlay");
-    
+
     const emailStep1 = document.getElementById("emailStep1");
     const emailStep2 = document.getElementById("emailStep2");
-    
+
     const continueEmailStep = document.getElementById("continueEmailStep");
     const cancelEmailModal1 = document.getElementById("cancelEmailModal1");
     const cancelEmailModal2 = document.getElementById("cancelEmailModal2");
     const updateEmailAddressBtn = document.getElementById("updateEmailAddressBtn");
 
-    // Helper to Reset Steps
     function resetEmailModal() {
         if (emailModalOverlay) emailModalOverlay.classList.remove("active");
         setTimeout(() => {
@@ -712,7 +712,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Switch from Step 1 -> Step 2
     if (continueEmailStep) {
         continueEmailStep.addEventListener("click", function () {
-            // Optional: Yahan Step 1 Validation logic add kar sakti hain
             emailStep1.classList.remove("active");
             emailStep2.classList.add("active");
         });
@@ -1080,5 +1079,88 @@ function getInvoice() {
         document.getElementById("paybackBtn").classList.add("btn-active", "btn-blue");
 
         document.getElementById("cancelBtn").classList.add("btn-active");
+    }
+}
+
+//==============Purchse product js============================
+function jumpToSteps(step) {
+
+    const totalSteps = 3;
+
+    for (let i = 1; i <= totalSteps; i++) {
+
+        const stepEl = document.getElementById(`step-Indicator${i}`);
+
+        stepEl.classList.remove("active", "completed");
+        if (i < step) {
+            stepEl.classList.add("completed");
+        }
+
+        else if (i === step) {
+            stepEl.classList.add("active");
+        }
+    }
+
+    document.getElementById("stepContent1").style.display = "none";
+    document.getElementById("stepContent2").style.display = "none";
+    document.getElementById("stepContent3").style.display = "none";
+
+    document.getElementById("stepContent" + step).style.display = "block";
+}
+window.onload = function () {
+    jumpToSteps(1);
+};
+// =======================
+let selectedProduct = {};
+
+// =======================
+// OPEN POPUP
+// =======================
+function openProductPopup(name, size) {
+
+    selectedProduct = { name, size };
+
+    document.getElementById("prodModal").style.display = "flex";
+
+    document.getElementById("modalTitle").innerText = name;
+    document.getElementById("modalSize").innerText = size;
+}
+
+// =======================
+// CLOSE POPUP
+// =======================
+function closeProdModal() {
+    document.getElementById("prodModal").style.display = "none";
+}
+
+// =======================
+// ADD TO CART (ONLY UI SHOW)
+// =======================
+function addToCart() {
+
+    // popup close
+    closeProdModal();
+
+    // show cart panel
+    const cartPanel = document.getElementById("cartPanel");
+    cartPanel.style.display = "block";
+
+    // shrink product area
+    const gridArea = document.querySelector(".purchase-products-section");
+    gridArea.classList.add("shrink");
+}
+// SHOW POPUP
+function showSuccessPopup() {
+    document.getElementById("successPopup").style.display = "flex";
+}
+
+// CLOSE POPUP (optional)
+function closeSuccessPopup() {
+    document.getElementById("successPopup").style.display = "none";
+}
+window.onclick = function (e) {
+    const popup = document.getElementById("successPopup");
+    if (e.target === popup) {
+        popup.style.display = "none";
     }
 }

@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchse Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo">
+                <img src="images/Logo.svg" alt="Super Lucky Tyre">
+            </div>
+
+
+            <!-- sidebar Menu -->
+            <div class="sidebar-menu ">
+
+                <a href="dashboard.html" class="menu-item ">
+                    <img src="images/home.svg" alt="">
+                    <span>Dashboard</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    VENDOR MANAGEMENT
+                </div>
+
+                <a href="vendor.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Vendor</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    CUSTOMER MANAGEMENT
+                </div>
+
+                <a href="customer.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Customer</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    PRODUCT MANAGEMENT
+                </div>
+
+                <a href="manage-product.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Product</span>
+                </a>
+
+                <a href="stock-listing.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Stock Listing</span>
+                </a>
+
+
+                <div class="menu-section-title ">
+                    SALE / PURCHASE MANAGEMENT
+                </div>
+
+                <a href="sale.html" class="menu-item ">
+                    <img src="images/home.svg" alt="">
+                    <span>Sale</span>
+                </a>
+
+                <a href="purchase.html" class="menu-item active">
+                    <img src="images/home.svg" alt="">
+                    <span>Purchase</span>
+                </a>
+
+                <a href="reporting.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Reporting</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    PROFIT & LOSS MANAGEMENT
+                </div>
+
+                <a href="open-balance-sheet.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Open Balance Sheet</span>
+                </a>
+
+                <a href="pnl-report.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>PnL Report</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    EXPENSE MANAGEMENT
+                </div>
+
+                <a href="manage-expenses.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Expenses</span>
+                </a>
+
+
+                <div class="menu-section-title">
+                    ROLE MANAGEMENT
+                </div>
+
+                <a href="manage-role.html" class="menu-item">
+                    <img src="images/home.svg" alt="">
+                    <span>Manage Role</span>
+                </a>
+
+            </div>
+
+
+            <!-- Bottom Buttons -->
+            <div class="sidebar-bottom ">
+
+                <a href="account-setting.html" class="menu-item account-btn">
+                    <i class="bi bi-gear"></i>
+                    <span>Account Setting</span>
+                </a>
+
+                <button type="button" class="menu-item logout-btn" onclick="logoutUser()">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN AREA -->
+        <main class="main-area">
+
+            <!-- TOP NAVBAR -->
+            <header class="top-header">
+
+                <button type="button" class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">
+
+                    <img src="images/SVG.svg" alt="Menu">
+
+                </button>
+
+
+                <div class="search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input type="text" placeholder="Search">
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <div class="profiles">
+
+                        <img src="images/notification.svg" alt="Profile">
+
+                    </div>
+
+
+
+                    <div class="profile" onclick="opensetting()">
+
+                        <img src="images/settings.svg" alt="Profile">
+
+                    </div>
+
+                </div>
+
+            </header>
+            <!-- DASHBOARD CONTENT -->
+
+            <div class="dashboard-content">
+                <div class="left">
+                    <p>Tyre Shop > Sale/Purchase Management > <b>Purchase</b></p>
+                    <h3>Purchase Product</h3>
+                </div>
+            </div>
+            <a href="purchase-return.html" class="Purchase-return-btn">
+                <i class="bi bi-arrow-counterclockwise"></i>
+                <span>Purchse Return</span>
+            </a>
+            <div class="step-wrapper">
+
+                <div class="purchase-stepper">
+
+                    <div class="steps-item active" id="step-Indicator1" onclick="jumpToSteps(1)">
+                        <span class="steps-text"><b class="side-text">Step 1:</b> Select Product</span>
+                        <span class="steps-dot"></span>
+                    </div>
+
+                    <div class="steps-item" id="step-Indicator2" onclick="jumpToSteps(2)">
+                        <span class="steps-text"><b class="side-text">Step 2:</b> Select Vendor</span>
+                        <span class="steps-dot"></span>
+                    </div>
+
+                    <div class="steps-item" id="step-Indicator3" onclick="jumpToSteps(3)">
+                        <span class="steps-text"><b class="side-text">Step 3:</b> Confirm Order & Pay</span>
+                        <span class="steps-dot"></span>
+                    </div>
+
+                </div>
+
+
+                <div id="stepContent1">
+                    <div class="sale-main-wrapper">
+
+                        <!-- ============================= -->
+                        <!-- LEFT PRODUCTS TABLE -->
+                        <!-- ============================= -->
+
+                        <div class="left-products-section">
+
+                            <!-- Header -->
+                            <div class="products-header">
+                                <h4 class="title">All Products</h4>
+                            </div>
+
+
+                            <!-- Entries + Search -->
+                            <div class="products-container">
+
+                                <div class="entries-control">
+
+                                    <select class="select-entries">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                    </select>
+
+                                    <span>entries per page</span>
+
+                                </div>
+
+
+                                <div class="search-control">
+
+                                    <label>Search:</label>
+
+                                    <input type="text" placeholder="Search Product" class="search-input">
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Products Cards -->
+                            <div class="product-card-table">
+
+                                <div class="products-grid">
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Sporty Euro Racer', '205/55 R 16')">
+
+                                        <h5>Sporty Euro Racer</h5>
+
+                                        <span class="product-code">
+                                            205/55 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Luxury Touring Pro', '225/60 R 16')">
+
+                                        <h5>Luxury Touring Pro</h5>
+
+                                        <span class="product-code">
+                                            225/60 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('All-Season Comfort', '195/70 R 14')">
+
+                                        <h5>All-Season Comfort</h5>
+
+                                        <span class="product-code">
+                                            195/70 R 14
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Eco-Friendly Green Tyre', '185/65 R 15')">
+
+                                        <h5>Eco-Friendly Green Tyre</h5>
+
+                                        <span class="product-code">
+                                            185/65 R 15
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Heavy Duty Workhorse', '215/75 R 15')">
+
+                                        <h5>Heavy Duty Workhorse</h5>
+
+                                        <span class="product-code">
+                                            215/75 R 15
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Performance Grip Master', '245/40 R 18')">
+
+                                        <h5>Performance Grip Master</h5>
+
+                                        <span class="product-code">
+                                            245/40 R 18
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Winter Snow Defender', '195/80 R 14')">
+
+                                        <h5>Winter Snow Defender</h5>
+
+                                        <span class="product-code">
+                                            195/80 R 14
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Rugged Off-Road Champion', '265/70 R 17')">
+
+                                        <h5>Rugged Off-Road Champion</h5>
+
+                                        <span class="product-code">
+                                            265/70 R 17
+                                        </span>
+
+                                    </div>
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Sporty Euro Racer', '205/55 R 16')">
+
+                                        <h5>Sporty Euro Racer</h5>
+
+                                        <span class="product-code">
+                                            205/55 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Luxury Touring Pro', '225/60 R 16')">
+
+                                        <h5>Luxury Touring Pro</h5>
+
+                                        <span class="product-code">
+                                            225/60 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('All-Season Comfort', '195/70 R 14')">
+
+                                        <h5>All-Season Comfort</h5>
+
+                                        <span class="product-code">
+                                            195/70 R 14
+                                        </span>
+
+                                    </div>
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Sporty Euro Racer', '205/55 R 16')">
+
+                                        <h5>Sporty Euro Racer</h5>
+
+                                        <span class="product-code">
+                                            205/55 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Luxury Touring Pro', '225/60 R 16')">
+
+                                        <h5>Luxury Touring Pro</h5>
+
+                                        <span class="product-code">
+                                            225/60 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('All-Season Comfort', '195/70 R 14')">
+
+                                        <h5>All-Season Comfort</h5>
+
+                                        <span class="product-code">
+                                            195/70 R 14
+                                        </span>
+
+                                    </div>
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Sporty Euro Racer', '205/55 R 16')">
+
+                                        <h5>Sporty Euro Racer</h5>
+
+                                        <span class="product-code">
+                                            205/55 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Luxury Touring Pro', '225/60 R 16')">
+
+                                        <h5>Luxury Touring Pro</h5>
+
+                                        <span class="product-code">
+                                            225/60 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('All-Season Comfort', '195/70 R 14')">
+
+                                        <h5>All-Season Comfort</h5>
+
+                                        <span class="product-code">
+                                            195/70 R 14
+                                        </span>
+
+                                    </div>
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Sporty Euro Racer', '205/55 R 16')">
+
+                                        <h5>Sporty Euro Racer</h5>
+
+                                        <span class="product-code">
+                                            205/55 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Luxury Touring Pro', '225/60 R 16')">
+
+                                        <h5>Luxury Touring Pro</h5>
+
+                                        <span class="product-code">
+                                            225/60 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('All-Season Comfort', '195/70 R 14')">
+
+                                        <h5>All-Season Comfort</h5>
+
+                                        <span class="product-code">
+                                            195/70 R 14
+                                        </span>
+
+                                    </div>
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Sporty Euro Racer', '205/55 R 16')">
+
+                                        <h5>Sporty Euro Racer</h5>
+
+                                        <span class="product-code">
+                                            205/55 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Luxury Touring Pro', '225/60 R 16')">
+
+                                        <h5>Luxury Touring Pro</h5>
+
+                                        <span class="product-code">
+                                            225/60 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('All-Season Comfort', '195/70 R 14')">
+
+                                        <h5>All-Season Comfort</h5>
+
+                                        <span class="product-code">
+                                            195/70 R 14
+                                        </span>
+
+                                    </div>
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Sporty Euro Racer', '205/55 R 16')">
+
+                                        <h5>Sporty Euro Racer</h5>
+
+                                        <span class="product-code">
+                                            205/55 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Luxury Touring Pro', '225/60 R 16')">
+
+                                        <h5>Luxury Touring Pro</h5>
+
+                                        <span class="product-code">
+                                            225/60 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('All-Season Comfort', '195/70 R 14')">
+
+                                        <h5>All-Season Comfort</h5>
+
+                                        <span class="product-code">
+                                            195/70 R 14
+                                        </span>
+
+                                    </div>
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Sporty Euro Racer', '205/55 R 16')">
+
+                                        <h5>Sporty Euro Racer</h5>
+
+                                        <span class="product-code">
+                                            205/55 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Luxury Touring Pro', '225/60 R 16')">
+
+                                        <h5>Luxury Touring Pro</h5>
+
+                                        <span class="product-code">
+                                            225/60 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('All-Season Comfort', '195/70 R 14')">
+
+                                        <h5>All-Season Comfort</h5>
+
+                                        <span class="product-code">
+                                            195/70 R 14
+                                        </span>
+
+                                    </div>
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Sporty Euro Racer', '205/55 R 16')">
+
+                                        <h5>Sporty Euro Racer</h5>
+
+                                        <span class="product-code">
+                                            205/55 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('Luxury Touring Pro', '225/60 R 16')">
+
+                                        <h5>Luxury Touring Pro</h5>
+
+                                        <span class="product-code">
+                                            225/60 R 16
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="product-card"
+                                        onclick="openProductPopup('All-Season Comfort', '195/70 R 14')">
+
+                                        <h5>All-Season Comfort</h5>
+
+                                        <span class="product-code">
+                                            195/70 R 14
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- ============================= -->
+                        <!-- RIGHT CART TABLE -->
+                        <!-- ============================= -->
+                        <div class="purchase-cart-card" id="cartPanel" style="display:none;">
+
+                            <div class="purchase-cart-header">
+                                <h4>Cart Detail</h4>
+                            </div>
+
+                            <!-- ITEMS -->
+                            <div class="purchase-cart-items" id="cartItems">
+
+                                <div class="purchase-cart-item">
+                                    <div class="cart-left-side">
+                                        <p>All-Season Comfort</p>
+                                        <span>195/70 R14</span>
+                                        <strong class="doted-badges">DOT 2224</strong>
+                                        <div class="cart-meta-data">
+                                            <small>3 x 5000</small>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="cart-right-side">
+                                        <button class="btn-del-items">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                        <b>≈ 15000</b>
+
+                                    </div>
+                                </div>
+                                <div class="purchase-cart-item">
+                                    <div class="cart-left-side">
+                                        <p>Winter Performance</p>
+                                        <span>195/70 R14</span>
+                                        <strong class="doted-badges">DOT 2224</strong>
+                                        <div class="cart-meta-data">
+                                            <small>3 x 5000</small>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="cart-right-side">
+                                        <button class="btn-del-items">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                        <b>≈ 15000</b>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <!-- FOOTER -->
+                            <div class="purchase-cart-footer">
+                                <div class="purchase-cart-summary">
+                                    <p>Total Products <span id="totalQty">0pcs</span></p>
+                                    <p>Net Total <b id="totalPrice">Rs. 60,000</b></p>
+                                </div>
+
+                                <button class="purchase-continue-btn" onclick="jumpToSteps(2)">Continue</button>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div id="stepContent2">
+
+                    <div class="purchase-stage-two">
+
+                        <!-- LEFT SIDE -->
+                        <div class="purchase-vendor-section">
+
+                            <!-- PAYMENT MODE -->
+                            <div class="vendor-card">
+                                <h4>Payment Mode Selection</h4>
+
+                                <div class="vendor-field">
+                                    <label>Payment Mode</label>
+                                    <select>
+                                        <option>--Select Payment Mode --</option>
+                                        <option>Cash</option>
+                                        <option>Bank Transfer</option>
+                                        <option>Card</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- VENDOR INFO -->
+                            <div class="vendor-card">
+                                <h4>Vendor Information</h4>
+
+                                <div class="vendor-field">
+                                    <label>Vendor <span>*</span></label>
+                                    <select>
+                                        <option>--Select Vendor --</option>
+                                        <option>ABC Tyre Supplier</option>
+                                        <option>XYZ Traders</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="purchase-cart-card">
+
+                            <div class="purchase-cart-header">
+                                <h4>Cart Detail</h4>
+                            </div>
+
+                            <!-- ITEMS -->
+                            <div class="purchase-cart-items" id="cartItems">
+
+                                <div class="purchase-cart-item">
+                                    <div class="cart-left-side">
+                                        <p>All-Season Comfort</p>
+                                        <span>195/70 R14</span>
+                                        <strong class="doted-badges">DOT 2224</strong>
+                                        <div class="cart-meta-data">
+                                            <small>3 x 5000</small>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="cart-right-side">
+                                        <button class="btn-del-items">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                        <b>≈ 15000</b>
+
+                                    </div>
+                                </div>
+                                <div class="purchase-cart-item">
+                                    <div class="cart-left-side">
+                                        <p>Winter Performance</p>
+                                        <span>195/70 R14</span>
+                                        <strong class="doted-badges">DOT 2224</strong>
+                                        <div class="cart-meta-data">
+                                            <small>3 x 5000</small>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="cart-right-side">
+                                        <button class="btn-del-items">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                        <b>≈ 15000</b>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <!-- FOOTER -->
+                            <div class="purchase-cart-footer">
+                                <div class="purchase-cart-summary">
+                                    <p>Total Products <span id="totalQty">0pcs</span></p>
+                                    <p>Net Total <b id="totalPrice">Rs. 60,000</b></p>
+                                </div>
+
+                                <button class="purchase-continue-btn" onclick="jumpToSteps(3)">Continue</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="stepContent3">
+
+                    <div class="purchase-step3-wrapper">
+
+                        <!-- LEFT SIDE FORM -->
+                        <div class="payment-form-card">
+
+                            <h4 class="form-title">Payment Information</h4>
+
+                            <!-- NET TOTAL -->
+                            <div class="form-group full">
+                                <label>Net Total</label>
+                                <input type="text" placeholder="Net Total">
+                            </div>
+
+                            <!-- ROW -->
+                            <div class="form-row">
+
+                                <div class="form-group">
+                                    <label>Payment Type <span>*</span></label>
+                                    <input type="text" placeholder="Bank Transfer">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Transaction ID <span>*</span></label>
+                                    <input type="text" placeholder="Transaction ID">
+                                </div>
+
+                            </div>
+
+                            <!-- ROW -->
+                            <div class="form-row">
+
+                                <div class="form-group">
+                                    <label>Paid Amount <span>*</span></label>
+                                    <input type="text" placeholder="Paid Amount">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Remaining Amount <span>*</span></label>
+                                    <input type="text" placeholder="Remaining Amount">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="purchase-cart-card">
+
+                            <div class="purchase-cart-header">
+                                <h4>Cart Detail</h4>
+                            </div>
+
+
+                            <div class="purchase-cart-items" id="cartItems">
+
+                                <div class="purchase-cart-item">
+                                    <div class="cart-left-side">
+                                        <p>All-Season Comfort</p>
+                                        <span>195/70 R14</span>
+                                        <strong class="doted-badges">DOT 2224</strong>
+                                        <div class="cart-meta-data">
+                                            <small>3 x 5000</small>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="cart-right-side">
+                                        <button class="btn-del-items">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                        <b>≈ 15000</b>
+
+                                    </div>
+                                </div>
+                                <div class="purchase-cart-item">
+                                    <div class="cart-left-side">
+                                        <p>Winter Performance</p>
+                                        <span>195/70 R14</span>
+                                        <strong class="doted-badges">DOT 2224</strong>
+                                        <div class="cart-meta-data">
+                                            <small>3 x 5000</small>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="cart-right-side">
+                                        <button class="btn-del-items">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                        <b>≈ 15000</b>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <!-- FOOTER -->
+                            <div class="purchase-cart-footer">
+                                <div class="purchase-cart-summary">
+                                    <p>Total Products <span id="totalQty">0pcs</span></p>
+                                    <p>Net Total <b id="totalPrice">Rs. 60,000</b></p>
+                                </div>
+
+                                <button class="purchase-continue-btn" onclick="showSuccessPopup()">Continue</button>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+    </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+    </div>
+
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!---------------------popup---------------------->
+
+
+
+    <!-- ================= LOGOUT POPUP ================= -->
+
+    <!-- Overlay -->
+    <div id="logoutModal" class="modal-overlay">
+
+        <div class="modal-box">
+
+            <h3>Log Out</h3>
+
+            <p>
+                Are you sure you want to log out? You need
+                credential to login again.
+            </p>
+
+            <div class="modal-actions">
+                <button class="btn cancel-btn" onclick="closeModal()">No, I'm good!</button>
+                <button class="btn logout-confirm" onclick="confirmLogout()">Log Out</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PURCHASE SUCCESS POPUP -->
+    <div class="success-popup" id="successPopup">
+
+        <div class="purchase-success-box">
+
+            <!-- ICON -->
+            <div class="purchase-success-icon">
+                <img src="images/gg_check-o.svg" alt="success">
+            </div>
+
+            <!-- TEXT -->
+            <h3>Purchase Confirmed</h3>
+
+            <p class="success-desc">
+                4 Product, Total 15 pcs Purchased.<br>
+                Total Amount : <b>Rs. 62,500</b><br>
+                Paid : <b>Rs. 62,500</b><br>
+                Remaining : <b>Rs. 62,500</b><br>
+                <b>Invoice ID# 345678906</b>
+            </p>
+
+            <!-- BUTTONS -->
+            <div class="success-actions">
+                <button class="btn-again-purchase">Again Purchase</button>
+                <button class="btn-download-invoice">Download Invoice</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PRODUCT MODAL -->
+    <div class="prod-modal" id="prodModal">
+
+        <div class="prod-modal-box">
+
+            <!-- HEADER -->
+            <div class="prod-modal-header">
+                <h3>Product Details</h3>
+            </div>
+
+            <!-- PRODUCT NAME -->
+            <div class="prod-modal-product">
+                <p id="modalTitle">Sport Euro Racer</p>
+                <span id="modalSize">205/55 R16</span>
+            </div>
+
+            <!-- FORM -->
+            <div class="prod-modal-form">
+
+                <!-- DOT / MFG -->
+                <div class="prod-field">
+                    <label>DOT/MFG <span>*</span></label>
+                    <input type="text" placeholder="DOT/MFG">
+                </div>
+
+                <!-- ROW -->
+                <div class="prod-row">
+
+                    <div class="prod-field">
+                        <label>Quantity <span>*</span></label>
+                        <input type="number" id="qtyInput" placeholder="Quantity">
+                    </div>
+
+                    <div class="prod-field">
+                        <label>Unit Price <span>*</span></label>
+                        <input id="priceInput" placeholder="Unit Price">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ACTION BUTTONS -->
+            <div class="prod-modal-actions">
+                <button class="cancel-btn" onclick="closeProdModal()">Cancel</button>
+                <button class="add-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+
+</html>

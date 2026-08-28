@@ -107,8 +107,8 @@ a {
 .menu-section-title {
     font-weight: 600;
     font-size: 8px;
-    color: #596273;
-
+    color: #6B7280;
+    font-family: 'inner';
     margin: 17px 4px 5px;
 
     line-height: 1;
@@ -163,6 +163,7 @@ a {
     padding: 0;
     height: auto;
     line-height: 20px;
+    font-family: 'poppins';
 }
 
 /* ================= HOVER ================= */
@@ -187,7 +188,6 @@ a {
     gap: 8px;
 
     border-radius: 8px;
-
     background-color: #487FFF;
     color: #ffffff;
 }
@@ -495,6 +495,16 @@ a {
     display: flex;
     flex-direction: column;
     gap: 2px;
+}
+
+.card-info b {
+    color: rgba(17, 24, 39, 0.40);
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+
 }
 
 .card-info span {
@@ -822,12 +832,14 @@ a {
     margin-bottom: 12px;
     border-bottom: 1px solid #D1D5DB80;
 
+
 }
 
 .table-header h3 {
-    font-size: 18px;
+    font-family: 'inter';
+    font-size: 16px;
     color: #111827;
-    font-weight: 700;
+    font-weight: 600;
     margin: 0;
 }
 
@@ -861,19 +873,23 @@ a {
 .table-card th {
     height: 60px;
     border-top: 1px solid #D1D5DB80;
-    font-size: 11px;
+    font-size: 14px;
+    font-weight: 600;
     background-color: #F5F6FA;
     color: #111827;
     text-align: left;
     padding: 10px;
+    font-family: 'inter';
 
 }
 
 /* Body */
 .table-card td {
     height: 56px;
-    font-size: 12px;
-    color: #374151;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: 'inter';
+    color: #4B5563;
     padding: 12px 10px;
     border-bottom: 1px solid #F1F5F9;
 }
@@ -1232,6 +1248,16 @@ a {
     gap: 2px;
 }
 
+.card-infor b {
+    color: rgba(17, 24, 39, 0.40);
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+
 .card-infor span {
     margin-top: 10px;
     font-size: 14px;
@@ -1398,9 +1424,9 @@ a {
 ========================================================= */
 
 .take-from-vendor {
-    width: 166px;
+    display: flex;
     height: 40px;
-
+    width: 100%;
     padding: 10px 12px;
 
     box-sizing: border-box;
@@ -1433,7 +1459,8 @@ a {
 ========================================================= */
 
 .pay-vendor-btn {
-    width: 166px;
+    display: flex;
+    width: 100%;
     height: 40px;
 
     padding: 10px 12px;
@@ -1651,6 +1678,7 @@ a {
     align-items: center;
     gap: 8px;
     color: #4B5563;
+    font-style: 'inter';
 }
 
 .vendor-search label {
@@ -1725,7 +1753,7 @@ a {
     padding: 16px;
 
 
-
+    font-family: 'inter';
     border-top: 1px solid #E5E7EB;
     border-bottom: 1px solid #E5E7EB;
 
@@ -1746,10 +1774,10 @@ a {
     height: 40px;
 
     padding: 0 10px;
-
+    font-family: 'inter';
     border-bottom: 1px solid #E5E7EB;
     text-align: center;
-    color: #596273;
+    color: #4B5563;
 
     font-size: 16px;
     font-weight: 400;
@@ -1797,7 +1825,7 @@ a {
 
 /* ================= ACTION BUTTONS ================= */
 
-.action-btn {
+.action-button {
     width: 28px;
     height: 28px;
 
@@ -1815,17 +1843,17 @@ a {
     font-size: 11px;
 }
 
-.view-btn {
+.view-button {
     background-color: #E8F0FF;
     color: #487FFF;
 }
 
-.edit-btn {
+.edit-button {
     background-color: #45B36926;
     color: #45B366;
 }
 
-.delete-btn {
+.delete-button {
     background-color: #EF477026;
     color: #b00404f0;
 }
@@ -4769,19 +4797,19 @@ button:active {
     align-items: center;
     gap: 5px;
     padding: 2px 8px;
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-    border-radius: 6px;
+    background: #D1D5DC;
+    border: none;
+    border-radius: 44px;
     font-size: 12px;
-    font-weight: 500;
-    color: #1d4ed8;
+    font-weight: 600;
+    color: #4B5563;
 }
 
 .access-item-remove {
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
-    color: #1d4ed8;
+    color: #4B5563;
     margin-left: 2px;
 }
 
@@ -6013,7 +6041,7 @@ button:active {
     border-top: 1px solid #F3F4F6;
 }
 
-.btn-cancel {
+.btn-cancel-sale {
     width: 265px;
     height: 40px;
     padding: 10px 12px;
@@ -6833,7 +6861,7 @@ button:active {
 
 /* PRICE */
 .item-total-price {
-   font-weight: 600;
+    font-weight: 600;
     font-size: 12px;
     color: #4B5563;
 }
@@ -6888,6 +6916,7 @@ button:active {
     margin-top: 10px;
     cursor: pointer;
 }
+
 /* =========================
    MAIN LAYOUT
 ========================= */
@@ -6948,7 +6977,8 @@ button:active {
     color: #4B5563;
     margin-bottom: 6px;
 }
-.payment-field span{
+
+.payment-field span {
     color: red;
 }
 
@@ -6962,10 +6992,11 @@ button:active {
     font-size: 16px;
     color: #4B5563;
 }
+
 .pay-input:focus {
     outline: none;
-    border-color: #487FFF; 
-    box-shadow: 0 0 0 2px rgba(72, 127, 255, 0.2); 
+    border-color: #487FFF;
+    box-shadow: 0 0 0 2px rgba(72, 127, 255, 0.2);
 }
 
 .payment-row {
@@ -6985,7 +7016,7 @@ button:active {
 }
 
 /* SUMMARY ROW */
-.summary-line{
+.summary-line {
     display: flex;
     justify-content: space-between;
     margin-bottom: 6px;
@@ -7032,6 +7063,7 @@ button:active {
         flex-direction: column;
     }
 }
+
 /*====================confirm model layout===============*/
 /* OVERLAY */
 .success-modal {
@@ -7079,7 +7111,8 @@ button:active {
     color: #4B5563;
     margin: 2px 0;
 }
-.bold-confirm{
+
+.bold-confirm {
     font-weight: 700;
     color: #4B5563;
     font-size: 14px;
@@ -7115,6 +7148,7 @@ button:active {
     border-radius: 6px;
     color: #FFFFFF;
 }
+
 /*=====================SALE RETURN===========================*/
 .sale-return-btn {
     position: absolute;
@@ -7142,6 +7176,7 @@ button:active {
 
     cursor: pointer;
 }
+
 .sale-return-page {
     margin-top: 30px;
 }
@@ -7222,6 +7257,7 @@ button:active {
     font-size: 14px;
     cursor: pointer;
 }
+
 /* =========================
    CARD
 ========================= */
@@ -7376,6 +7412,7 @@ button:active {
     margin-right: 16px;
     margin-bottom: 16px;
 }
+
 /* DEFAULT DISABLED */
 .btn-disabled {
     width: 166px;
@@ -7404,7 +7441,7 @@ button:active {
 /* ACTIVE COMMON */
 .btn-active {
     cursor: pointer;
-   
+
 }
 
 /* ORANGE */
@@ -7427,4 +7464,709 @@ button:active {
     color: #FFFFFF;
     background: #487FFF;
     border: none;
+}
+
+/*==============PURCHASE PRODUCT===========================================================*/
+.Purchase-return-btn {
+    position: absolute;
+    top: 100px;
+    right: 16px;
+    width: 160px;
+    height: 40px;
+    padding: 10px 12px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background-color: #EF4A00;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+/* STEPPER MAIN CONTAINER */
+.step-wrapper {
+
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+.purchase-stepper {
+    display: flex;
+    gap: 12px;
+    background: #FFFFFF;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* BASE STEP ITEM (Deactive / Gray State) */
+.steps-item {
+    flex: 1;
+    height: 46px;
+    border-radius: 8px;
+    border: 1px solid #D1D5DB;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #4B5563;
+    background: #FFFFFF;
+    /* Pure White Background */
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.25s ease;
+}
+
+/* STEP INNER DOT (Deactive State) */
+.steps-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #D1D5DB;
+    /* Gray Outer Circle */
+    background: #FFFFFF;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+}
+
+/* Deactive Inner Radio Fill */
+.steps-dot::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #D1D5DB;
+    /* Gray Inner Dot */
+    display: block;
+    transition: background 0.25s ease;
+}
+
+/* DYNAMIC STEP STATES */
+
+/* 1. ACTIVE STATE (Blue) */
+.steps-item.active {
+    border: NONE;
+    color: #FFFFFF;
+    background: #487FFF;
+}
+
+.steps-item.active .steps-dot {
+    border-color: #487FFF;
+}
+
+.steps-item.active .steps-dot::after {
+    background: #487FFF;
+    /* Solid Blue Center Dot */
+}
+
+/* 2. VISITED / COMPLETED STATE (Green) */
+.steps-item.completed {
+    color: #4B5563;
+    background: #FFFFFF;
+}
+
+.steps-item.completed .steps-dot {
+    border-color: #45B369;
+}
+
+.steps-item.completed .steps-dot::after {
+    background: #45B369;
+    /* Solid Green Center Dot */
+}
+
+/* Hover effect for non-active boxes */
+.steps-item:not(.active):not(.completed):hover {
+    border-color: #9CA3AF;
+    color: #6B7280;
+}
+
+.side-text {
+    color: #4B5563;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/*========================product detail popup=============================*/
+/* OVERLAY */
+.prod-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(75, 85, 99, 0.40);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* BOX */
+.prod-modal-box {
+    width: 600px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* HEADER */
+.prod-modal-header {
+    padding: 12px 18px;
+    border-bottom: 1px solid #D1D5DB80;
+}
+
+.prod-modal-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* PRODUCT INFO */
+.prod-modal-product {
+    padding: 12px 16px;
+    border-bottom: 1px solid #D1D5DB80;
+    background-color: #F5F6FA;
+}
+
+.prod-modal-product p {
+    color: #4B5563;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.prod-modal-product span {
+    font-size: 12px;
+    font-weight: 400;
+    color: #487FFF;
+}
+
+/* FORM */
+.prod-modal-form {
+    padding: 16px 20px;
+}
+
+/* FIELD */
+.prod-field {
+    margin-bottom: 14px;
+}
+
+.prod-field label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #4B5563;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.prod-field label span {
+    color: #EF4A00;
+}
+
+/* INPUT */
+.prod-field input {
+    width: 100%;
+    height: 42px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-weight: 400;
+    color: #4B5563;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.prod-field input:focus {
+    border-color: #487FFF;
+}
+
+/* ROW */
+.prod-row {
+    display: flex;
+    gap: 12px;
+}
+
+/* ACTIONS */
+.prod-modal-actions {
+    display: flex;
+    gap: 12px;
+    padding: 16px 20px;
+    border-top: 1px solid #E5E7EB;
+}
+
+/* CANCEL */
+.cancel-btn {
+    flex: 1;
+    height: 40px;
+    border: none;
+    color: #4B5563;
+    background: #F6F6F6;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* ADD BUTTON */
+.add-btn {
+    flex: 1;
+    height: 40px;
+    border: none;
+    color: #FFFFFF;
+    background: #487FFF;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* CART CARD */
+.purchase-cart-card {
+    width: 270px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+/* HEADER */
+.purchase-cart-header {
+    padding: 12px 24px;
+    border-bottom: 1px solid #F1F2F4;
+}
+
+.purchase-cart-header h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+}
+
+/* ITEMS AREA */
+.purchase-cart-items {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* SINGLE ITEM */
+.purchase-cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #EBECEF66;
+}
+
+/* LEFT SIDE */
+.cart-left-side p {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: #4B5563;
+}
+
+.cart-left-side span {
+    font-size: 400;
+    font-size: 12px;
+    color: #487FFF;
+}
+
+/* META (qty + badge) */
+.cart-meta-data {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.cart-meta-data small {
+    font-weight: 600;
+    font-size: 12px;
+    color: #4B5563;
+    font-style: italic;
+}
+
+/* DOT BADGE */
+.doted-badges {
+    font-weight: 600;
+    font-size: 10px;
+    padding: 4px 8px;
+    background: #D1D5DC;
+    gap: 10px;
+    color: #4B5563;
+    border-radius: 44px;
+}
+
+/* RIGHT SIDE */
+.cart-right-side {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.cart-right-side b {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4B5563;
+    font-style: italic;
+}
+
+/* DELETE BUTTON */
+.btn-del-items {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: #EF477026;
+    color: #EF4A00;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 22px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+.purchase-cart-footer {
+    border-top: 1px solid #F1F2F4;
+    padding: 12px;
+    margin-top: 200px;
+}
+
+
+/* =========================
+   SUMMARY (TEXT ALIGN FIX)
+========================= */
+.purchase-cart-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.purchase-cart-summary p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4B5563;
+    margin: 0;
+}
+
+.purchase-cart-summary span {
+    color: #4B5563;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.purchase-cart-summary b {
+    color: #487FFF;
+    font-weight: 700;
+    font-size: 700;
+}
+
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+.purchase-continue-btn {
+    width: 100%;
+    height: 40px;
+    background: #487FFF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/*==============================2nd tab=========================*/
+
+.purchase-stage-two {
+    display: flex;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+
+/* =========================
+   LEFT SECTION
+========================= */
+.purchase-vendor-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+/* =========================
+   CARD (COMMON)
+========================= */
+.vendor-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+
+/* CARD TITLE */
+.vendor-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #D1D5DB80;
+    padding: 10px 2px;
+}
+
+
+/* =========================
+   FIELD
+========================= */
+.vendor-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.vendor-field label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4B5563;
+}
+
+.vendor-field span {
+    color: red;
+}
+
+
+/* =========================
+   INPUT / SELECT
+========================= */
+.vendor-field select {
+    width: 100%;
+    height: 42px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #4B5563;
+    outline: none;
+    background: #fff;
+}
+
+
+/* FOCUS EFFECT */
+.vendor-field select:focus {
+    border-color: #487FFF;
+}
+
+/*=================3rd tab==================*/
+.purchase-step3-wrapper {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+.payment-form-card {
+    flex: 1;
+    background: #FFFFFF;
+    border: 1px solid #EBECEF;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* TITLE */
+.form-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #D1D5DB80;
+    padding: 10px 2px;
+}
+
+/* FORM GROUP */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 14px;
+}
+
+/* LABEL */
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4B5563;
+    margin-bottom: 6px;
+}
+
+.form-group label span {
+    color: red;
+}
+
+/* INPUT */
+.form-group input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    padding: 0 12px;
+    font-weight: 400;
+    font-size: 15px;
+    background: #FFFFFF;
+    outline: none;
+    color: #4B5563;
+    transition: 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #487FFF;
+    background: #fff;
+}
+
+
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+}
+
+/* OVERLAY */
+.success-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(75, 85, 99, 0.40);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+/* BOX */
+.purchase-success-box {
+    width: 400px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ICON (FIXED) */
+.purchase-success-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* IMAGE */
+.purchase-success-icon img {
+    width: 70px;
+    display: block;
+}
+
+/* TITLE */
+.purchase-success-box h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+/* DESCRIPTION */
+.success-desc {
+    font-weight: 700;
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+.success-desc p {
+    font-weight: 500;
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+.success-desc b {
+    color: #4B5563;
+}
+
+/* BUTTONS */
+.success-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* AGAIN BUTTON */
+.btn-again-purchase {
+    font-size: 14px;
+    font-weight: 400;
+    flex: 1;
+    height: 40px;
+    background: #F6F6F6;
+    color: #4B5563;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* DOWNLOAD BUTTON */
+.btn-download-invoice {
+    font-size: 14px;
+    font-weight: 400;
+    flex: 1;
+    height: 40px;
+    background: #487FFF;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
