@@ -8171,22 +8171,6 @@ button:active {
     cursor: pointer;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*================responsive==========================================*/
 
 @media (max-width: 991px) {
@@ -8542,7 +8526,517 @@ button:active {
         min-width: 500px;
     }
 }
+@media (max-width: 480px) {
 
+    .variant-header-row {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .variant-action-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .price-input-wrap {
+        width: 100%;
+    }
+
+    .input-price {
+        width: 100%;
+        flex: 1;
+    }
+
+    .btn-add-cart,
+    .btn-add-carts {
+        width: 100%;
+    }
+
+    .qty-counter {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .prod-modal-actions {
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .step-text,
+    .steps-text {
+        font-size: 13px;
+    }
+
+    .step-item,
+    .steps-item {
+        padding: 0 10px;
+        height: auto;
+        min-height: 46px;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .step-text,
+    .steps-text {
+        font-size: 12px;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .modal-search {
+        padding: 10px 12px;
+    }
+}
+
+
+
+@media (max-width: 400px) {
+    .date-buttons {
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .report-card,
+    .reports-card {
+        height: auto;
+        padding: 12px;
+    }
+
+    .report-tabs,
+    .report-tab {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .tab-option span,
+    .tab-options span {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 600px) and (min-width: 481px) {
+
+    .report-card,
+    .reports-card {
+        height: auto;
+    }
+
+    .tab-option span,
+    .tab-options span {
+        padding: 10px 10px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .form-action {
+        height: auto;
+        min-height: 64px;
+        flex-wrap: wrap;
+    }
+
+    .canceled-btn,
+    .add-vendor-submit {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    .vendor-form-card {
+        width: calc(100% - 24px);
+        margin: 0 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .vendor-form-card {
+        width: calc(100% - 16px);
+        margin: 0 8px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+  
+    .form-rows {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+
+    .add-expense-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-cancel,
+    .btn-submit {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .expense-top,
+    .expense-card,
+    .add-expense-actions {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    .expense-card {
+        padding: 14px;
+    }
+
+    .expense-form {
+        gap: 12px;
+    }
+
+    .form-groups input,
+    .form-groups textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .form-groups textarea {
+        height: 80px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .expense-top,
+    .expense-card,
+    .add-expense-actions {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
+
+.modal-body {
+    overflow-y: auto;
+}
+
+
+
+@media (max-width: 700px) {
+
+    .return-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-cancel,
+    .btn-disabled,
+    .btn-orange,
+    .btn-blue {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 420px) {
+    .return-input-group {
+        flex-direction: column;
+    }
+
+    .return-input-group button {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+
+    .return-card,
+    .return-cards,
+    .return-actions {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+}
+
+.prod-modal-box,
+.pay-modal-box,
+.gp-box,
+.password-modal,
+.email-modal-card,
+.success-box,
+.purchase-success-box,
+.modal-box,
+.date-box {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+
+
+@media (max-width: 480px) {
+    .qty-counter button {
+        min-width: 36px;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .prod-modal-actions {
+        flex-direction: column;
+    }
+}
+
+
+
+@media (max-width: 420px) {
+    .input-with-btn {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-get-otp {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 380px) {
+
+    .gp-actions,
+    .password-modal-footer,
+    .email-modal-footer {
+        flex-direction: column;
+    }
+
+    .gp-cancel,
+    .gp-submit {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .modal-header {
+        padding: 10px 16px;
+    }
+
+    .modal-header h3 {
+        font-size: 16px;
+    }
+
+    .modal-body {
+        padding: 12px 16px;
+    }
+
+    .variant-card {
+        padding: 10px 12px;
+    }
+
+    .variant-name {
+        font-size: 14px;
+    }
+
+    .variant-meta {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .badge-dot,
+    .badge-batch {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+
+    .price-input-wrap label {
+        font-size: 13px;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+
+    .success-box {
+        padding: 16px;
+    }
+
+    .success-icon {
+        width: 56px;
+    }
+
+    .success-box h3 {
+        font-size: 16px;
+    }
+
+    .success-box p,
+    .bold-confirm {
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .purchase-success-box {
+        padding: 16px;
+    }
+
+    .purchase-success-icon img {
+        width: 56px;
+    }
+
+    .purchase-success-box h3 {
+        font-size: 16px;
+    }
+
+    .success-desc,
+    .success-desc p {
+        font-size: 13px;
+        line-height: 22px;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+
+    .prod-modal-header {
+        padding: 10px 14px;
+    }
+
+    .prod-modal-header h3 {
+        font-size: 16px;
+    }
+
+    .prod-modal-product {
+        padding: 10px 14px;
+    }
+
+    .prod-modal-product p {
+        font-size: 14px;
+    }
+
+    .prod-modal-form {
+        padding: 14px 16px;
+    }
+
+    .prod-field label {
+        font-size: 13px;
+    }
+
+    .prod-field input {
+        font-size: 13px;
+    }
+
+    .prod-modal-actions {
+        padding: 14px 16px;
+    }
+}
+
+
+
+
+@media (max-width: 600px) {
+    .role-actions .btn-cancel,
+    .role-actions .btn-submit {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .role-form,
+    .role-actions {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    .role-form {
+        padding: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .role-form,
+    .role-actions {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+
+    .manage-role-top {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .role-search input {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .manage-role-card {
+        margin-top: 12px;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+ 
+    .payment-cart-footer {
+        margin-top: 16px;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+
+    .customer-card,
+    .customer-bottom-card,
+    .payment-card-box {
+        padding: 12px;
+    }
+
+    .customer-card h4,
+    .customer-bottom-card h4,
+    .payment-card-box h4 {
+        font-size: 16px;
+    }
+}
 
 
 /*===========================================================================================*/
