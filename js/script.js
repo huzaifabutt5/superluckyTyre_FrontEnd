@@ -1,56 +1,53 @@
 function opensetting() {
     window.location.href = "account-setting.html";
 }
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
-    const sidebarMenu = document.querySelector(".sidebar-menu");
+    const sidebarToggle = document.getElementById("sidebarToggle");
+    const sidebar = document.getElementById("sidebar") || document.querySelector(".sidebar");
+    const overlay = document.getElementById("sidebarOverlay");
 
-    if (sidebarMenu) {
 
-        const savedScrollPos = sessionStorage.getItem("sidebarScrollPos");
-        if (savedScrollPos !== null) {
-            sidebarMenu.scrollTop = parseInt(savedScrollPos, 10);
+    if (sidebarToggle && sidebar) {
+        sidebarToggle.addEventListener("click", function (e) {
+            e.stopPropagation(); 
+
+            if (window.innerWidth <= 991) {
+                sidebar.classList.toggle("sidebar-show");
+
+                if (overlay) {
+                    overlay.classList.toggle("sidebar-show");
+                }
+            }
+        });
+    }
+
+
+    document.addEventListener("click", function (e) {
+        if (window.innerWidth <= 991 && sidebar && sidebar.classList.contains("sidebar-show")) {
+            const isClickInsideSidebar = sidebar.contains(e.target);
+            const isClickOnToggle = sidebarToggle && sidebarToggle.contains(e.target);
+
+    
+            if (!isClickInsideSidebar && !isClickOnToggle) {
+                sidebar.classList.remove("sidebar-show");
+                if (overlay) {
+                    overlay.classList.remove("sidebar-show");
+                }
+            }
         }
+    });
 
-        const menuLinks = sidebarMenu.querySelectorAll("a.menu-item");
-        menuLinks.forEach(link => {
-            link.addEventListener("click", function () {
-                sessionStorage.setItem("sidebarScrollPos", sidebarMenu.scrollTop);
-            });
+    if (overlay) {
+        overlay.addEventListener("click", function () {
+            if (sidebar) sidebar.classList.remove("sidebar-show");
+            overlay.classList.remove("sidebar-show");
         });
     }
 });
 
-
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    const overlay = document.getElementById("sidebarOverlay");
-
-    if (!sidebar) return;
-
-    if (window.innerWidth <= 991) {
-        sidebar.classList.toggle("sidebar-show");
-
-        if (overlay) {
-            overlay.classList.toggle("sidebar-show");
-        }
-    }
-}
-
-
-window.addEventListener("resize", function () {
-    const sidebar = document.getElementById("sidebar");
-    const overlay = document.getElementById("sidebarOverlay");
-
-    if (window.innerWidth > 991) {
-        if (sidebar) {
-            sidebar.classList.remove("sidebar-show");
-        }
-
-        if (overlay) {
-            overlay.classList.remove("sidebar-show");
-        }
-    }
-});
 
 
 
@@ -744,11 +741,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 //==========================sale page js=======================
-
-
 let currentStep = 1;
 const totalSteps = 3;
-
 
 function updateStepperUI() {
 
@@ -756,12 +750,14 @@ function updateStepperUI() {
     for (let i = 1; i <= totalSteps; i++) {
         const stepElement = document.getElementById(`stepIndicator${i}`);
 
-        stepElement.classList.remove("active", "completed");
+        if (stepElement) {
+            stepElement.classList.remove("active", "completed");
 
-        if (i < currentStep) {
-            stepElement.classList.add("completed");
-        } else if (i === currentStep) {
-            stepElement.classList.add("active");
+            if (i < currentStep) {
+                stepElement.classList.add("completed");
+            } else if (i === currentStep) {
+                stepElement.classList.add("active");
+            }
         }
     }
 
@@ -775,283 +771,140 @@ function updateStepperUI() {
     }
 }
 
-
 function nextStep() {
-
     if (currentStep < totalSteps) {
-
         currentStep++;
-
         updateStepperUI();
-
     }
-
 }
-
 
 function prevStep() {
-
     if (currentStep > 1) {
-
         currentStep--;
-
         updateStepperUI();
-
     }
-
 }
-
 
 function jumpToStep(stepNum) {
-
-    if (
-        stepNum >= 1 &&
-        stepNum <= totalSteps
-    ) {
-
+    if (stepNum >= 1 && stepNum <= totalSteps) {
         currentStep = stepNum;
-
         updateStepperUI();
-
     }
-
 }
 
-
-
-
-function openVariantModal(
-    productName,
-    productCode
-) {
-
-    const modal =
-        document.getElementById("variantModal");
-
-    const nameElem =
-        document.getElementById("modalProductName");
-
-    const codeElem =
-        document.getElementById("modalProductCode");
-
+function openVariantModal(productName, productCode) {
+    const modal = document.getElementById("variantModal");
+    const nameElem = document.getElementById("modalProductName");
+    const codeElem = document.getElementById("modalProductCode");
 
     if (nameElem) {
-
         nameElem.innerText = productName;
-
     }
-
 
     if (codeElem) {
-
         codeElem.innerText = productCode;
-
     }
-
 
     if (modal) {
-
         modal.classList.add("show");
-
     }
-
 }
-
 
 function closeVariantModal() {
-
-    const modal =
-        document.getElementById("variantModal");
-
+    const modal = document.getElementById("variantModal");
 
     if (modal) {
-
         modal.classList.remove("show");
-
     }
-
 }
 
-
-
 function changeQty(btn, delta) {
+    if (!btn || !btn.parentElement) return;
 
-    const input =
-        btn.parentElement.querySelector(".qty-val");
-
+    const input = btn.parentElement.querySelector(".qty-val");
 
     if (!input) return;
 
-
-    let val =
-        parseInt(input.value) || 1;
-
+    let val = parseInt(input.value) || 1;
 
     val += delta;
 
-
     if (val < 1) {
-
         val = 1;
-
     }
 
-
-    input.value =
-        val < 10
-            ? "0" + val
-            : val;
-
+    input.value = val < 10 ? "0" + val : val;
 }
 
+document.addEventListener("DOMContentLoaded", function () {
 
-
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
+    // Only update stepper UI if step indicator exists on the page
+    if (document.getElementById("stepIndicator1")) {
         updateStepperUI();
+    }
 
+    const applyBtn = document.querySelector(".btn-apply");
 
+    if (applyBtn) {
+        applyBtn.addEventListener("click", function () {
+            closeVariantModal();
 
-        const applyBtn =
-            document.querySelector(
-                ".btn-apply"
-            );
+            const cartSidebar = document.getElementById("cartSidebar");
 
+            if (cartSidebar) {
+                cartSidebar.classList.add("show");
+            }
+        });
+    }
 
-        if (applyBtn) {
+    const cartItemsList = document.getElementById("cartItemsList");
 
-            applyBtn.addEventListener(
-                "click",
-                function () {
+    if (cartItemsList) {
+        cartItemsList.addEventListener("click", function (event) {
+            if (event.target && event.target.classList.contains("btn-delete-item")) {
+                const itemRow = event.target.closest(".cart-item");
 
-                    closeVariantModal();
+                if (itemRow) {
+                    itemRow.remove();
+                }
 
-
-                    const cartSidebar =
-                        document.getElementById(
-                            "cartSidebar"
-                        );
-
+                if (cartItemsList.querySelectorAll(".cart-item").length === 0) {
+                    const cartSidebar = document.getElementById("cartSidebar");
 
                     if (cartSidebar) {
-
-                        cartSidebar.classList.add(
-                            "show"
-                        );
-
+                        cartSidebar.classList.remove("show");
                     }
-
                 }
-            );
-
-        }
-
-
-
-        const cartItemsList =
-            document.getElementById(
-                "cartItemsList"
-            );
-
-
-        if (cartItemsList) {
-
-            cartItemsList.addEventListener(
-                "click",
-                function (event) {
-
-                    if (
-                        event.target.classList.contains(
-                            "btn-delete-item"
-                        )
-                    ) {
-
-                        const itemRow =
-                            event.target.closest(
-                                ".cart-item"
-                            );
-
-
-                        if (itemRow) {
-
-                            itemRow.remove();
-
-                        }
-
-
-                        if (
-                            cartItemsList.querySelectorAll(
-                                ".cart-item"
-                            ).length === 0
-                        ) {
-
-                            const cartSidebar =
-                                document.getElementById(
-                                    "cartSidebar"
-                                );
-
-
-                            if (cartSidebar) {
-
-                                cartSidebar.classList.remove(
-                                    "show"
-                                );
-
-                            }
-
-                        }
-
-                    }
-
-                }
-            );
-
-        }
-
-
-
-
-        const variantModal =
-            document.getElementById(
-                "variantModal"
-            );
-
-
-        if (variantModal) {
-
-            variantModal.addEventListener(
-                "click",
-                function (event) {
-
-                    if (
-                        event.target ===
-                        variantModal
-                    ) {
-
-                        closeVariantModal();
-
-                    }
-
-                }
-            );
-
-        }
-
+            }
+        });
     }
-);
+
+    const variantModal = document.getElementById("variantModal");
+
+    if (variantModal) {
+        variantModal.addEventListener("click", function (event) {
+            if (event.target === variantModal) {
+                closeVariantModal();
+            }
+        });
+    }
+});
 
 function showSuccess() {
-    document.getElementById("successModal").style.display = "flex";
-}
-window.onclick = function (e) {
-    let modal = document.getElementById("successModal");
-    if (e.target === modal) {
-        modal.style.display = "none";
+    const modal = document.getElementById("successModal");
+    if (modal) {
+        modal.style.display = "flex";
     }
 }
+
+window.addEventListener("click", function (e) {
+    let modal = document.getElementById("successModal");
+    if (modal && e.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
+
 //==========================return sale js======================
 function getInvoice() {
     document.getElementById("invoiceDetails").style.display = "block";
@@ -1071,80 +924,110 @@ function getInvoice() {
 
 //==============Purchse product js============================
 function jumpToSteps(step) {
-
     const totalSteps = 3;
 
+    // Step indicators update with safe null checks
     for (let i = 1; i <= totalSteps; i++) {
-
         const stepEl = document.getElementById(`step-Indicator${i}`);
 
-        stepEl.classList.remove("active", "completed");
-        if (i < step) {
-            stepEl.classList.add("completed");
-        }
-
-        else if (i === step) {
-            stepEl.classList.add("active");
+        if (stepEl) {
+            stepEl.classList.remove("active", "completed");
+            if (i < step) {
+                stepEl.classList.add("completed");
+            } else if (i === step) {
+                stepEl.classList.add("active");
+            }
         }
     }
 
-    document.getElementById("stepContent1").style.display = "none";
-    document.getElementById("stepContent2").style.display = "none";
-    document.getElementById("stepContent3").style.display = "none";
+    // Hide step contents safely
+    for (let i = 1; i <= totalSteps; i++) {
+        const contentEl = document.getElementById(`stepContent${i}`);
+        if (contentEl) {
+            contentEl.style.display = "none";
+        }
+    }
 
-    document.getElementById("stepContent" + step).style.display = "block";
+    // Show active step content safely
+    const activeContent = document.getElementById("stepContent" + step);
+    if (activeContent) {
+        activeContent.style.display = "block";
+    }
 }
-window.onload = function () {
-    jumpToSteps(1);
-};
+
+// Safely invoke jumpToSteps on window load
+window.addEventListener("load", function () {
+    if (document.getElementById("step-Indicator1") || document.getElementById("stepContent1")) {
+        jumpToSteps(1);
+    }
+});
+
 // =======================
 let selectedProduct = {};
 
-
 function openProductPopup(name, size) {
-
     selectedProduct = { name, size };
 
-    document.getElementById("prodModal").style.display = "flex";
+    const prodModal = document.getElementById("prodModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalSize = document.getElementById("modalSize");
 
-    document.getElementById("modalTitle").innerText = name;
-    document.getElementById("modalSize").innerText = size;
+    if (prodModal) {
+        prodModal.style.display = "flex";
+    }
+
+    if (modalTitle) {
+        modalTitle.innerText = name || "";
+    }
+
+    if (modalSize) {
+        modalSize.innerText = size || "";
+    }
 }
-
 
 function closeProdModal() {
-    document.getElementById("prodModal").style.display = "none";
+    const prodModal = document.getElementById("prodModal");
+    if (prodModal) {
+        prodModal.style.display = "none";
+    }
 }
 
-
 function addToCart() {
-
-    // popup close
+    // Popup close safely
     closeProdModal();
 
-    // show cart panel
+    // Show cart panel safely
     const cartPanel = document.getElementById("cartPanel");
-    cartPanel.style.display = "block";
-
+    if (cartPanel) {
+        cartPanel.style.display = "block";
+    }
 
     const gridArea = document.querySelector(".purchase-products-section");
-    gridArea.classList.add("shrink");
+    if (gridArea) {
+        gridArea.classList.add("shrink");
+    }
 }
 
 function showSuccessPopup() {
-    document.getElementById("successPopup").style.display = "flex";
+    const popup = document.getElementById("successPopup");
+    if (popup) {
+        popup.style.display = "flex";
+    }
 }
-
 
 function closeSuccessPopup() {
-    document.getElementById("successPopup").style.display = "none";
-}
-window.onclick = function (e) {
     const popup = document.getElementById("successPopup");
-    if (e.target === popup) {
+    if (popup) {
         popup.style.display = "none";
     }
 }
+
+window.addEventListener("click", function (e) {
+    const popup = document.getElementById("successPopup");
+    if (popup && e.target === popup) {
+        popup.style.display = "none";
+    }
+});
 
 //============================LOGIN PAGE====================
 document.addEventListener("DOMContentLoaded", function () {
