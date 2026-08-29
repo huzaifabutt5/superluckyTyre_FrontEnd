@@ -8170,3 +8170,922 @@ button:active {
     border-radius: 8px;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*================responsive==========================================*/
+
+@media (max-width: 991px) {
+    .main-area {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.sidebar-show {
+        transform: translateX(0);
+    }
+
+    .top-header {
+        left: 0 !important;
+    }
+}
+
+.sidebar-overlay {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .top-header {
+        left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .search-box {
+        width: 100%;
+        max-width: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-box {
+        max-width: 140px;
+    }
+
+    .header-right {
+        width: auto;
+        padding-right: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .modal-box,
+    .date-box,
+    .pay-modal-box,
+    .password-modal,
+    .email-modal-card,
+    .gp-box,
+    .success-box,
+    .purchase-success-box,
+    .prod-modal-box,
+    .modal-card {
+        width: 92vw;
+        max-width: 92vw;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .email-modal-footer,
+    .password-modal-footer,
+    .success-actions {
+        flex-direction: column;
+    }
+
+    .btn-modal-cancel,
+    .btn-modal-primary,
+    .password-cancel-btn,
+    .password-update-btn,
+    .btn-again,
+    .btn-download,
+    .btn-again-purchase,
+    .btn-download-invoice {
+        width: 100%;
+    }
+
+    .prod-row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .customer-layout,
+    .step-three-layout,
+    .purchase-stage-two,
+    .purchase-step3-wrapper {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .customer-right,
+    .cart-sidebar,
+    .customer-sidebar,
+    .purchase-cart-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .sale-stepper,
+    .purchase-stepper {
+        flex-wrap: wrap;
+    }
+
+    .step-item,
+    .steps-item {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .step-item,
+    .steps-item {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .form-fields,
+    .settings-form-row {
+        grid-template-columns: 1fr !important;
+    }
+
+    .form-row,
+    .payment-row,
+    .return-grid {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+
+    .return-field.full {
+        grid-column: 1 / -1;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .form-action,
+    .add-expense-actions,
+    .account-settings-actions,
+    .role-actions,
+    .modal-footer,
+    .modal-actions,
+    .pay-amount-btn,
+    .return-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .canceled-btn,
+    .add-vendor-submit,
+    .cancel-btn,
+    .paytovendor,
+    .settings-cancel-btn,
+    .settings-save-btn,
+    .btn-cancel-sale,
+    .btn-apply,
+    .btn-disabled,
+    .btn-orange,
+    .btn-blue {
+        width: 100% !important;
+    }
+}
+
+
+@media (max-width: 1200px) {
+
+    .report-card,
+    .reports-card {
+        margin-right: 16px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .manage-role-wrapper,
+    .expense-table-wrapper,
+    .balance-table,
+    .pnl-table,
+    .report-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .manage-role-table,
+    .expense-table,
+    .balance-table table,
+    .pnl-table table,
+    .report-table-wrapper table {
+        min-width: 650px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .vendor-table-top,
+    .expense-actions,
+    .pnl-table-top,
+    .role-search,
+    .stock-listing-top .stock-search {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .vendor-search input,
+    .role-search input,
+    .expense-search input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .pnl-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pnl-actions {
+        flex-direction: column;
+    }
+
+    .pnl-actions .btn {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .add-vendor-btn,
+    .sale-return-btn,
+    .Purchase-return-btn {
+        position: static;
+        display: inline-flex;
+        margin: 12px 16px;
+        width: calc(100% - 32px);
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .table-card table,
+    .stock-product-table,
+    .stock-batch-table {
+        font-size: 12px;
+    }
+}
+
+
+
+
+@media (max-width: 1200px) {
+    .summarycard {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .summarycard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .summarycard {
+        grid-template-columns: 1fr;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
+
+@media (max-width: 992px) {
+    .stock-listing-wrapper {
+        width: calc(100% - 32px);
+        margin: 0 16px;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .stock-listing-wrapper {
+        width: calc(100% - 24px);
+        margin: 0 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stock-listing-wrapper {
+        width: calc(100% - 16px);
+        margin: 0 8px;
+    }
+}
+
+
+
+@media (max-width: 800px) {
+    .sale-main-wrapper .purchase-cart-card {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 900px) {
+    .customer-items-list {
+        margin-bottom: 16px;
+    }
+
+    .purchase-cart-footer {
+        margin-top: 16px;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+
+    .report-tabs,
+    .report-tab {
+        flex-direction: column;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    .access-table {
+        overflow-x: auto;
+    }
+
+    .access-table table {
+        min-width: 500px;
+    }
+}
+
+
+
+/*===========================================================================================*/
+/*  LOGIN PAGE
+===========================================================================================*/
+.auth-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+/* ==========================================
+   1. LOGO FIX 
+   ========================================== */
+.logo-container {
+    width: 272px;
+    height: 72px;
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+
+/* ==========================================
+   CARD CONTAINER
+   ========================================== */
+.auth-card {
+    width: 400px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Step Switching */
+.auth-step {
+    display: none;
+}
+
+.auth-step.active {
+    display: block;
+}
+
+/* HEADER BAR */
+.card-header-bar {
+    width: 100%;
+    height: 49px;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(209, 213, 219, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.card-header-bar h3 {
+    color: #111827;
+    font-family: 'Inter';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px
+}
+
+.auth-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* CARD BODY */
+.card-body {
+    padding: 20px;
+}
+
+.form-fields-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #4B5563;
+    font-size: 14px;
+    font-style: normal;
+
+    line-height: 24px;
+}
+
+/* ==========================================
+   2. INPUt
+   ========================================== */
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.input-wrapper .input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    color: #4B5563;
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+.input-wrapper input {
+    width: 100%;
+    height: 44px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 12px;
+    padding-left: 42px !important;
+    font-size: 0.9rem;
+    color: #4B5563;
+    background-color: #ffffff;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input-wrapper input.no-icon {
+    padding-left: 14px !important;
+}
+
+.input-wrapper input::placeholder {
+    color: #4B5563;
+}
+
+.input-wrapper input:focus {
+    border-color: #4b7bec;
+    box-shadow: 0 0 0 3px rgba(75, 123, 236, 0.15);
+}
+
+/* ==========================================
+   ACTIONS & BUTTON
+   ========================================== */
+.form-actions-right {
+    text-align: right;
+    margin-top: -2px;
+    margin-bottom: 8px;
+}
+
+.forgot-link {
+    font-size: 0.82rem;
+    color: #FF4343;
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.form-actions-center {
+    text-align: center;
+    margin-top: 14px;
+}
+
+
+
+.btn-primary {
+    width: 100%;
+    height: 42px;
+    background-color: #487FFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s ease;
+}
+
+
+
+@media (max-width: 440px) {
+    .auth-card {
+        width: 100%;
+    }
+}
+
+.forgot-card-step {
+    display: none;
+    width: 100%;
+}
+
+.forgot-card-step.active {
+    display: block;
+}
+
+
+.forgot-header-bar {
+    width: 100%;
+    height: 49px;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(209, 213, 219, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.forgot-heading {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 24px;
+    margin: 0;
+}
+
+.forgot-card-body {
+    padding: 20px;
+}
+
+.forgot-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.forgot-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.forgot-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4B5563;
+}
+
+/* Input & Icon Position Fix */
+.forgot-input-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.forgot-input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.forgot-input-field {
+    width: 100%;
+    height: 44px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 12px;
+    padding-left: 42px !important;
+    font-size: 0.9rem;
+    color: #1f2937;
+    background-color: #ffffff;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.forgot-input-field::placeholder {
+    color: #4B5563;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.forgot-input-field:focus {
+    border-color: #4b7bec;
+    box-shadow: 0 0 0 3px rgba(75, 123, 236, 0.15);
+}
+
+/* Submit Button styling */
+.forgot-submit-btn {
+    width: 100%;
+    height: 42px;
+    background-color: #487FFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 440px) {
+    .forgot-card-body {
+        padding: 16px;
+    }
+}
+
+
+
+.otp-card-step {
+    display: none;
+    width: 100%;
+}
+
+.otp-card-step.active {
+    display: block;
+}
+
+
+.otp-header-bar {
+    width: 100%;
+    height: 49px;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(209, 213, 219, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.otp-heading {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 24px;
+    margin: 0;
+}
+
+
+.otp-card-body {
+    padding: 20px;
+}
+
+.otp-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.otp-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.otp-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+
+.otp-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.otp-input-field {
+    width: 100%;
+    height: 44px;
+    padding: 8px 14px !important; 
+    font-size: 0.9rem;
+    color: #1f2937;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.otp-input-field::placeholder {
+    color: #4b5563;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.otp-input-field:focus {
+    border-color: #4b7bec;
+    box-shadow: 0 0 0 3px rgba(75, 123, 236, 0.15);
+}
+
+/* Submit Button styling */
+.otp-submit-btn {
+    width: 100%;
+    height: 42px;
+    background-color: #487FFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 440px) {
+    .otp-card-body {
+        padding: 16px;
+    }
+}
+
+.newpass-card-step {
+    display: none;
+    width: 100%;
+}
+
+.newpass-card-step.active {
+    display: block;
+}
+
+
+.newpass-header-bar {
+    width: 100%;
+    height: 49px;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(209, 213, 219, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.newpass-heading {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1;
+    margin: 0;
+}
+
+
+.newpass-card-body {
+    padding: 20px;
+}
+
+.newpass-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.newpass-fields-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; 
+}
+
+.newpass-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.newpass-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+
+.newpass-input-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.newpass-input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.newpass-input-field {
+    width: 100%;
+    height: 44px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 12px;
+    padding-left: 42px !important; 
+    font-size: 16px;
+    font-weight: 400;
+    color: #4b5563;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.newpass-input-field::placeholder {
+    color: #4b5563;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.newpass-input-field:focus {
+    border-color: #4b7bec;
+    box-shadow: 0 0 0 3px rgba(75, 123, 236, 0.15);
+}
+
+.newpass-submit-btn {
+    width: 100%;
+    height: 42px;
+    background-color: #487FFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+@media (max-width: 440px) {
+    .newpass-card-body {
+        padding: 16px;
+    }
+}

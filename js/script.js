@@ -386,7 +386,7 @@ function closeDateModal() {
     document.getElementById("dateModal").style.display = "none";
 }
 
-// reset dates (Safe Code)
+// reset dates 
 const resetDateBtn = document.getElementById("resetDate");
 if (resetDateBtn) {
     resetDateBtn.onclick = function () {
@@ -572,7 +572,7 @@ document.addEventListener("DOMContentLoaded", function () {
             e.stopPropagation();
         });
 
-        
+
         function updateSelectedItems() {
             if (!selectedAccess || !accessPlaceholder) return;
 
@@ -589,11 +589,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     chip.className = "access-item";
                     chip.innerHTML = `${cb.getAttribute("data-name")} <span class="access-item-remove">&times;</span>`;
 
-                    
+
                     chip.querySelector(".access-item-remove").addEventListener("click", function (ev) {
-                        ev.stopPropagation(); 
-                        cb.checked = false;   
-                        updateSelectedItems(); 
+                        ev.stopPropagation();
+                        cb.checked = false;
+                        updateSelectedItems();
                     });
 
                     selectedAccess.appendChild(chip);
@@ -612,7 +612,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Modal logic
-    const openBtn = document.getElementById("openPasswordModal"); 
+    const openBtn = document.getElementById("openPasswordModal");
     const modal = document.getElementById("passwordModal");
     const cancelBtn = document.getElementById("cancelPasswordModal");
 
@@ -638,6 +638,9 @@ function removerole() {
 }
 
 //====================================== Account settings==================================//
+function saveSetting() {
+    window.location.href = "dashboard.html";
+}
 document.addEventListener("DOMContentLoaded", function () {
     const openBtn = document.getElementById("openPasswordModal");
     const modal = document.getElementById("passwordModal");
@@ -652,14 +655,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // CLOSE WITH CANCEL BUTTON
+
     if (cancelBtn && modal) {
         cancelBtn.addEventListener("click", function () {
             modal.classList.remove("active");
         });
     }
 
-    // CLICK OUTSIDE TO CLOSE
+
     if (modal) {
         modal.addEventListener("click", function (e) {
             if (e.target === modal) {
@@ -668,10 +671,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // UPDATE BUTTON ACTION 
+
     if (updateBtn && modal) {
         updateBtn.addEventListener("click", function () {
-    
+
             modal.classList.remove("active");
         });
     }
@@ -679,8 +682,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    // DOM Elements
-    const openEmailModalBtn = document.querySelector(".change-email-btn"); // Aapka Change Email Trigger Button
+
+    const openEmailModalBtn = document.querySelector(".change-email-btn");
     const emailModalOverlay = document.getElementById("emailModalOverlay");
 
     const emailStep1 = document.getElementById("emailStep1");
@@ -701,7 +704,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 200);
     }
 
-    // Open Modal (Step 1)
+    // Open Modal 
     if (openEmailModalBtn && emailModalOverlay) {
         openEmailModalBtn.addEventListener("click", function (e) {
             e.preventDefault();
@@ -709,7 +712,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Switch from Step 1 -> Step 2
+
     if (continueEmailStep) {
         continueEmailStep.addEventListener("click", function () {
             emailStep1.classList.remove("active");
@@ -721,7 +724,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (cancelEmailModal1) cancelEmailModal1.addEventListener("click", resetEmailModal);
     if (cancelEmailModal2) cancelEmailModal2.addEventListener("click", resetEmailModal);
 
-    // Outside Click Close
+
     if (emailModalOverlay) {
         emailModalOverlay.addEventListener("click", function (e) {
             if (e.target === emailModalOverlay) {
@@ -730,10 +733,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Update Action Finish
+
     if (updateEmailAddressBtn) {
         updateEmailAddressBtn.addEventListener("click", function () {
-            // Success Logic
+
             resetEmailModal();
         });
     }
@@ -815,9 +818,7 @@ function jumpToStep(stepNum) {
 }
 
 
-// ==========================================
-// 2. VARIANT MODAL
-// ==========================================
+
 
 function openVariantModal(
     productName,
@@ -872,9 +873,6 @@ function closeVariantModal() {
 }
 
 
-// ==========================================
-// 3. QUANTITY
-// ==========================================
 
 function changeQty(btn, delta) {
 
@@ -907,9 +905,7 @@ function changeQty(btn, delta) {
 }
 
 
-// ==========================================
-// 4. PAGE INITIALIZATION
-// ==========================================
+
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -918,10 +914,6 @@ document.addEventListener(
         updateStepperUI();
 
 
-
-        // ==================================
-        // APPLY TO ORDER
-        // ==================================
 
         const applyBtn =
             document.querySelector(
@@ -958,9 +950,6 @@ document.addEventListener(
         }
 
 
-        // ==================================
-        // DELETE CART ITEM
-        // ==================================
 
         const cartItemsList =
             document.getElementById(
@@ -1023,9 +1012,7 @@ document.addEventListener(
         }
 
 
-        // ==================================
-        // CLOSE MODAL WHEN CLICKING OUTSIDE
-        // ==================================
+
 
         const variantModal =
             document.getElementById(
@@ -1113,9 +1100,7 @@ window.onload = function () {
 // =======================
 let selectedProduct = {};
 
-// =======================
-// OPEN POPUP
-// =======================
+
 function openProductPopup(name, size) {
 
     selectedProduct = { name, size };
@@ -1126,16 +1111,12 @@ function openProductPopup(name, size) {
     document.getElementById("modalSize").innerText = size;
 }
 
-// =======================
-// CLOSE POPUP
-// =======================
+
 function closeProdModal() {
     document.getElementById("prodModal").style.display = "none";
 }
 
-// =======================
-// ADD TO CART (ONLY UI SHOW)
-// =======================
+
 function addToCart() {
 
     // popup close
@@ -1145,16 +1126,16 @@ function addToCart() {
     const cartPanel = document.getElementById("cartPanel");
     cartPanel.style.display = "block";
 
-    // shrink product area
+
     const gridArea = document.querySelector(".purchase-products-section");
     gridArea.classList.add("shrink");
 }
-// SHOW POPUP
+
 function showSuccessPopup() {
     document.getElementById("successPopup").style.display = "flex";
 }
 
-// CLOSE POPUP (optional)
+
 function closeSuccessPopup() {
     document.getElementById("successPopup").style.display = "none";
 }
@@ -1164,3 +1145,106 @@ window.onclick = function (e) {
         popup.style.display = "none";
     }
 }
+
+//============================LOGIN PAGE====================
+document.addEventListener("DOMContentLoaded", function () {
+
+    const loginStep = document.getElementById("loginStep");
+    const forgotStep = document.getElementById("forgotStep");
+    const otpStep = document.getElementById("otpStep");
+    const newPasswordStep = document.getElementById("newPasswordStep");
+
+
+    const allSteps = [loginStep, forgotStep, otpStep, newPasswordStep];
+
+
+    function showStep(targetStep) {
+        allSteps.forEach(step => {
+            if (step) step.classList.remove("active");
+        });
+        if (targetStep) targetStep.classList.add("active");
+    }
+
+
+    const gotoForgotLink = document.getElementById("gotoForgot");
+    if (gotoForgotLink) {
+        gotoForgotLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            showStep(forgotStep);
+        });
+    }
+
+
+    const loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById("loginEmail").value.trim();
+            const password = document.getElementById("loginPassword").value.trim();
+
+
+            const demoEmail = "admin@gmail.com";
+            const demoPassword = "12345678";
+
+            if (email === demoEmail && password === demoPassword) {
+
+                window.location.href = "dashboard.html";
+            } else {
+
+                alert("Invalid Credentials!\n\nDemo Email: " + demoEmail + "\nDemo Password: " + demoPassword);
+            }
+        });
+    }
+
+
+    const forgotForm = document.getElementById("forgotForm");
+    if (forgotForm) {
+        forgotForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const email = document.getElementById("resetEmail").value;
+
+
+            console.log("Sending OTP to:", email);
+
+
+            showStep(otpStep);
+        });
+    }
+    const otpForm = document.getElementById("otpForm");
+    if (otpForm) {
+        otpForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const otp = document.getElementById("otpCode").value;
+
+
+            console.log("Verifying OTP:", otp);
+
+
+            showStep(newPasswordStep);
+        });
+    }
+
+    const newPasswordForm = document.getElementById("newPasswordForm");
+    if (newPasswordForm) {
+        newPasswordForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const newPassword = document.getElementById("newPassword").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+
+            if (newPassword !== confirmPassword) {
+                alert("Passwords do not match! Please check again.");
+                return;
+            }
+
+
+            console.log("Updating password...");
+            alert("Password reset successfully! Please login with your new password.");
+
+
+            newPasswordForm.reset();
+            showStep(loginStep);
+        });
+    }
+});

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Super Lucky Tyre</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+
+    <main class="auth-wrapper">
+        <div class="logo-container">
+            <img src="images/loginLogo.svg" alt="Super Lucky Tyre" class="brand-logo">
+        </div>
+
+
+        <div class="auth-card">
+            <!-- ================= STEP 1: LOGIN FORM ================= -->
+            <section id="loginStep" class="auth-step active">
+
+
+                <div class="card-header-bar">
+                    <h2 class="auth-title">Login Now</h2>
+                </div>
+
+                <div class="card-body">
+                    <form id="loginForm">
+                        <div class="form-fields-group">
+
+                            <!-- Email Input -->
+                            <div class="form-group">
+                                <label for="loginEmail">Email Address</label>
+                                <div class="input-wrapper">
+                                    <img src="images/mail-01.svg" class="input-icon" alt="">
+                                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                                </div>
+                            </div>
+
+                            <!-- Password Input -->
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <div class="input-wrapper">
+                                    <img src="images/lock-password.svg" class="input-icon">
+                                    <input type="password" id="loginPassword" placeholder="Enter Password" required>
+                                </div>
+                            </div>
+
+                            <!-- Forgot Link -->
+                            <div class="form-actions-right">
+                                <a href="#" id="gotoForgot" class="forgot-link">forget password?</a>
+                            </div>
+
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-primary">Submit form</button>
+                    </form>
+                </div>
+            </section>
+            <!-- ================= STEP 2: RESET PASSWORD (SEND OTP) ================= -->
+
+            <section id="forgotStep" class="auth-step forgot-card-step">
+
+                <!-- Card Header -->
+                <div class="forgot-header-bar">
+                    <h2 class="auth-title forgot-heading">Reset Password</h2>
+                </div>
+
+                <!-- Form Body -->
+                <div class="forgot-card-body">
+                    <form id="forgotForm" class="forgot-form-container">
+
+                        <div class="forgot-field-group">
+                            <label for="resetEmail" class="forgot-label">Email Address</label>
+                            <div class="forgot-input-wrapper">
+                                <img src="images/mail-01.svg" alt="Email Icon" class="forgot-input-icon">
+                                <input type="email" id="resetEmail" class="forgot-input-field"
+                                    placeholder="Email Address" required>
+                            </div>
+                        </div>
+
+                        <!-- Send OTP Button -->
+                        <button type="submit" class="btn-primary forgot-submit-btn">Send OTP</button>
+
+                    </form>
+                </div>
+
+            </section>
+
+            <!-- ================= STEP 3: VERIFY OTP ================= -->
+            <!-- STEP 3: VERIFY OTP SECTION -->
+            <section id="otpStep" class="auth-step otp-card-step">
+
+                <!-- Card Header Bar -->
+                <div class="otp-header-bar">
+                    <h2 class="auth-title otp-heading">Verify OTP</h2>
+                </div>
+
+                <!-- Form Body -->
+                <div class="otp-card-body">
+                    <form id="otpForm" class="otp-form-container">
+
+                        <div class="otp-field-group">
+                            <label for="otpCode" class="otp-label">OTP</label>
+                            <div class="otp-input-wrapper">
+                                <input type="text" id="otpCode" class="otp-input-field" placeholder="6-Digit Passcode"
+                                    maxlength="6" required>
+                            </div>
+                        </div>
+
+                        <!-- Verify OTP Button -->
+                        <button type="submit" class="btn-primary otp-submit-btn">Verify OTP</button>
+
+                    </form>
+                </div>
+
+            </section>
+
+            <!-- ================= STEP 4: SET NEW PASSWORD ================= -->
+            <!-- STEP 4: SET NEW PASSWORD SECTION -->
+            <section id="newPasswordStep" class="auth-step newpass-card-step">
+
+                <!-- Card Header Bar -->
+                <div class="newpass-header-bar">
+                    <h2 class="auth-title newpass-heading">Set New Password</h2>
+                </div>
+
+                <!-- Form Body -->
+                <div class="newpass-card-body">
+                    <form id="newPasswordForm" class="newpass-form-container">
+
+                        <div class="newpass-fields-group">
+                            <!-- New Password Field -->
+                            <div class="newpass-field-group">
+                                <label for="newPassword" class="newpass-label">New Password</label>
+                                <div class="newpass-input-wrapper">
+                                    <img src="images/lock-password.svg" alt="Lock Icon" class="newpass-input-icon">
+                                    <input type="password" id="newPassword" class="newpass-input-field"
+                                        placeholder="New Password" required>
+                                </div>
+                            </div>
+
+                            <!-- Confirm Password Field -->
+                            <div class="newpass-field-group">
+                                <label for="confirmPassword" class="newpass-label">Confirm Password</label>
+                                <div class="newpass-input-wrapper">
+                                    <img src="images/lock-password.svg" alt="Lock Icon" class="newpass-input-icon">
+                                    <input type="password" id="confirmPassword" class="newpass-input-field"
+                                        placeholder="Confirm Password" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Set New Password Button -->
+                        <button type="submit" class="btn-primary newpass-submit-btn">Set New Password</button>
+
+                    </form>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+
+
+
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+</body>
+
+
+
+
+</html>
