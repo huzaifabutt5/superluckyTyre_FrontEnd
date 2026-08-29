@@ -1,7 +1,20 @@
 function opensetting() {
     window.location.href = "account-setting.html";
 }
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar") || document.querySelector(".sidebar");
+    const overlay = document.getElementById("sidebarOverlay");
 
+    if (!sidebar) return;
+
+    if (window.innerWidth <= 991) {
+        sidebar.classList.toggle("sidebar-show");
+
+        if (overlay) {
+            overlay.classList.toggle("sidebar-show");
+        }
+    }
+}
 
 
 document.addEventListener("DOMContentLoaded", function () {
