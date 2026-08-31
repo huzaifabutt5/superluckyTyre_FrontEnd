@@ -372,7 +372,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// logout  popup //
+// ============logout  popup ======//
 
 function logoutUser() {
     document.getElementById("logoutModal").style.display = "flex";
@@ -474,7 +474,7 @@ function cancel() {
     document.getElementById("payModal").style.display = "none";
     window.location.reload();
 }
-//--====customer js====================================================================================================//
+//--====customer js====================================================================================================
 
 
 function customerview() {
