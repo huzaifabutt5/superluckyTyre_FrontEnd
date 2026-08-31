@@ -1144,3 +1144,185 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+
+
+
+// ======================= CUSTOM DATA TABLES =======================
+document.addEventListener("DOMContentLoaded", function () {
+    const initializedScopes = new WeakSet();
+    const searchSelector = ".vendor-search input, .role-search input, .expense-search input, .stock-search input, .search-control input, input[type='search']";
+
+    function getTableScope(table) {
+        let scope = table.parentElement;
+
+        while (scope && scope !== document.body) {
+            const footer = scope.querySelector(":scope > [class*='footer']");
+            const entries = scope.querySelector(":scope > select, :scope .vendor-table-top select, :scope .stock-entries select, :scope .entries select, :scope .select-entries, :scope .pnl-entries select");
+            const search = scope.querySelector(searchSelector);
+
+            if (footer && entries && (search || table.closest(".pnl-card"))) {
+                return scope;
+            }
+
+            scope = scope.parentElement;
+        }
+
+        return null;
+    }
+
+    function getRows(table) {
+        if (!table.tBodies.length) return [];
+
+        const rows = Array.from(table.tBodies[0].children).filter(row => row.tagName === "TR");
+
+        if (table.classList.contains("stock-product-table")) {
+            return rows
+                .filter(row => row.classList.contains("stock-product-row"))
+                .map(row => ({
+                    rows: [row, row.nextElementSibling].filter(Boolean),
+                    text: row.textContent.toLowerCase()
+                }));
+        }
+
+        return rows.map(row => ({
+            rows: [row],
+            text: row.textContent.toLowerCase()
+        }));
+    }
+
+    function initializeDataTable(table, scope) {
+        if (initializedScopes.has(scope)) return;
+        initializedScopes.add(scope);
+
+        const entriesSelect = scope.querySelector(".vendor-table-top select, .stock-entries select, .entries select, .select-entries, .pnl-entries select, :scope > select");
+        const searchInput = scope.querySelector(searchSelector);
+        const footer = scope.querySelector("[class*='footer']");
+        const pagination = footer ? footer.querySelector(".pagination, .stock-pagination") : null;
+        const showing = footer ? footer.querySelector("span") : null;
+        const controlledTables = scope.querySelectorAll(".tab-content-panel table").length
+            ? Array.from(scope.querySelectorAll(".tab-content-panel table"))
+            : [table];
+        const recordsByTable = new Map(controlledTables.map(controlledTable => [controlledTable, getRows(controlledTable)]));
+
+        if (!entriesSelect || !footer || !pagination || !showing) return;
+
+        const state = {
+            currentPage: 1,
+            entriesPerPage: parseInt(entriesSelect.value, 10) || 10,
+            query: ""
+        };
+
+        function getActiveTable() {
+            const activePanel = scope.querySelector(".tab-content-panel.active");
+            return activePanel ? activePanel.querySelector("table") : table;
+        }
+
+        function getFilteredRecords() {
+            const records = recordsByTable.get(getActiveTable()) || [];
+            return records.filter(record => record.text.includes(state.query));
+        }
+
+        function renderRows(visibleRecords) {
+            const visibleRows = new Set(visibleRecords.flatMap(record => record.rows));
+
+            recordsByTable.forEach(records => {
+                records.forEach(record => {
+                    record.rows.forEach(row => {
+                        row.style.display = visibleRows.has(row) ? "" : "none";
+                    });
+                });
+            });
+        }
+
+        function addPaginationButton(label, page, disabled, active) {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.textContent = label;
+            button.disabled = disabled;
+            if (active) button.classList.add("active", "stock-page-active");
+            button.addEventListener("click", function () {
+                if (!disabled) {
+                    state.currentPage = page;
+                    render();
+                }
+            });
+            pagination.appendChild(button);
+        }
+
+        function renderPagination(pageCount) {
+            const buttons = Array.from(pagination.querySelectorAll("button"));
+            const firstLabel = buttons[0] ? buttons[0].textContent.trim() : "«";
+            const lastLabel = buttons[buttons.length - 1] ? buttons[buttons.length - 1].textContent.trim() : "»";
+
+            pagination.innerHTML = "";
+            addPaginationButton(firstLabel, 1, state.currentPage === 1 || pageCount === 0, false);
+            addPaginationButton("‹", Math.max(1, state.currentPage - 1), state.currentPage === 1 || pageCount === 0, false);
+
+            for (let page = 1; page <= pageCount; page++) {
+                addPaginationButton(String(page), page, false, page === state.currentPage);
+            }
+
+            addPaginationButton("›", Math.min(pageCount, state.currentPage + 1), state.currentPage === pageCount || pageCount === 0, false);
+            addPaginationButton(lastLabel, pageCount, state.currentPage === pageCount || pageCount === 0, false);
+        }
+
+        function render() {
+            const filteredRecords = getFilteredRecords();
+            const pageCount = Math.ceil(filteredRecords.length / state.entriesPerPage);
+            state.currentPage = pageCount ? Math.min(state.currentPage, pageCount) : 1;
+            const startIndex = (state.currentPage - 1) * state.entriesPerPage;
+            const visibleRecords = filteredRecords.slice(startIndex, startIndex + state.entriesPerPage);
+
+            renderRows(visibleRecords);
+            renderPagination(pageCount);
+            showing.textContent = filteredRecords.length
+                ? `Showing ${startIndex + 1} to ${startIndex + visibleRecords.length} of ${filteredRecords.length} entries`
+                : "No matching records found";
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener("input", function () {
+                state.query = this.value.trim().toLowerCase();
+                state.currentPage = 1;
+                render();
+            });
+        }
+
+        entriesSelect.addEventListener("change", function () {
+            state.entriesPerPage = parseInt(this.value, 10) || 10;
+            state.currentPage = 1;
+            render();
+        });
+
+        scope.querySelectorAll("input[name='reportTab']").forEach(function (tab) {
+            tab.addEventListener("change", function () {
+                setTimeout(render, 0);
+            });
+        });
+
+        render();
+    }
+
+    document.querySelectorAll("table").forEach(function (table) {
+        if (table.parentElement.closest("table") || table.classList.contains("stock-batch-table")) return;
+        const scope = getTableScope(table);
+        if (scope) initializeDataTable(table, scope);
+    });
+
+    document.querySelectorAll(".left-products-section").forEach(function (section) {
+        const searchInput = section.querySelector(".search-control .search-input");
+        const productCards = Array.from(section.querySelectorAll(".product-card-table .product-card"));
+
+        if (!searchInput || !productCards.length) return;
+
+        searchInput.addEventListener("input", function () {
+            const query = this.value.trim().toLowerCase();
+
+            productCards.forEach(function (card) {
+                card.style.display = card.textContent.toLowerCase().includes(query) ? "" : "none";
+            });
+        });
+    });
+});
+
