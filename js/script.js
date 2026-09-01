@@ -1045,106 +1045,163 @@ window.addEventListener("click", function (e) {
 //============================LOGIN PAGE====================
 document.addEventListener("DOMContentLoaded", function () {
 
-    const loginStep = document.getElementById("loginStep");
-    const forgotStep = document.getElementById("forgotStep");
-    const otpStep = document.getElementById("otpStep");
-    const newPasswordStep = document.getElementById("newPasswordStep");
-
-
-    const allSteps = [loginStep, forgotStep, otpStep, newPasswordStep];
-
-
-    function showStep(targetStep) {
-        allSteps.forEach(step => {
-            if (step) step.classList.remove("active");
-        });
-        if (targetStep) targetStep.classList.add("active");
-    }
-
-
-    const gotoForgotLink = document.getElementById("gotoForgot");
-    if (gotoForgotLink) {
-        gotoForgotLink.addEventListener("click", function (e) {
-            e.preventDefault();
-            showStep(forgotStep);
-        });
-    }
-
-
     const loginForm = document.getElementById("loginForm");
+
     if (loginForm) {
+
         loginForm.addEventListener("submit", function (e) {
+
             e.preventDefault();
 
-            const email = document.getElementById("loginEmail").value.trim();
-            const password = document.getElementById("loginPassword").value.trim();
+            const email =
+                document.getElementById("loginEmail").value.trim();
+
+            const password =
+                document.getElementById("loginPassword").value.trim();
 
 
             const demoEmail = "admin@gmail.com";
             const demoPassword = "12345678";
 
-            if (email === demoEmail && password === demoPassword) {
+
+            if (
+                email === demoEmail &&
+                password === demoPassword
+            ) {
 
                 window.location.href = "dashboard.html";
+
             } else {
 
-                alert("Invalid Credentials!\n\nDemo Email: " + demoEmail + "\nDemo Password: " + demoPassword);
+                alert(
+                    "Invalid Credentials!\n\n" +
+                    "Demo Email: " + demoEmail +
+                    "\nDemo Password: " + demoPassword
+                );
+
             }
+
         });
+
     }
 
 
-    const forgotForm = document.getElementById("forgotForm");
+    // ==========================================
+    // FORGOT PASSWORD
+    // ==========================================
+
+    const forgotForm =
+        document.getElementById("forgotForm");
+
     if (forgotForm) {
+
         forgotForm.addEventListener("submit", function (e) {
+
             e.preventDefault();
-            const email = document.getElementById("resetEmail").value;
+
+            const email =
+                document.getElementById("resetEmail").value.trim();
+
+
+            if (email === "") {
+                return;
+            }
 
 
             console.log("Sending OTP to:", email);
 
 
-            showStep(otpStep);
+            window.location.href =
+                "verify-otp.html";
+
         });
+
     }
-    const otpForm = document.getElementById("otpForm");
+
+
+    // ==========================================
+    // VERIFY OTP
+    // ==========================================
+
+    const otpForm =
+        document.getElementById("otpForm");
+
     if (otpForm) {
+
         otpForm.addEventListener("submit", function (e) {
+
             e.preventDefault();
-            const otp = document.getElementById("otpCode").value;
+
+            const otp =
+                document.getElementById("otpCode").value.trim();
+
+
+            if (otp.length !== 6) {
+
+                alert("Please enter a 6-digit OTP.");
+
+                return;
+            }
 
 
             console.log("Verifying OTP:", otp);
 
 
-            showStep(newPasswordStep);
+            window.location.href =
+                "new-password.html";
+
         });
+
     }
 
-    const newPasswordForm = document.getElementById("newPasswordForm");
+
+    // ==========================================
+    // NEW PASSWORD
+    // ==========================================
+
+    const newPasswordForm =
+        document.getElementById("newPasswordForm");
+
     if (newPasswordForm) {
+
         newPasswordForm.addEventListener("submit", function (e) {
+
             e.preventDefault();
-            const newPassword = document.getElementById("newPassword").value;
-            const confirmPassword = document.getElementById("confirmPassword").value;
+
+
+            const newPassword =
+                document.getElementById("newPassword").value;
+
+            const confirmPassword =
+                document.getElementById("confirmPassword").value;
 
 
             if (newPassword !== confirmPassword) {
-                alert("Passwords do not match! Please check again.");
+
+                alert(
+                    "Passwords do not match! Please check again."
+                );
+
                 return;
             }
 
 
             console.log("Updating password...");
-            alert("Password reset successfully! Please login with your new password.");
 
 
-            newPasswordForm.reset();
-            showStep(loginStep);
+            alert(
+                "Password reset successfully! Please login with your new password."
+            );
+
+
+            window.location.href =
+                "login.html";
+
         });
-    }
-});
 
+    }
+
+});
 
 
 

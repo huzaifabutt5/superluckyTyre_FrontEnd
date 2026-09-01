@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Verify OTP - Super Lucky Tyre</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <main class="auth-wrapper">
+
+        <div class="logo-container">
+            <img src="images/loginLogo.svg" alt="Super Lucky Tyre" class="brand-logo">
+        </div>
+
+        <div class="auth-card">
+
+            <section id="otpStep" class="auth-step otp-card-step active">
+
+                <div class="otp-header-bar">
+
+                    <h2 class="auth-title otp-heading">
+                        Verify OTP
+                    </h2>
+
+                </div>
+
+                <div class="otp-card-body">
+
+                    <form id="otpForm" class="otp-form-container">
+
+                        <div class="otp-field-group">
+
+                            <label for="otpCode" class="otp-label">
+                                OTP
+                            </label>
+
+                            <div class="otp-input-wrapper">
+
+                                <input type="text" id="otpCode" class="otp-input-field" placeholder="6-Digit Passcode"
+                                    maxlength="6" required>
+
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="btn-primary otp-submit-btn">
+                            Verify OTP
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
